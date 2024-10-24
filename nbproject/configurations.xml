@@ -35,6 +35,15 @@
         <logicalFolder name="Mcal_GPIO" displayName="Mcal_GPIO" projectFiles="true">
           <itemPath>Mcal/Mcal_GPIO/Mcal_GPIO_init.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Mcal_interrupt"
+                       displayName="Mcal_interrupt"
+                       projectFiles="true">
+          <itemPath>Mcal/Mcal_interrupt/Mcal_internal_interrupt.h</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_external_interrupt.h</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_manager.h</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h</itemPath>
+        </logicalFolder>
         <itemPath>Mcal/Mcal_Device_cfg.h</itemPath>
         <itemPath>Mcal/Mcal_Std_Types.h</itemPath>
         <itemPath>Mcal/Mcal_Bit_Math.h</itemPath>
@@ -83,6 +92,13 @@
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
         <logicalFolder name="Mcal_GPIO" displayName="Mcal_GPIO" projectFiles="true">
           <itemPath>Mcal/Mcal_GPIO/Mcal_GPIO_prog.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Mcal_interrupt"
+                       displayName="Mcal_interrupt"
+                       projectFiles="true">
+          <itemPath>Mcal/Mcal_interrupt/Mcal_external_interrupt.c</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_manager.c</itemPath>
+          <itemPath>Mcal/Mcal_interrupt/Mcal_internal_interrupt.c</itemPath>
         </logicalFolder>
         <itemPath>Mcal/Mcal_Device_cfg.c</itemPath>
       </logicalFolder>
