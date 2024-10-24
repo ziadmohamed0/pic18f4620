@@ -1,29 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"27 Hall/Led/Hall_Led_init.h
-[; ;Hall/Led/Hall_Led_init.h: 27: typedef struct {
+"24 Hall/Relay/Hall_Relay_init.h
+[; ;Hall/Relay/Hall_Relay_init.h: 24: typedef struct {
 [s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S274 . LED_PORTx LED_PINx LED_Status ]
-"58 Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
-[; ;Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 58: typedef struct {
+[n S274 . Relay_Port Relay_Pin Relay_Status ]
+"58 Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
+[; ;Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 58: typedef struct {
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"16 Hall/Led/Hall_Led_prog.c
-[; ;Hall/Led/Hall_Led_prog.c: 16:         Pin_cfg_t objLed = {
+"18 Hall/Relay/Hall_Relay_prog.c
+[; ;Hall/Relay/Hall_Relay_prog.c: 18:         Pin_cfg_t objPin = {
 [c E2986 0 1 .. ]
 [n E2986 . GPIO_Dircetion_Input GPIO_Dircetion_Output  ]
-"72 Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
-[; ;Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 72: Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG);
+"72 Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
+[; ;Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 72: Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG);
 [v _MCAL_GPIO_init `(uc ~T0 @X0 0 ef1`*CS273 ]
-"41 Hall/Led/Hall_Led_prog.c
-[; ;Hall/Led/Hall_Led_prog.c: 41:         MCAL_GPIO_writePinStatus(&objLed, GPIO_Status_High);
+"41 Hall/Relay/Hall_Relay_prog.c
+[; ;Hall/Relay/Hall_Relay_prog.c: 41:         MCAL_GPIO_writePinStatus(&objPin, GPIO_Status_High);
 [c E2982 0 1 .. ]
 [n E2982 . GPIO_Status_Low GPIO_Status_High  ]
-"69 Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
-[; ;Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 69: Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin);
+"69 Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
+[; ;Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 69: Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin);
 [v _MCAL_GPIO_writePinStatus `(uc ~T0 @X0 0 ef2`*CS273`E2982 ]
-"71
-[; ;Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h: 71: Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG);
-[v _MCAL_GPIO_togglePin `(uc ~T0 @X0 0 ef1`*CS273 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -435,38 +432,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"10 Hall/Led/Hall_Led_prog.c
-[; ;Hall/Led/Hall_Led_prog.c: 10: Std_Return HALL_Led_init(const Led_t* copyLed) {
-[v _HALL_Led_init `(uc ~T0 @X0 1 ef1`*CS274 ]
+"12 Hall/Relay/Hall_Relay_prog.c
+[; ;Hall/Relay/Hall_Relay_prog.c: 12: Std_Return HALL_Relay_init(const Relay_t* copyRelay) {
+[v _HALL_Relay_init `(uc ~T0 @X0 1 ef1`*CS274 ]
 {
-[e :U _HALL_Led_init ]
-[v _copyLed `*CS274 ~T0 @X0 1 r1 ]
+[e :U _HALL_Relay_init ]
+[v _copyRelay `*CS274 ~T0 @X0 1 r1 ]
 [f ]
-"11
-[; ;Hall/Led/Hall_Led_prog.c: 11:     uint8_t retVal = (Std_Return)1;
-[v _retVal `uc ~T0 @X0 1 a ]
-[e = _retVal -> -> 1 `i `uc ]
-"12
-[; ;Hall/Led/Hall_Led_prog.c: 12:     if(copyLed == ((void*)0)) {
-[e $ ! == _copyLed -> -> -> 0 `i `*v `*CS274 276  ]
-{
 "13
-[; ;Hall/Led/Hall_Led_prog.c: 13:         retVal = (Std_Return)0;
-[e = _retVal -> -> 0 `i `uc ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 13:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
 "14
-[; ;Hall/Led/Hall_Led_prog.c: 14:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 14:     if(copyRelay == ((void*)0)) {
+[e $ ! == _copyRelay -> -> -> 0 `i `*v `*CS274 276  ]
+{
+"15
+[; ;Hall/Relay/Hall_Relay_prog.c: 15:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"16
+[; ;Hall/Relay/Hall_Relay_prog.c: 16:     }
 }
 [e $U 277  ]
-"15
-[; ;Hall/Led/Hall_Led_prog.c: 15:     else {
+"17
+[; ;Hall/Relay/Hall_Relay_prog.c: 17:     else {
 [e :U 276 ]
 {
-[v F3060 `S273 ~T0 @X0 1 s ]
-[i F3060
+[v F3054 `S273 ~T0 @X0 1 s ]
+[i F3054
 :U ..
 :U ..
-"16
-[; ;Hall/Led/Hall_Led_prog.c: 16:         Pin_cfg_t objLed = {
+"18
+[; ;Hall/Relay/Hall_Relay_prog.c: 18:         Pin_cfg_t objPin = {
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -474,56 +471,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3060 ]
-[e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
-"23
-[; ;Hall/Led/Hall_Led_prog.c: 23:         MCAL_GPIO_init(&objLed);
-[e ( _MCAL_GPIO_init (1 -> &U _objLed `*CS273 ]
+[v _objPin `S273 ~T0 @X0 1 a ]
+[e = _objPin F3054 ]
+[e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
 "24
-[; ;Hall/Led/Hall_Led_prog.c: 24:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 24:         MCAL_GPIO_init(&objPin);
+[e ( _MCAL_GPIO_init (1 -> &U _objPin `*CS273 ]
+"25
+[; ;Hall/Relay/Hall_Relay_prog.c: 25:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"26
+[; ;Hall/Relay/Hall_Relay_prog.c: 26:     }
 }
 [e :U 277 ]
-"25
-[; ;Hall/Led/Hall_Led_prog.c: 25:     return retVal;
-[e ) _retVal ]
+"27
+[; ;Hall/Relay/Hall_Relay_prog.c: 27:     return retValue = (Std_Return)0;;
+[e ) = _retValue -> -> 0 `i `uc ]
 [e $UE 275  ]
-"26
-[; ;Hall/Led/Hall_Led_prog.c: 26: }
+"28
+[; ;Hall/Relay/Hall_Relay_prog.c: 28: }
 [e :UE 275 ]
 }
-"28
-[; ;Hall/Led/Hall_Led_prog.c: 28: Std_Return HALL_Led_trunON(const Led_t* copyLed) {
-[v _HALL_Led_trunON `(uc ~T0 @X0 1 ef1`*CS274 ]
-{
-[e :U _HALL_Led_trunON ]
-[v _copyLed `*CS274 ~T0 @X0 1 r1 ]
-[f ]
 "29
-[; ;Hall/Led/Hall_Led_prog.c: 29:     uint8_t retVal = (Std_Return)1;
-[v _retVal `uc ~T0 @X0 1 a ]
-[e = _retVal -> -> 1 `i `uc ]
-"30
-[; ;Hall/Led/Hall_Led_prog.c: 30:     if(copyLed == ((void*)0)) {
-[e $ ! == _copyLed -> -> -> 0 `i `*v `*CS274 279  ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 29: Std_Return HALL_Relay_turnON(const Relay_t* copyRelay) {
+[v _HALL_Relay_turnON `(uc ~T0 @X0 1 ef1`*CS274 ]
 {
+[e :U _HALL_Relay_turnON ]
+[v _copyRelay `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"30
+[; ;Hall/Relay/Hall_Relay_prog.c: 30:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
 "31
-[; ;Hall/Led/Hall_Led_prog.c: 31:         retVal = (Std_Return)0;
-[e = _retVal -> -> 0 `i `uc ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 31:     if(copyRelay == ((void*)0)) {
+[e $ ! == _copyRelay -> -> -> 0 `i `*v `*CS274 279  ]
+{
 "32
-[; ;Hall/Led/Hall_Led_prog.c: 32:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 32:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"33
+[; ;Hall/Relay/Hall_Relay_prog.c: 33:     }
 }
 [e $U 280  ]
-"33
-[; ;Hall/Led/Hall_Led_prog.c: 33:     else {
+"34
+[; ;Hall/Relay/Hall_Relay_prog.c: 34:     else {
 [e :U 279 ]
 {
-[v F3065 `S273 ~T0 @X0 1 s ]
-[i F3065
+[v F3059 `S273 ~T0 @X0 1 s ]
+[i F3059
 :U ..
 :U ..
-"34
-[; ;Hall/Led/Hall_Led_prog.c: 34:         Pin_cfg_t objLed = {
+"35
+[; ;Hall/Relay/Hall_Relay_prog.c: 35:         Pin_cfg_t objPin = {
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -531,56 +531,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3065 ]
-[e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
+[v _objPin `S273 ~T0 @X0 1 a ]
+[e = _objPin F3059 ]
+[e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
 "41
-[; ;Hall/Led/Hall_Led_prog.c: 41:         MCAL_GPIO_writePinStatus(&objLed, GPIO_Status_High);
-[e ( _MCAL_GPIO_writePinStatus (2 , -> &U _objLed `*CS273 . `E2982 1 ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 41:         MCAL_GPIO_writePinStatus(&objPin, GPIO_Status_High);
+[e ( _MCAL_GPIO_writePinStatus (2 , -> &U _objPin `*CS273 . `E2982 1 ]
 "42
-[; ;Hall/Led/Hall_Led_prog.c: 42:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 42:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"43
+[; ;Hall/Relay/Hall_Relay_prog.c: 43:     }
 }
 [e :U 280 ]
-"43
-[; ;Hall/Led/Hall_Led_prog.c: 43:     return retVal;
-[e ) _retVal ]
-[e $UE 278  ]
 "44
-[; ;Hall/Led/Hall_Led_prog.c: 44: }
+[; ;Hall/Relay/Hall_Relay_prog.c: 44:     return retValue = (Std_Return)0;;
+[e ) = _retValue -> -> 0 `i `uc ]
+[e $UE 278  ]
+"45
+[; ;Hall/Relay/Hall_Relay_prog.c: 45: }
 [e :UE 278 ]
 }
 "46
-[; ;Hall/Led/Hall_Led_prog.c: 46: Std_Return HALL_Led_trunOFF(const Led_t* copyLed) {
-[v _HALL_Led_trunOFF `(uc ~T0 @X0 1 ef1`*CS274 ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 46: Std_Return HALL_Relay_turnOFF(const Relay_t* copyRelay) {
+[v _HALL_Relay_turnOFF `(uc ~T0 @X0 1 ef1`*CS274 ]
 {
-[e :U _HALL_Led_trunOFF ]
-[v _copyLed `*CS274 ~T0 @X0 1 r1 ]
+[e :U _HALL_Relay_turnOFF ]
+[v _copyRelay `*CS274 ~T0 @X0 1 r1 ]
 [f ]
 "47
-[; ;Hall/Led/Hall_Led_prog.c: 47:     uint8_t retVal = (Std_Return)1;
-[v _retVal `uc ~T0 @X0 1 a ]
-[e = _retVal -> -> 1 `i `uc ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 47:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
 "48
-[; ;Hall/Led/Hall_Led_prog.c: 48:     if(copyLed == ((void*)0)) {
-[e $ ! == _copyLed -> -> -> 0 `i `*v `*CS274 282  ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 48:     if(copyRelay == ((void*)0)) {
+[e $ ! == _copyRelay -> -> -> 0 `i `*v `*CS274 282  ]
 {
 "49
-[; ;Hall/Led/Hall_Led_prog.c: 49:         retVal = (Std_Return)0;
-[e = _retVal -> -> 0 `i `uc ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 49:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
 "50
-[; ;Hall/Led/Hall_Led_prog.c: 50:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 50:     }
 }
 [e $U 283  ]
 "51
-[; ;Hall/Led/Hall_Led_prog.c: 51:     else {
+[; ;Hall/Relay/Hall_Relay_prog.c: 51:     else {
 [e :U 282 ]
 {
-[v F3070 `S273 ~T0 @X0 1 s ]
-[i F3070
+[v F3064 `S273 ~T0 @X0 1 s ]
+[i F3064
 :U ..
 :U ..
 "52
-[; ;Hall/Led/Hall_Led_prog.c: 52:         Pin_cfg_t objLed = {
+[; ;Hall/Relay/Hall_Relay_prog.c: 52:         Pin_cfg_t objPin = {
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -588,78 +591,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3070 ]
-[e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
+[v _objPin `S273 ~T0 @X0 1 a ]
+[e = _objPin F3064 ]
+[e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
+"58
+[; ;Hall/Relay/Hall_Relay_prog.c: 58:         MCAL_GPIO_writePinStatus(&objPin, GPIO_Status_Low);
+[e ( _MCAL_GPIO_writePinStatus (2 , -> &U _objPin `*CS273 . `E2982 0 ]
 "59
-[; ;Hall/Led/Hall_Led_prog.c: 59:         MCAL_GPIO_writePinStatus(&objLed, GPIO_Status_Low);
-[e ( _MCAL_GPIO_writePinStatus (2 , -> &U _objLed `*CS273 . `E2982 0 ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 59:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
 "60
-[; ;Hall/Led/Hall_Led_prog.c: 60:     }
+[; ;Hall/Relay/Hall_Relay_prog.c: 60:     }
 }
 [e :U 283 ]
 "61
-[; ;Hall/Led/Hall_Led_prog.c: 61:     return retVal;
-[e ) _retVal ]
+[; ;Hall/Relay/Hall_Relay_prog.c: 61:     return retValue = (Std_Return)0;;
+[e ) = _retValue -> -> 0 `i `uc ]
 [e $UE 281  ]
 "62
-[; ;Hall/Led/Hall_Led_prog.c: 62: }
+[; ;Hall/Relay/Hall_Relay_prog.c: 62: }
 [e :UE 281 ]
-}
-"64
-[; ;Hall/Led/Hall_Led_prog.c: 64: Std_Return HALL_Led_trunToggle(const Led_t* copyLed) {
-[v _HALL_Led_trunToggle `(uc ~T0 @X0 1 ef1`*CS274 ]
-{
-[e :U _HALL_Led_trunToggle ]
-[v _copyLed `*CS274 ~T0 @X0 1 r1 ]
-[f ]
-"65
-[; ;Hall/Led/Hall_Led_prog.c: 65:     uint8_t retVal = (Std_Return)1;
-[v _retVal `uc ~T0 @X0 1 a ]
-[e = _retVal -> -> 1 `i `uc ]
-"66
-[; ;Hall/Led/Hall_Led_prog.c: 66:     if(copyLed == ((void*)0)) {
-[e $ ! == _copyLed -> -> -> 0 `i `*v `*CS274 285  ]
-{
-"67
-[; ;Hall/Led/Hall_Led_prog.c: 67:         retVal = (Std_Return)0;
-[e = _retVal -> -> 0 `i `uc ]
-"68
-[; ;Hall/Led/Hall_Led_prog.c: 68:     }
-}
-[e $U 286  ]
-"69
-[; ;Hall/Led/Hall_Led_prog.c: 69:     else {
-[e :U 285 ]
-{
-[v F3075 `S273 ~T0 @X0 1 s ]
-[i F3075
-:U ..
-:U ..
-"70
-[; ;Hall/Led/Hall_Led_prog.c: 70:         Pin_cfg_t objLed = {
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-..
-]
-[v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3075 ]
-[e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
-"77
-[; ;Hall/Led/Hall_Led_prog.c: 77:         MCAL_GPIO_togglePin(&objLed);
-[e ( _MCAL_GPIO_togglePin (1 -> &U _objLed `*CS273 ]
-"78
-[; ;Hall/Led/Hall_Led_prog.c: 78:     }
-}
-[e :U 286 ]
-"79
-[; ;Hall/Led/Hall_Led_prog.c: 79:     return retVal;
-[e ) _retVal ]
-[e $UE 284  ]
-"80
-[; ;Hall/Led/Hall_Led_prog.c: 80: }
-[e :UE 284 ]
 }

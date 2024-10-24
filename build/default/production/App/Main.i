@@ -13,10 +13,10 @@
 
 
 
-
-
 # 1 "App/Main.h" 1
 # 12 "App/Main.h"
+# 1 "App/../Hall/Hall_dfs.h" 1
+# 12 "App/../Hall/Hall_dfs.h"
 # 1 "App/../Hall/Led/Hall_Led_init.h" 1
 # 12 "App/../Hall/Led/Hall_Led_init.h"
 # 1 "App/../Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
@@ -26,6 +26,237 @@
 
 # 1 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
 # 12 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 2 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\features.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 2 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 128 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned size_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 421 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 12 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 143 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef __int24 ssize_t;
+# 255 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 409 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+
+
+
+
+
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+
+
+
+
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 13 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+
 # 1 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
 # 12 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
@@ -41,28 +272,10 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -4511,11 +4724,11 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
 # 12 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
-# 12 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 14 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
 # 1 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
-# 13 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
-# 69 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 15 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 70 "App/../Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4597,12 +4810,173 @@ typedef struct {
 
 Std_Return HALL_Led_init(const Led_t* copyLed);
 Std_Return HALL_Led_trunON(const Led_t* copyLed);
-# 12 "App/Main.h" 2
-# 9 "App/Main.c" 2
+Std_Return HALL_Led_trunOFF(const Led_t* copyLed);
+Std_Return HALL_Led_trunToggle(const Led_t* copyLed);
+# 12 "App/../Hall/Hall_dfs.h" 2
 
+# 1 "App/../Hall/Button/Hall_Button_init.h" 1
+# 19 "App/../Hall/Button/Hall_Button_init.h"
+typedef enum {
+    BTN_Pressed,
+    BTN_Released
+}BTN_status_t;
+
+typedef enum {
+    BTN_Active_High,
+    BTN_Active_Low
+}BTN_Active_t;
+
+typedef struct {
+    Pin_cfg_t BTN_Pin;
+    BTN_status_t BTN_Status;
+    BTN_Active_t BTN_Connection;
+}BTN_t;
+
+
+
+
+
+
+Std_Return HALL_BTN_init(const BTN_t *copyBTN);
+Std_Return HALL_BTN_readStatus(const BTN_t *copyBTN, BTN_status_t *copyBTN_State);
+# 13 "App/../Hall/Hall_dfs.h" 2
+
+# 1 "App/../Hall/Relay/Hall_Relay_init.h" 1
+# 24 "App/../Hall/Relay/Hall_Relay_init.h"
+typedef struct {
+    uint8_t Relay_Port : 4;
+    uint8_t Relay_Pin : 3;
+    uint8_t Relay_Status : 1;
+}Relay_t;
+
+
+
+Std_Return HALL_Relay_init(const Relay_t* copyRelay);
+Std_Return HALL_Relay_turnON(const Relay_t* copyRelay);
+Std_Return HALL_Relay_turnOFF(const Relay_t* copyRelay);
+# 14 "App/../Hall/Hall_dfs.h" 2
+
+# 1 "App/../Hall/DC_Motor/Hall_Dc_Motor_init.h" 1
+# 24 "App/../Hall/DC_Motor/Hall_Dc_Motor_init.h"
+typedef struct {
+    uint8_t DC_Motor_Port : 4;
+    uint8_t DC_Motor_Pin : 3;
+    uint8_t DC_Motor_Status : 1;
+}DC_Motor_pin_t;
+
+typedef struct {
+    DC_Motor_pin_t DC_MOTOR[2];
+}DC_Motor_t;
+
+
+
+Std_Return HALL_DC_MOTOR_init(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_right(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_left(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_stop(const DC_Motor_t* copyDC_motor);
+# 15 "App/../Hall/Hall_dfs.h" 2
+
+# 1 "App/../Hall/Seven_seg/Hall_Seven_seg_init.h" 1
+# 26 "App/../Hall/Seven_seg/Hall_Seven_seg_init.h"
+typedef enum {
+    SEGEMENT_COMMON_ANODE,
+    SEGEMENT_COMMON_CATHOD,
+}Segement_type_t;
+
+typedef struct {
+    Pin_cfg_t Segement_Pins[4];
+    Segement_type_t SegmentType;
+}Segement_t;
+
+
+
+Std_Return HALL_SEVEN_SEGEMENT_init(const Segement_t* copySevenSegement);
+Std_Return HALL_SEVEN_SEGEMENT_writeNumber(const Segement_t* copySevenSegement, uint8_t copyNumber);
+# 16 "App/../Hall/Hall_dfs.h" 2
+
+# 1 "App/../Hall/Key_Pad/Hall_Key_Pad_init.h" 1
+# 24 "App/../Hall/Key_Pad/Hall_Key_Pad_init.h"
+typedef struct {
+    Pin_cfg_t Keypad_Row_Pins[4];
+    Pin_cfg_t Keypad_Column_Pins[4];
+}KeyPad_t;
+
+
+
+Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad);
+Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore);
+# 17 "App/../Hall/Hall_dfs.h" 2
+
+# 1 "App/../Hall/LCD/Hall_lcd_init.h" 1
+# 43 "App/../Hall/LCD/Hall_lcd_init.h"
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[4];
+}LCD_4Bit_t;
+
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[8];
+}LCD_8Bit_t;
+
+
+
+Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD);
+Std_Return HALL_LCD_4bit_sendCMD(const LCD_4Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_4bit_sendChar(const LCD_4Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendCharPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendSTR(const LCD_4Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_sendSTRPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_goto(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+Std_Return HALL_LCD_8bit_init(const LCD_8Bit_t* copyLCD);
+Std_Return HALL_LCD_8bit_sendCMD(const LCD_8Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_8bit_sendChar(const LCD_8Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendCharPos(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendSTR(const LCD_8Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_sendSTRPos(const LCD_8Bit_t* copyLCD, uint8_t coptRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_goto(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+
+Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR);
+# 18 "App/../Hall/Hall_dfs.h" 2
+
+
+
+
+uint8_t *RetValue_KeyPad = ((void*)0);
+uint8_t *RetValue_BTN = ((void*)0);
+# 38 "App/../Hall/Hall_dfs.h"
+DC_Motor_t Motor1;
+DC_Motor_t Motor2;
+
+
+Segement_t Seg1;
+
+
+BTN_t BTN1;
+
+
+KeyPad_t KeyPad1;
+
+
+LCD_4Bit_t LCD1_4Bit;
+LCD_8Bit_t LCD1_8Bit;
+# 12 "App/Main.h" 2
+# 7 "App/Main.c" 2
+
+
+uint8_t Num = 20 ;
+uint8_t NumArr[4];
 
 void main(void) {
-
+    HALL_LCD_8bit_init(&LCD1_8Bit);
+    HALL_LCD_convertU8toSTR(Num, NumArr);
+    HALL_LCD_8bit_sendSTR(&LCD1_8Bit, NumArr);
     while(1) {
 
     }

@@ -1,5 +1,55 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"24 App/../Hall/DC_Motor/Hall_Dc_Motor_init.h
+[; ;App/../Hall/DC_Motor/Hall_Dc_Motor_init.h: 24: typedef struct {
+[s S277 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S277 . DC_Motor_Port DC_Motor_Pin DC_Motor_Status ]
+"30
+[; ;App/../Hall/DC_Motor/Hall_Dc_Motor_init.h: 30: typedef struct {
+[s S278 `S277 -> 2 `i ]
+[n S278 . DC_MOTOR ]
+"58 App/../Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . Port Pin Direction Status ]
+"42 App/../Hall/Hall_dfs.h
+[; ;App/../Hall/Hall_dfs.h: 42: Segement_t Seg1;
+[c E3102 0 1 .. ]
+[n E3102 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
+"31 App/../Hall/Seven_seg/Hall_Seven_seg_init.h
+[; ;App/../Hall/Seven_seg/Hall_Seven_seg_init.h: 31: typedef struct {
+[s S279 `S273 -> 4 `i `E3102 1 ]
+[n S279 . Segement_Pins SegmentType ]
+"45 App/../Hall/Hall_dfs.h
+[; ;App/../Hall/Hall_dfs.h: 45: BTN_t BTN1;
+[c E3057 0 1 .. ]
+[n E3057 . BTN_Pressed BTN_Released  ]
+[c E3061 0 1 .. ]
+[n E3061 . BTN_Active_High BTN_Active_Low  ]
+"29 App/../Hall/Button/Hall_Button_init.h
+[; ;App/../Hall/Button/Hall_Button_init.h: 29: typedef struct {
+[s S275 `S273 1 `E3057 1 `E3061 1 ]
+[n S275 . BTN_Pin BTN_Status BTN_Connection ]
+"24 App/../Hall/Key_Pad/Hall_Key_Pad_init.h
+[; ;App/../Hall/Key_Pad/Hall_Key_Pad_init.h: 24: typedef struct {
+[s S280 `S273 -> 4 `i `S273 -> 4 `i ]
+[n S280 . Keypad_Row_Pins Keypad_Column_Pins ]
+"43 App/../Hall/LCD/Hall_lcd_init.h
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 43: typedef struct {
+[s S281 `S273 1 `S273 1 `S273 -> 4 `i ]
+[n S281 . LCD_rs LCD_en LCD_D ]
+"49
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 49: typedef struct {
+[s S282 `S273 1 `S273 1 `S273 -> 8 `i ]
+[n S282 . LCD_rs LCD_en LCD_D ]
 [p mainexit ]
+"65
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 65: Std_Return HALL_LCD_8bit_init(const LCD_8Bit_t* copyLCD);
+[v _HALL_LCD_8bit_init `(uc ~T0 @X0 0 ef1`*CS282 ]
+"74
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 74: Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR);
+[v _HALL_LCD_convertU8toSTR `(uc ~T0 @X0 0 ef2`uc`*uc ]
+"69
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 69: Std_Return HALL_LCD_8bit_sendSTR(const LCD_8Bit_t* copyLCD, uint8_t *copyData);
+[v _HALL_LCD_8bit_sendSTR `(uc ~T0 @X0 0 ef2`*CS282`*uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -411,24 +461,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"22 App/../Hall/Hall_dfs.h
+[; ;App/../Hall/Hall_dfs.h: 22: uint8_t *RetValue_KeyPad = ((void*)0);
+[v _RetValue_KeyPad `*uc ~T0 @X0 1 e ]
+[i _RetValue_KeyPad
+-> -> -> 0 `i `*v `*uc
+]
+"23
+[; ;App/../Hall/Hall_dfs.h: 23: uint8_t *RetValue_BTN = ((void*)0);
+[v _RetValue_BTN `*uc ~T0 @X0 1 e ]
+[i _RetValue_BTN
+-> -> -> 0 `i `*v `*uc
+]
+"38
+[; ;App/../Hall/Hall_dfs.h: 38: DC_Motor_t Motor1;
+[v _Motor1 `S278 ~T0 @X0 1 e ]
+"39
+[; ;App/../Hall/Hall_dfs.h: 39: DC_Motor_t Motor2;
+[v _Motor2 `S278 ~T0 @X0 1 e ]
+"42
+[; ;App/../Hall/Hall_dfs.h: 42: Segement_t Seg1;
+[v _Seg1 `S279 ~T0 @X0 1 e ]
+"45
+[; ;App/../Hall/Hall_dfs.h: 45: BTN_t BTN1;
+[v _BTN1 `S275 ~T0 @X0 1 e ]
+"48
+[; ;App/../Hall/Hall_dfs.h: 48: KeyPad_t KeyPad1;
+[v _KeyPad1 `S280 ~T0 @X0 1 e ]
+"51
+[; ;App/../Hall/Hall_dfs.h: 51: LCD_4Bit_t LCD1_4Bit;
+[v _LCD1_4Bit `S281 ~T0 @X0 1 e ]
+"52
+[; ;App/../Hall/Hall_dfs.h: 52: LCD_8Bit_t LCD1_8Bit;
+[v _LCD1_8Bit `S282 ~T0 @X0 1 e ]
+"9 App/Main.c
+[; ;App/Main.c: 9: uint8_t Num = 20 ;
+[v _Num `uc ~T0 @X0 1 e ]
+[i _Num
+-> -> 20 `i `uc
+]
+"10
+[; ;App/Main.c: 10: uint8_t NumArr[4];
+[v _NumArr `uc ~T0 @X0 -> 4 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"11 App/Main.c
-[; ;App/Main.c: 11: void main(void) {
+"12
+[; ;App/Main.c: 12: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
 "13
-[; ;App/Main.c: 13:     while(1) {
-[e :U 274 ]
-{
+[; ;App/Main.c: 13:     HALL_LCD_8bit_init(&LCD1_8Bit);
+[e ( _HALL_LCD_8bit_init (1 -> &U _LCD1_8Bit `*CS282 ]
+"14
+[; ;App/Main.c: 14:     HALL_LCD_convertU8toSTR(Num, NumArr);
+[e ( _HALL_LCD_convertU8toSTR (2 , _Num &U _NumArr ]
 "15
-[; ;App/Main.c: 15:     }
-}
-[e :U 273 ]
-[e $U 274  ]
-[e :U 275 ]
+[; ;App/Main.c: 15:     HALL_LCD_8bit_sendSTR(&LCD1_8Bit, NumArr);
+[e ( _HALL_LCD_8bit_sendSTR (2 , -> &U _LCD1_8Bit `*CS282 &U _NumArr ]
 "16
-[; ;App/Main.c: 16: }
-[e :UE 272 ]
+[; ;App/Main.c: 16:     while(1) {
+[e :U 285 ]
+{
+"18
+[; ;App/Main.c: 18:     }
+}
+[e :U 284 ]
+[e $U 285  ]
+[e :U 286 ]
+"19
+[; ;App/Main.c: 19: }
+[e :UE 283 ]
 }

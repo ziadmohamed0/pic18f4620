@@ -1,4 +1,4 @@
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c"
+# 1 "Hall/Key_Pad/Hall_Key_Pad_prog.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 1 "Hall/Key_Pad/Hall_Key_Pad_prog.c" 2
 
 
 
@@ -15,13 +15,15 @@
 
 
 
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 1 "Hall/Key_Pad/Hall_Key_Pad_init.h" 1
+# 12 "Hall/Key_Pad/Hall_Key_Pad_init.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -97,7 +99,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -251,10 +253,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 13 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4719,12 +4721,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
-# 14 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
+# 14 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
-# 15 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
-# 70 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
+# 15 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 70 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4737,8 +4739,8 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 13 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 13 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Hall/Key_Pad/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4789,388 +4791,68 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
-# 9 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 12 "Hall/Key_Pad/Hall_Key_Pad_init.h" 2
+# 24 "Hall/Key_Pad/Hall_Key_Pad_init.h"
+typedef struct {
+    Pin_cfg_t Keypad_Row_Pins[4];
+    Pin_cfg_t Keypad_Column_Pins[4];
+}KeyPad_t;
 
 
-Std_Return Mcal_GPIO_initPinDirection(const Pin_cfg_t* copyPinCFG) {
 
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad);
+Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore);
+# 9 "Hall/Key_Pad/Hall_Key_Pad_prog.c" 2
+
+
+static const uint8_t btn_Value[4][4] ={
+                                                                            {7,8,9,'/'},
+                                                                            {4,5,6,'*'},
+                                                                            {1,2,3,'-'},
+                                                                            {'#',0,'=','+'}
+                                                                        };
+
+Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad) {
+    uint8_t retvalue = (Std_Return)0;
+    uint8_t Rows_Conter = 0;
+    uint8_t Columns_Conter = 0;
+    if(copyKeyPad == ((void*)0)) {
+        retvalue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISA |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_B:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISB |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_C:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISC |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_D:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISD |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_E:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISE |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-                default:
-                    retVal = (Std_Return)0;
-                    break;
+        for(Rows_Conter = 0; Rows_Conter < 4; Rows_Conter++) {
+            MCAL_GPIO_init(&(copyKeyPad->Keypad_Row_Pins[Rows_Conter]));
         }
+        for(Columns_Conter = 0; Columns_Conter < 4; Columns_Conter++) {
+            Mcal_GPIO_initPinDirection(&(copyKeyPad->Keypad_Column_Pins[Columns_Conter]));
+        }
+        retvalue = (Std_Return)1;
     }
-    return retVal;
+    return retvalue;
 }
-
-Std_Return MCAL_GPIO_getPinDirection(const Pin_cfg_t* copyPinCFG, Direction_t *copyDirectionPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore) {
+    uint8_t retvalue = (Std_Return)0;
+    uint8_t Rows_Conter = 0;
+    uint8_t Columns_Conter = 0;
+    uint8_t Counter = 0;
+    uint8_t Column_Value = 0;
+    if(copyKeyPad == ((void*)0)) {
+        retvalue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyDirectionPin = ((TRISA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyDirectionPin = ((TRISB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyDirectionPin = ((TRISC >> copyPinCFG->Pin) & 1 );
-                break;
-
-
-            case GPIO_Port_Index_D :
-                *copyDirectionPin = ((TRISD >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_E :
-                *copyDirectionPin = ((TRISE >> copyPinCFG->Pin) & 1 );
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATA |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
+        for(Rows_Conter = 0; Rows_Conter < 4; Rows_Conter++) {
+            for(Counter = 0; Counter < 4; Counter++) {
+                MCAL_GPIO_writePinStatus(&(copyKeyPad->Keypad_Row_Pins[Counter]), GPIO_Status_Low);
+            }
+            MCAL_GPIO_writePinStatus(&(copyKeyPad->Keypad_Row_Pins[Rows_Conter]), GPIO_Status_High);
+            for(Columns_Conter = 0; Columns_Conter < 4; Columns_Conter++) {
+                MCAL_GPIO_getPinStatus(&(copyKeyPad->Keypad_Column_Pins[Columns_Conter]), &Column_Value);
+                if(Column_Value == GPIO_Status_High) {
+                    *copyValueStore = btn_Value[Rows_Conter][Columns_Conter];
                 }
-                break;
-
-            case GPIO_Port_Index_B :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATB |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_C :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATC |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-
-            case GPIO_Port_Index_D :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATD |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-
-            case GPIO_Port_Index_E :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATE |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-            default:
-                retVal = (Std_Return)0;
-                break;
+            }
         }
+        retvalue = (Std_Return)1;
     }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_getPinStatus(const Pin_cfg_t* copyPinCFG, Status_t* copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if((copyPinCFG == ((void*)0)) || (copyStatusPin == ((void*)0))) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyStatusPin = ((PORTA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyStatusPin = ((PORTB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyStatusPin = ((PORTC >> copyPinCFG->Pin) & 1 );
-                break;
-
-
-            case GPIO_Port_Index_D :
-                *copyStatusPin = ((PORTD >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_E :
-                *copyStatusPin = ((PORTE >> copyPinCFG->Pin) & 1 );
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                LATA ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_B :
-                LATB ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_C :
-                LATC ^= (1 << copyPinCFG->Pin);
-                break;
-
-
-            case GPIO_Port_Index_D :
-                LATD ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_E :
-                LATE ^= (1 << copyPinCFG->Pin);
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        retVal = Mcal_GPIO_initPinDirection(copyPinCFG);
-        retVal = MCAL_GPIO_writePinStatus(copyPinCFG,copyPinCFG->Status);
-    }
-    return retVal;
-}
-
-
-Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDirection) {
-    uint8_t retValue = (Std_Return)1;
-
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        TRISA = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        TRISB = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        TRISC = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        TRISD = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        TRISE = copyDirection;
-    }
-    else {
-        retValue = (Std_Return)0;
-    }
-    return retValue;
-}
-
-Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyDirectionPort == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        uint8_t retValue = (Std_Return)1;
-
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyDirectionPort = TRISA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyDirectionPort = TRISB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyDirectionPort = TRISC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyDirectionPort = TRISD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyDirectionPort = TRISE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
-    }
-    return retVal;
-}
-Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort) {
-    uint8_t retValue = (Std_Return)1;
-
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        LATA = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        LATB = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        LATC = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        LATD = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        LATE = copyStatusPort;
-    }
-    else {
-        retValue = (Std_Return)0;
-    }
-    return retValue;
-}
-
-Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyStatusPort == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        uint8_t retValue = (Std_Return)1;
-
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyStatusPort = PORTA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyStatusPort = PORTB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyStatusPort = PORTC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyStatusPort = PORTD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyStatusPort = PORTE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
-    }
-    return retVal;
+    return retvalue;
 }

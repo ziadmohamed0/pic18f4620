@@ -1,4 +1,4 @@
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c"
+# 1 "Hall/Hall_dfs.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 1 "Hall/Hall_dfs.c" 2
 
 
 
@@ -15,13 +15,17 @@
 
 
 
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 1 "Hall/Hall_dfs.h" 1
+# 12 "Hall/Hall_dfs.h"
+# 1 "Hall/Led/Hall_Led_init.h" 1
+# 12 "Hall/Led/Hall_Led_init.h"
+# 1 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -97,7 +101,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -251,10 +255,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 13 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h"
+# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4719,12 +4723,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
-# 14 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
+# 14 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
-# 15 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
-# 70 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
+# 15 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 70 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4737,8 +4741,8 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 13 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 13 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4789,388 +4793,362 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
-# 9 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 12 "Hall/Led/Hall_Led_init.h" 2
+# 22 "Hall/Led/Hall_Led_init.h"
+typedef enum {
+    LED_OFF,
+    LED_ON
+}Led_State_t;
+
+typedef struct {
+    uint8_t LED_PORTx : 4;
+    uint8_t LED_PINx : 3;
+    uint8_t LED_Status : 1;
+}Led_t;
 
 
-Std_Return Mcal_GPIO_initPinDirection(const Pin_cfg_t* copyPinCFG) {
 
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISA |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
+Std_Return HALL_Led_init(const Led_t* copyLed);
+Std_Return HALL_Led_trunON(const Led_t* copyLed);
+Std_Return HALL_Led_trunOFF(const Led_t* copyLed);
+Std_Return HALL_Led_trunToggle(const Led_t* copyLed);
+# 12 "Hall/Hall_dfs.h" 2
 
-            case GPIO_Port_Index_B:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISB |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
+# 1 "Hall/Button/Hall_Button_init.h" 1
+# 19 "Hall/Button/Hall_Button_init.h"
+typedef enum {
+    BTN_Pressed,
+    BTN_Released
+}BTN_status_t;
 
-            case GPIO_Port_Index_C:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISC |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
+typedef enum {
+    BTN_Active_High,
+    BTN_Active_Low
+}BTN_Active_t;
 
-            case GPIO_Port_Index_D:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISD |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_E:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISE |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-                default:
-                    retVal = (Std_Return)0;
-                    break;
-        }
-    }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_getPinDirection(const Pin_cfg_t* copyPinCFG, Direction_t *copyDirectionPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyDirectionPin = ((TRISA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyDirectionPin = ((TRISB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyDirectionPin = ((TRISC >> copyPinCFG->Pin) & 1 );
-                break;
+typedef struct {
+    Pin_cfg_t BTN_Pin;
+    BTN_status_t BTN_Status;
+    BTN_Active_t BTN_Connection;
+}BTN_t;
 
 
-            case GPIO_Port_Index_D :
-                *copyDirectionPin = ((TRISD >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_E :
-                *copyDirectionPin = ((TRISE >> copyPinCFG->Pin) & 1 );
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATA |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_B :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATB |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_C :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATC |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
 
 
-            case GPIO_Port_Index_D :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATD |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
 
 
-            case GPIO_Port_Index_E :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATE |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
+Std_Return HALL_BTN_init(const BTN_t *copyBTN);
+Std_Return HALL_BTN_readStatus(const BTN_t *copyBTN, BTN_status_t *copyBTN_State);
+# 13 "Hall/Hall_dfs.h" 2
 
-Std_Return MCAL_GPIO_getPinStatus(const Pin_cfg_t* copyPinCFG, Status_t* copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if((copyPinCFG == ((void*)0)) || (copyStatusPin == ((void*)0))) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyStatusPin = ((PORTA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyStatusPin = ((PORTB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyStatusPin = ((PORTC >> copyPinCFG->Pin) & 1 );
-                break;
+# 1 "Hall/Relay/Hall_Relay_init.h" 1
+# 24 "Hall/Relay/Hall_Relay_init.h"
+typedef struct {
+    uint8_t Relay_Port : 4;
+    uint8_t Relay_Pin : 3;
+    uint8_t Relay_Status : 1;
+}Relay_t;
 
 
-            case GPIO_Port_Index_D :
-                *copyStatusPin = ((PORTD >> copyPinCFG->Pin) & 1 );
-                break;
 
-            case GPIO_Port_Index_E :
-                *copyStatusPin = ((PORTE >> copyPinCFG->Pin) & 1 );
-                break;
+Std_Return HALL_Relay_init(const Relay_t* copyRelay);
+Std_Return HALL_Relay_turnON(const Relay_t* copyRelay);
+Std_Return HALL_Relay_turnOFF(const Relay_t* copyRelay);
+# 14 "Hall/Hall_dfs.h" 2
 
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
+# 1 "Hall/DC_Motor/Hall_Dc_Motor_init.h" 1
+# 24 "Hall/DC_Motor/Hall_Dc_Motor_init.h"
+typedef struct {
+    uint8_t DC_Motor_Port : 4;
+    uint8_t DC_Motor_Pin : 3;
+    uint8_t DC_Motor_Status : 1;
+}DC_Motor_pin_t;
 
-Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                LATA ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_B :
-                LATB ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_C :
-                LATC ^= (1 << copyPinCFG->Pin);
-                break;
+typedef struct {
+    DC_Motor_pin_t DC_MOTOR[2];
+}DC_Motor_t;
 
 
-            case GPIO_Port_Index_D :
-                LATD ^= (1 << copyPinCFG->Pin);
-                break;
 
-            case GPIO_Port_Index_E :
-                LATE ^= (1 << copyPinCFG->Pin);
-                break;
+Std_Return HALL_DC_MOTOR_init(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_right(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_left(const DC_Motor_t* copyDC_motor);
+Std_Return HALL_DC_MOTOR_stop(const DC_Motor_t* copyDC_motor);
+# 15 "Hall/Hall_dfs.h" 2
 
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        retVal = Mcal_GPIO_initPinDirection(copyPinCFG);
-        retVal = MCAL_GPIO_writePinStatus(copyPinCFG,copyPinCFG->Status);
-    }
-    return retVal;
-}
+# 1 "Hall/Seven_seg/Hall_Seven_seg_init.h" 1
+# 26 "Hall/Seven_seg/Hall_Seven_seg_init.h"
+typedef enum {
+    SEGEMENT_COMMON_ANODE,
+    SEGEMENT_COMMON_CATHOD,
+}Segement_type_t;
+
+typedef struct {
+    Pin_cfg_t Segement_Pins[4];
+    Segement_type_t SegmentType;
+}Segement_t;
 
 
-Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDirection) {
-    uint8_t retValue = (Std_Return)1;
 
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        TRISA = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        TRISB = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        TRISC = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        TRISD = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        TRISE = copyDirection;
-    }
-    else {
-        retValue = (Std_Return)0;
-    }
-    return retValue;
-}
+Std_Return HALL_SEVEN_SEGEMENT_init(const Segement_t* copySevenSegement);
+Std_Return HALL_SEVEN_SEGEMENT_writeNumber(const Segement_t* copySevenSegement, uint8_t copyNumber);
+# 16 "Hall/Hall_dfs.h" 2
 
-Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyDirectionPort == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        uint8_t retValue = (Std_Return)1;
+# 1 "Hall/Key_Pad/Hall_Key_Pad_init.h" 1
+# 24 "Hall/Key_Pad/Hall_Key_Pad_init.h"
+typedef struct {
+    Pin_cfg_t Keypad_Row_Pins[4];
+    Pin_cfg_t Keypad_Column_Pins[4];
+}KeyPad_t;
 
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyDirectionPort = TRISA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyDirectionPort = TRISB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyDirectionPort = TRISC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyDirectionPort = TRISD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyDirectionPort = TRISE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
-    }
-    return retVal;
-}
-Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort) {
-    uint8_t retValue = (Std_Return)1;
 
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        LATA = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        LATB = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        LATC = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        LATD = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        LATE = copyStatusPort;
-    }
-    else {
-        retValue = (Std_Return)0;
-    }
-    return retValue;
-}
 
-Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyStatusPort == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        uint8_t retValue = (Std_Return)1;
+Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad);
+Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore);
+# 17 "Hall/Hall_dfs.h" 2
 
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyStatusPort = PORTA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyStatusPort = PORTB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyStatusPort = PORTC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyStatusPort = PORTD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyStatusPort = PORTE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
-    }
-    return retVal;
-}
+# 1 "Hall/LCD/Hall_lcd_init.h" 1
+# 43 "Hall/LCD/Hall_lcd_init.h"
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[4];
+}LCD_4Bit_t;
+
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[8];
+}LCD_8Bit_t;
+
+
+
+Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD);
+Std_Return HALL_LCD_4bit_sendCMD(const LCD_4Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_4bit_sendChar(const LCD_4Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendCharPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendSTR(const LCD_4Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_sendSTRPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_goto(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+Std_Return HALL_LCD_8bit_init(const LCD_8Bit_t* copyLCD);
+Std_Return HALL_LCD_8bit_sendCMD(const LCD_8Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_8bit_sendChar(const LCD_8Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendCharPos(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendSTR(const LCD_8Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_sendSTRPos(const LCD_8Bit_t* copyLCD, uint8_t coptRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_goto(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+
+Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR);
+# 18 "Hall/Hall_dfs.h" 2
+
+
+
+
+uint8_t *RetValue_KeyPad = ((void*)0);
+uint8_t *RetValue_BTN = ((void*)0);
+# 38 "Hall/Hall_dfs.h"
+DC_Motor_t Motor1;
+DC_Motor_t Motor2;
+
+
+Segement_t Seg1;
+
+
+BTN_t BTN1;
+
+
+KeyPad_t KeyPad1;
+
+
+LCD_4Bit_t LCD1_4Bit;
+LCD_8Bit_t LCD1_8Bit;
+# 9 "Hall/Hall_dfs.c" 2
+
+
+
+DC_Motor_t Motor1 = {
+    .DC_MOTOR[0].DC_Motor_Port = GPIO_Port_Index_B,
+    .DC_MOTOR[0].DC_Motor_Pin = GPIO_Pin_Index_0,
+    .DC_MOTOR[0].DC_Motor_Status = GPIO_Status_Low,
+
+    .DC_MOTOR[1].DC_Motor_Port = GPIO_Port_Index_B,
+    .DC_MOTOR[1].DC_Motor_Pin = GPIO_Pin_Index_1,
+    .DC_MOTOR[1].DC_Motor_Status = GPIO_Status_Low,
+};
+
+DC_Motor_t Motor2 = {
+    .DC_MOTOR[0].DC_Motor_Port = GPIO_Port_Index_B,
+    .DC_MOTOR[0].DC_Motor_Pin = GPIO_Pin_Index_2,
+    .DC_MOTOR[0].DC_Motor_Status = GPIO_Status_Low,
+
+    .DC_MOTOR[1].DC_Motor_Port = GPIO_Port_Index_B,
+    .DC_MOTOR[1].DC_Motor_Pin = GPIO_Pin_Index_3,
+    .DC_MOTOR[1].DC_Motor_Status = GPIO_Status_Low,
+};
+
+
+Segement_t Seg1 = {
+    .Segement_Pins[0].Port = GPIO_Port_Index_B,
+    .Segement_Pins[0].Pin = GPIO_Pin_Index_0,
+    .Segement_Pins[0].Direction = GPIO_Dircetion_Output,
+    .Segement_Pins[0].Status = GPIO_Status_Low,
+
+    .Segement_Pins[1].Port = GPIO_Port_Index_B,
+    .Segement_Pins[1].Pin = GPIO_Pin_Index_1,
+    .Segement_Pins[1].Direction = GPIO_Dircetion_Output,
+    .Segement_Pins[1].Status = GPIO_Status_Low,
+
+    .Segement_Pins[2].Port = GPIO_Port_Index_B,
+    .Segement_Pins[2].Pin = GPIO_Pin_Index_2,
+    .Segement_Pins[2].Direction = GPIO_Dircetion_Output,
+    .Segement_Pins[2].Status = GPIO_Status_Low,
+
+    .Segement_Pins[3].Port = GPIO_Port_Index_B,
+    .Segement_Pins[3].Pin = GPIO_Pin_Index_3,
+    .Segement_Pins[3].Direction = GPIO_Dircetion_Output,
+    .Segement_Pins[3].Status = GPIO_Status_Low,
+
+    .SegmentType = SEGEMENT_COMMON_ANODE,
+};
+
+
+BTN_t BTN1 = {
+    .BTN_Pin.Port = GPIO_Port_Index_B,
+    .BTN_Pin.Pin = GPIO_Pin_Index_0,
+    .BTN_Pin.Direction = GPIO_Dircetion_Input,
+    .BTN_Pin.Status = GPIO_Status_Low,
+    .BTN_Connection = BTN_Active_High,
+    .BTN_Status = BTN_Released
+};
+
+
+KeyPad_t KeyPad1 = {
+    .Keypad_Row_Pins[0].Port = GPIO_Port_Index_C,
+    .Keypad_Row_Pins[0].Pin = GPIO_Pin_Index_0,
+    .Keypad_Row_Pins[0].Direction = GPIO_Dircetion_Output,
+    .Keypad_Row_Pins[0].Status = GPIO_Status_Low,
+
+    .Keypad_Row_Pins[1].Port = GPIO_Port_Index_C,
+    .Keypad_Row_Pins[1].Pin = GPIO_Pin_Index_1,
+    .Keypad_Row_Pins[1].Direction = GPIO_Dircetion_Output,
+    .Keypad_Row_Pins[1].Status = GPIO_Status_Low,
+
+    .Keypad_Row_Pins[2].Port = GPIO_Port_Index_C,
+    .Keypad_Row_Pins[2].Pin = GPIO_Pin_Index_2,
+    .Keypad_Row_Pins[2].Direction = GPIO_Dircetion_Output,
+    .Keypad_Row_Pins[2].Status = GPIO_Status_Low,
+
+    .Keypad_Row_Pins[3].Port = GPIO_Port_Index_C,
+    .Keypad_Row_Pins[3].Pin = GPIO_Pin_Index_3,
+    .Keypad_Row_Pins[3].Direction = GPIO_Dircetion_Output,
+    .Keypad_Row_Pins[3].Status = GPIO_Status_Low,
+
+    .Keypad_Column_Pins[0].Port = GPIO_Port_Index_C,
+    .Keypad_Column_Pins[0].Pin = GPIO_Pin_Index_4,
+    .Keypad_Column_Pins[0].Direction = GPIO_Dircetion_Input,
+    .Keypad_Column_Pins[0].Status = GPIO_Status_Low,
+
+    .Keypad_Column_Pins[1].Port = GPIO_Port_Index_C,
+    .Keypad_Column_Pins[1].Pin = GPIO_Pin_Index_5,
+    .Keypad_Column_Pins[1].Direction = GPIO_Dircetion_Input,
+    .Keypad_Column_Pins[1].Status = GPIO_Status_Low,
+
+    .Keypad_Column_Pins[2].Port = GPIO_Port_Index_C,
+    .Keypad_Column_Pins[2].Pin = GPIO_Pin_Index_6,
+    .Keypad_Column_Pins[2].Direction = GPIO_Dircetion_Input,
+    .Keypad_Column_Pins[2].Status = GPIO_Status_Low,
+
+    .Keypad_Column_Pins[3].Port = GPIO_Port_Index_C,
+    .Keypad_Column_Pins[3].Pin = GPIO_Pin_Index_7,
+    .Keypad_Column_Pins[3].Direction = GPIO_Dircetion_Input,
+    .Keypad_Column_Pins[3].Status = GPIO_Status_Low,
+};
+
+
+LCD_4Bit_t LCD1_4Bit = {
+    .LCD_rs.Port = GPIO_Port_Index_B,
+    .LCD_rs.Pin = GPIO_Pin_Index_0,
+    .LCD_rs.Direction = GPIO_Dircetion_Output,
+    .LCD_rs.Status = GPIO_Status_Low,
+
+    .LCD_en.Port = GPIO_Port_Index_B,
+    .LCD_en.Pin = GPIO_Pin_Index_1,
+    .LCD_en.Direction = GPIO_Dircetion_Output,
+    .LCD_en.Status = GPIO_Status_Low,
+
+    .LCD_D[0].Port = GPIO_Port_Index_B,
+    .LCD_D[0].Pin = GPIO_Pin_Index_2,
+    .LCD_D[0].Direction = GPIO_Dircetion_Output,
+    .LCD_D[0].Status = GPIO_Status_Low,
+
+    .LCD_D[1].Port = GPIO_Port_Index_B,
+    .LCD_D[1].Pin = GPIO_Pin_Index_3,
+    .LCD_D[1].Direction = GPIO_Dircetion_Output,
+    .LCD_D[1].Status = GPIO_Status_Low,
+
+    .LCD_D[2].Port = GPIO_Port_Index_B,
+    .LCD_D[2].Pin = GPIO_Pin_Index_4,
+    .LCD_D[2].Direction = GPIO_Dircetion_Output,
+    .LCD_D[2].Status = GPIO_Status_Low,
+
+    .LCD_D[3].Port = GPIO_Port_Index_B,
+    .LCD_D[3].Pin = GPIO_Pin_Index_5,
+    .LCD_D[3].Direction = GPIO_Dircetion_Output,
+    .LCD_D[3].Status = GPIO_Status_Low,
+};
+
+LCD_8Bit_t LCD1_8Bit = {
+    .LCD_rs.Port = GPIO_Port_Index_C,
+    .LCD_rs.Pin = GPIO_Pin_Index_0,
+    .LCD_rs.Direction = GPIO_Dircetion_Output,
+    .LCD_rs.Status = GPIO_Status_Low,
+
+    .LCD_en.Port = GPIO_Port_Index_C,
+    .LCD_en.Pin = GPIO_Pin_Index_1,
+    .LCD_en.Direction = GPIO_Dircetion_Output,
+    .LCD_en.Status = GPIO_Status_Low,
+
+    .LCD_D[0].Port = GPIO_Port_Index_D,
+    .LCD_D[0].Pin = GPIO_Pin_Index_0,
+    .LCD_D[0].Direction = GPIO_Dircetion_Output,
+    .LCD_D[0].Status = GPIO_Status_Low,
+
+    .LCD_D[1].Port = GPIO_Port_Index_D,
+    .LCD_D[1].Pin = GPIO_Pin_Index_1,
+    .LCD_D[1].Direction = GPIO_Dircetion_Output,
+    .LCD_D[1].Status = GPIO_Status_Low,
+
+    .LCD_D[2].Port = GPIO_Port_Index_D,
+    .LCD_D[2].Pin = GPIO_Pin_Index_2,
+    .LCD_D[2].Direction = GPIO_Dircetion_Output,
+    .LCD_D[2].Status = GPIO_Status_Low,
+
+    .LCD_D[3].Port = GPIO_Port_Index_D,
+    .LCD_D[3].Pin = GPIO_Pin_Index_3,
+    .LCD_D[3].Direction = GPIO_Dircetion_Output,
+    .LCD_D[3].Status = GPIO_Status_Low,
+
+    .LCD_D[4].Port = GPIO_Port_Index_D,
+    .LCD_D[4].Pin = GPIO_Pin_Index_4,
+    .LCD_D[4].Direction = GPIO_Dircetion_Output,
+    .LCD_D[4].Status = GPIO_Status_Low,
+
+    .LCD_D[5].Port = GPIO_Port_Index_D,
+    .LCD_D[5].Pin = GPIO_Pin_Index_5,
+    .LCD_D[5].Direction = GPIO_Dircetion_Output,
+    .LCD_D[5].Status = GPIO_Status_Low,
+
+    .LCD_D[6].Port = GPIO_Port_Index_D,
+    .LCD_D[6].Pin = GPIO_Pin_Index_6,
+    .LCD_D[6].Direction = GPIO_Dircetion_Output,
+    .LCD_D[6].Status = GPIO_Status_Low,
+
+    .LCD_D[7].Port = GPIO_Port_Index_D,
+    .LCD_D[7].Pin = GPIO_Pin_Index_7,
+    .LCD_D[7].Direction = GPIO_Dircetion_Output,
+    .LCD_D[7].Status = GPIO_Status_Low,
+};

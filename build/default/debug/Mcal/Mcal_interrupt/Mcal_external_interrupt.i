@@ -4741,5 +4741,21 @@ typedef uint8_t Std_Return;
 # 1 "Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
 # 13 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
 # 12 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
+# 108 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+typedef struct {
+
+}Interrupt_INTx_t;
+
+typedef struct {
+
+}Interrupt_RBx_t;
+
+
+
+Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
+
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
 # 9 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c" 2
 

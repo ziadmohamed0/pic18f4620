@@ -1,4 +1,4 @@
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c"
+# 1 "Hall/LCD/Hall_lcd_prog.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 1 "Hall/LCD/Hall_lcd_prog.c" 2
 
 
 
@@ -15,13 +15,15 @@
 
 
 
-# 1 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 1 "Hall/LCD/Hall_lcd_init.h" 1
+# 12 "Hall/LCD/Hall_lcd_init.h"
+# 1 "Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -97,7 +99,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -251,10 +253,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 13 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h"
+# 1 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4719,12 +4721,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
-# 14 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
+# 14 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
 
-# 1 "Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
-# 15 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
-# 70 "Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
+# 15 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 70 "Hall/LCD/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4737,8 +4739,8 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 13 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 13 "Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4789,388 +4791,337 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
-# 9 "Mcal/Mcal_GPIO/Mcal_GPIO_prog.c" 2
+# 12 "Hall/LCD/Hall_lcd_init.h" 2
+# 43 "Hall/LCD/Hall_lcd_init.h"
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[4];
+}LCD_4Bit_t;
+
+typedef struct {
+    Pin_cfg_t LCD_rs;
+    Pin_cfg_t LCD_en;
+    Pin_cfg_t LCD_D[8];
+}LCD_8Bit_t;
 
 
-Std_Return Mcal_GPIO_initPinDirection(const Pin_cfg_t* copyPinCFG) {
 
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD);
+Std_Return HALL_LCD_4bit_sendCMD(const LCD_4Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_4bit_sendChar(const LCD_4Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendCharPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_4bit_sendSTR(const LCD_4Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_sendSTRPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_4bit_goto(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+Std_Return HALL_LCD_8bit_init(const LCD_8Bit_t* copyLCD);
+Std_Return HALL_LCD_8bit_sendCMD(const LCD_8Bit_t* copyLCD, uint8_t copyCMD);
+Std_Return HALL_LCD_8bit_sendChar(const LCD_8Bit_t* copyLCD, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendCharPos(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData);
+Std_Return HALL_LCD_8bit_sendSTR(const LCD_8Bit_t* copyLCD, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_sendSTRPos(const LCD_8Bit_t* copyLCD, uint8_t coptRow, uint8_t copyColumn, uint8_t *copyData);
+Std_Return HALL_LCD_8bit_goto(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn);
+
+
+Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR);
+Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR);
+# 9 "Hall/LCD/Hall_lcd_prog.c" 2
+
+
+static Std_Return LCD_send4Bits(const LCD_4Bit_t* copyLCD, uint8_t copyCMD);
+static Std_Return LCD_sendEnableSignal4Bits(const LCD_4Bit_t* copyLCD);
+static Std_Return LCD_sendEnableSignal8Bits(const LCD_8Bit_t* copyLCD);
+
+Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISA |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_B:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISB |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_C:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISC |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_D:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISD |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_E:
-                switch(copyPinCFG->Direction) {
-                    case GPIO_Dircetion_Output:
-                        TRISE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Dircetion_Input:
-                        TRISE |= (1 << copyPinCFG->Pin);
-                        break;
-                }
-                break;
-                default:
-                    retVal = (Std_Return)0;
-                    break;
+        MCAL_GPIO_init(&(copyLCD->LCD_rs));
+        MCAL_GPIO_init(&(copyLCD->LCD_en));
+        for(uint8_t Counter = 0; Counter < 4; Counter++) {
+            MCAL_GPIO_init(&(copyLCD->LCD_D[Counter]));
         }
+        _delay((unsigned long)((20)*(4000000U/4000.0)));
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x38);
+        _delay((unsigned long)((5)*(4000000U/4000.0)));
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x38);
+        _delay((unsigned long)((150)*(4000000U/4000000.0)));
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x38);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x01);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x02);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x06);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x0C);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x28);
+        HALL_LCD_4bit_sendCMD(copyLCD, 0x80);
+        RetValue = (Std_Return)1;
     }
-    return retVal;
+    return RetValue;
 }
-
-Std_Return MCAL_GPIO_getPinDirection(const Pin_cfg_t* copyPinCFG, Direction_t *copyDirectionPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_4bit_sendCMD(const LCD_4Bit_t* copyLCD, uint8_t copyCMD){
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyDirectionPin = ((TRISA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyDirectionPin = ((TRISB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyDirectionPin = ((TRISC >> copyPinCFG->Pin) & 1 );
-                break;
-
-
-            case GPIO_Port_Index_D :
-                *copyDirectionPin = ((TRISD >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_E :
-                *copyDirectionPin = ((TRISE >> copyPinCFG->Pin) & 1 );
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
+        MCAL_GPIO_writePinStatus(&(copyLCD->LCD_rs),GPIO_Status_Low);
+        LCD_send4Bits(copyLCD, copyCMD >> 4);
+        LCD_sendEnableSignal4Bits(copyLCD);
+        LCD_send4Bits(copyLCD, copyCMD);
+        LCD_sendEnableSignal4Bits(copyLCD);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_4bit_sendChar(const LCD_4Bit_t* copyLCD, uint8_t copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        MCAL_GPIO_writePinStatus(&(copyLCD->LCD_rs),GPIO_Status_High);
+        LCD_send4Bits(copyLCD, copyData >> 4);
+        LCD_sendEnableSignal4Bits(copyLCD);
+        LCD_send4Bits(copyLCD, copyData);
+        LCD_sendEnableSignal4Bits(copyLCD);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_4bit_sendCharPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        HALL_LCD_4bit_goto(copyLCD, copyRow, copyColumn);
+        HALL_LCD_4bit_sendChar(copyLCD, copyData);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_4bit_sendSTR(const LCD_4Bit_t* copyLCD, uint8_t *copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        while (*copyData) {
+            HALL_LCD_4bit_sendChar(copyLCD, *copyData++);
         }
+        RetValue = (Std_Return)1;
     }
-    return retVal;
+    return RetValue;
 }
-
-Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_4bit_sendSTRPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATA |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATA &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_B :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATB |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATB &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-            case GPIO_Port_Index_C :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATC |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATC &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-
-            case GPIO_Port_Index_D :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATD |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATD &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-
-
-            case GPIO_Port_Index_E :
-                switch(copyStatusPin) {
-                    case GPIO_Status_High:
-                        LATE |= (1 << copyPinCFG->Pin);
-                        break;
-                    case GPIO_Status_Low:
-                        LATE &= ~ (1 << copyPinCFG->Pin);
-                        break;
-                    default:
-                        retVal = (Std_Return)0;
-                        break;
-                }
-                break;
-            default:
-                retVal = (Std_Return)0;
-                break;
+        HALL_LCD_4bit_goto(copyLCD,copyRow, copyColumn);
+        while(*copyData) {
+           HALL_LCD_4bit_sendChar(copyLCD, *copyData++);
         }
+        RetValue = (Std_Return)1;
     }
-    return retVal;
+    return RetValue;
 }
-
-Std_Return MCAL_GPIO_getPinStatus(const Pin_cfg_t* copyPinCFG, Status_t* copyStatusPin) {
-    uint8_t retVal = (Std_Return)1;
-    if((copyPinCFG == ((void*)0)) || (copyStatusPin == ((void*)0))) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_4bit_goto(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                *copyStatusPin = ((PORTA >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_B :
-                *copyStatusPin = ((PORTB >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_C :
-                *copyStatusPin = ((PORTC >> copyPinCFG->Pin) & 1 );
-                break;
-
-
-            case GPIO_Port_Index_D :
-                *copyStatusPin = ((PORTD >> copyPinCFG->Pin) & 1 );
-                break;
-
-            case GPIO_Port_Index_E :
-                *copyStatusPin = ((PORTE >> copyPinCFG->Pin) & 1 );
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
+        switch (copyRow) {
+            case 1 : HALL_LCD_4bit_sendCMD(copyLCD, (0x80 + copyColumn)); break;
+            case 2 : HALL_LCD_4bit_sendCMD(copyLCD, (0xc0 + copyColumn)); break;
+            case 3 : HALL_LCD_4bit_sendCMD(copyLCD, (0x94 + copyColumn)); break;
+            case 4 : HALL_LCD_4bit_sendCMD(copyLCD, (0xd4 + copyColumn)); break;
+            default: RetValue = (Std_Return)0; break;
         }
+        RetValue = (Std_Return)1;
     }
-    return retVal;
-}
-
-Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        switch(copyPinCFG->Port) {
-            case GPIO_Port_Index_A :
-                LATA ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_B :
-                LATB ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_C :
-                LATC ^= (1 << copyPinCFG->Pin);
-                break;
-
-
-            case GPIO_Port_Index_D :
-                LATD ^= (1 << copyPinCFG->Pin);
-                break;
-
-            case GPIO_Port_Index_E :
-                LATE ^= (1 << copyPinCFG->Pin);
-                break;
-
-            default:
-                retVal = (Std_Return)0;
-                break;
-        }
-    }
-    return retVal;
-}
-Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyPinCFG == ((void*)0)) {
-        retVal = (Std_Return)0;
-    }
-    else {
-        retVal = Mcal_GPIO_initPinDirection(copyPinCFG);
-        retVal = MCAL_GPIO_writePinStatus(copyPinCFG,copyPinCFG->Status);
-    }
-    return retVal;
+    return RetValue;
 }
 
 
-Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDirection) {
-    uint8_t retValue = (Std_Return)1;
-
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        TRISA = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        TRISB = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        TRISC = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        TRISD = copyDirection;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        TRISE = copyDirection;
+Std_Return HALL_LCD_8bit_init(const LCD_8Bit_t* copyLCD) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        retValue = (Std_Return)0;
+        MCAL_GPIO_init(&(copyLCD->LCD_rs));
+        MCAL_GPIO_init(&(copyLCD->LCD_en));
+        for(uint8_t Counter = 0; Counter < 8; Counter++) {
+            MCAL_GPIO_init(&(copyLCD->LCD_D[Counter]));
+        }
+        _delay((unsigned long)((20)*(4000000U/4000.0)));
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x38);
+        _delay((unsigned long)((5)*(4000000U/4000.0)));
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x38);
+        _delay((unsigned long)((150)*(4000000U/4000000.0)));
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x38);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x01);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x02);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x06);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x0C);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x38);
+        HALL_LCD_8bit_sendCMD(copyLCD, 0x38);
+
+        RetValue = (Std_Return)1;
     }
-    return retValue;
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_sendCMD(const LCD_8Bit_t* copyLCD, uint8_t copyCMD) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        MCAL_GPIO_writePinStatus(&(copyLCD->LCD_rs),GPIO_Status_Low);
+        for(uint8_t Counter = 0; Counter < 8; Counter++) {
+            MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[Counter]),(copyCMD >> Counter) & (uint8_t)0x01);
+        }
+        LCD_sendEnableSignal8Bits(copyLCD);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_sendChar(const LCD_8Bit_t* copyLCD, uint8_t copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        MCAL_GPIO_writePinStatus(&(copyLCD->LCD_rs),GPIO_Status_High);
+        for(uint8_t Counter = 0; Counter < 8; Counter++) {
+            MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[Counter]),(copyData >> Counter) & (uint8_t)0x01);
+        }
+        LCD_sendEnableSignal8Bits(copyLCD);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_sendCharPos(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        HALL_LCD_8bit_goto(copyLCD, copyRow, copyColumn);
+        HALL_LCD_8bit_sendChar(copyLCD, copyData);
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_sendSTR(const LCD_8Bit_t* copyLCD, uint8_t *copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        while(*copyData) {
+            HALL_LCD_8bit_sendChar(copyLCD, *copyData++);
+        }
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_sendSTRPos(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        HALL_LCD_8bit_goto(copyLCD, copyRow, copyColumn);
+        while(*copyData) {
+            HALL_LCD_8bit_sendChar(copyLCD, *copyData++);
+        }
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
+}
+Std_Return HALL_LCD_8bit_goto(const LCD_8Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn) {
+    uint8_t RetValue = (Std_Return)0;
+    copyColumn--;
+    if(copyLCD == ((void*)0)) {
+        RetValue = (Std_Return)0;
+    }
+    else {
+        switch (copyRow) {
+            case 1 : HALL_LCD_8bit_sendCMD(copyLCD, (0x80 + copyColumn)); break;
+            case 2 : HALL_LCD_8bit_sendCMD(copyLCD, (0xc0 + copyColumn)); break;
+            case 3 : HALL_LCD_8bit_sendCMD(copyLCD, (0x94 + copyColumn)); break;
+            case 4 : HALL_LCD_8bit_sendCMD(copyLCD, (0xd4 + copyColumn)); break;
+            default: RetValue = (Std_Return)0; break;
+        }
+        RetValue = (Std_Return)1;
+    }
+    return RetValue;
 }
 
-Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyDirectionPort == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copySTR == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        uint8_t retValue = (Std_Return)1;
-
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyDirectionPort = TRISA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyDirectionPort = TRISB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyDirectionPort = TRISC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyDirectionPort = TRISD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyDirectionPort = TRISE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
+        memset(copySTR, '\0', 4);
+        sprintf(copySTR, "%i", copyValue);
+        RetValue = (Std_Return)1;
     }
-    return retVal;
+    return RetValue;
 }
-Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort) {
-    uint8_t retValue = (Std_Return)1;
-
-    if(copyPortCFG == GPIO_Port_Index_A) {
-        LATA = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_B) {
-        LATB = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_C) {
-        LATC = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_D) {
-        LATD = copyStatusPort;
-    }
-    else if(copyPortCFG == GPIO_Port_Index_E) {
-        LATE = copyStatusPort;
+Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copySTR == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        retValue = (Std_Return)0;
+        memset(copySTR, '\0', 6);
+        sprintf(copySTR, "%i", copyValue);
+        RetValue = (Std_Return)1;
     }
-    return retValue;
+    return RetValue;
 }
 
-Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort) {
-    uint8_t retVal = (Std_Return)1;
-    if(copyStatusPort == ((void*)0)) {
-        retVal = (Std_Return)0;
+Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR) {
+    uint8_t RetValue = (Std_Return)0;
+    if(copySTR == ((void*)0)) {
+        RetValue = (Std_Return)0;
     }
     else {
-        uint8_t retValue = (Std_Return)1;
-
-        if(copyPortCFG == GPIO_Port_Index_A) {
-            *copyStatusPort = PORTA;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_B) {
-            *copyStatusPort = PORTB;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_C) {
-            *copyStatusPort = PORTC;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_D) {
-            *copyStatusPort = PORTD;
-        }
-        else if(copyPortCFG == GPIO_Port_Index_E) {
-            *copyStatusPort = PORTE;
-        }
-        else {
-            retValue = (Std_Return)0;
-        }
+        memset(copySTR, '\0', 11);
+        sprintf(copySTR, "%i", copyValue);
+        RetValue = (Std_Return)1;
     }
-    return retVal;
+    return RetValue;
+}
+
+static Std_Return LCD_send4Bits(const LCD_4Bit_t* copyLCD, uint8_t copyData) {
+    uint8_t RetValue = (Std_Return)1;
+    RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[0]),(copyData >> 0) & (uint8_t)0x01);
+    RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[1]),(copyData >> 1) & (uint8_t)0x01);
+    RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[2]),(copyData >> 2) & (uint8_t)0x01);
+    RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[3]),(copyData >> 3) & (uint8_t)0x01);
+    return RetValue;
+}
+static Std_Return LCD_sendEnableSignal4Bits(const LCD_4Bit_t* copyLCD) {
+    uint8_t RetValue = (Std_Return)1;
+    MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
+    _delay((unsigned long)((5)*(4000000U/4000000.0)));
+    MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
+    return RetValue;
+}
+static Std_Return LCD_sendEnableSignal8Bits(const LCD_8Bit_t* copyLCD) {
+    uint8_t RetValue = (Std_Return)1;
+    MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
+    _delay((unsigned long)((5)*(4000000U/4000000.0)));
+    MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
+    return RetValue;
 }
