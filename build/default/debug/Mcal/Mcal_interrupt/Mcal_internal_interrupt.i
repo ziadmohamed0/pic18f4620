@@ -4740,6 +4740,68 @@ typedef uint8_t Std_Return;
 
 # 1 "Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
 # 13 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+typedef enum {
+    GPIO_Status_Low = 0,
+    GPIO_Status_High
+}Status_t;
+
+typedef enum {
+    GPIO_Dircetion_Input = 0,
+    GPIO_Dircetion_Output,
+}Direction_t;
+
+typedef enum {
+    GPIO_Pin_Index_0 = 0,
+    GPIO_Pin_Index_1,
+    GPIO_Pin_Index_2,
+    GPIO_Pin_Index_3,
+    GPIO_Pin_Index_4,
+    GPIO_Pin_Index_5,
+    GPIO_Pin_Index_6,
+    GPIO_Pin_Index_7
+}Pin_Index_t;
+
+typedef enum {
+    GPIO_Port_Index_A = 0,
+    GPIO_Port_Index_B,
+    GPIO_Port_Index_C,
+    GPIO_Port_Index_D,
+    GPIO_Port_Index_E,
+}Port_Index_t;
+
+typedef struct {
+    uint8_t Port :3;
+    uint8_t Pin :3;
+    uint8_t Direction :1;
+    uint8_t Status :1 ;
+}Pin_cfg_t;
+
+
+
+Std_Return Mcal_GPIO_initPinDirection(const Pin_cfg_t* copyPinCFG);
+Std_Return MCAL_GPIO_getPinDirection(const Pin_cfg_t* copyPinCFG, Direction_t *copyDirectionPin);
+Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin);
+Std_Return MCAL_GPIO_getPinStatus(const Pin_cfg_t* copyPinCFG, Status_t* copyStatusPin);
+Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG);
+Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG);
+
+
+Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDirection);
+Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
+Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
+Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
+# 14 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 65 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+typedef enum {
+    INTERRUPT_PRIORETY_LOW,
+    INTERRUPT_PRIORETY_HIGH
+}Interrupt_Priorety_cfg_t;
 # 12 "Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 2
 # 9 "Mcal/Mcal_interrupt/Mcal_internal_interrupt.c" 2
 

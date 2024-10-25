@@ -11,6 +11,7 @@
 /* -------------------- Include Start -------------------- */
 #include "../Mcal_Std_Types.h"
 #include "Mcal_interrupt_gen_cfg.h"
+#include "../Mcal_GPIO/Mcal_GPIO_init.h"
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */
@@ -61,6 +62,10 @@
 /* -------------------- Functions Macro End -------------------- */
 
 /* -------------------- Standard Types Start -------------------- */
+typedef enum {
+    INTERRUPT_PRIORETY_LOW,
+    INTERRUPT_PRIORETY_HIGH        
+}Interrupt_Priorety_cfg_t;
 /* -------------------- Standard Types End -------------------- */
 
 /* -------------------- API Start -------------------- */

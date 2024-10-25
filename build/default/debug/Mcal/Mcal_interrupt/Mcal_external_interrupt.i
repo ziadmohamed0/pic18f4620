@@ -4740,14 +4740,93 @@ typedef uint8_t Std_Return;
 
 # 1 "Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
 # 13 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
-# 12 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
-# 108 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
-typedef struct {
 
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+typedef enum {
+    GPIO_Status_Low = 0,
+    GPIO_Status_High
+}Status_t;
+
+typedef enum {
+    GPIO_Dircetion_Input = 0,
+    GPIO_Dircetion_Output,
+}Direction_t;
+
+typedef enum {
+    GPIO_Pin_Index_0 = 0,
+    GPIO_Pin_Index_1,
+    GPIO_Pin_Index_2,
+    GPIO_Pin_Index_3,
+    GPIO_Pin_Index_4,
+    GPIO_Pin_Index_5,
+    GPIO_Pin_Index_6,
+    GPIO_Pin_Index_7
+}Pin_Index_t;
+
+typedef enum {
+    GPIO_Port_Index_A = 0,
+    GPIO_Port_Index_B,
+    GPIO_Port_Index_C,
+    GPIO_Port_Index_D,
+    GPIO_Port_Index_E,
+}Port_Index_t;
+
+typedef struct {
+    uint8_t Port :3;
+    uint8_t Pin :3;
+    uint8_t Direction :1;
+    uint8_t Status :1 ;
+}Pin_cfg_t;
+
+
+
+Std_Return Mcal_GPIO_initPinDirection(const Pin_cfg_t* copyPinCFG);
+Std_Return MCAL_GPIO_getPinDirection(const Pin_cfg_t* copyPinCFG, Direction_t *copyDirectionPin);
+Std_Return MCAL_GPIO_writePinStatus(const Pin_cfg_t* copyPinCFG, Status_t copyStatusPin);
+Std_Return MCAL_GPIO_getPinStatus(const Pin_cfg_t* copyPinCFG, Status_t* copyStatusPin);
+Std_Return MCAL_GPIO_togglePin(const Pin_cfg_t* copyPinCFG);
+Std_Return MCAL_GPIO_init(const Pin_cfg_t* copyPinCFG);
+
+
+Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDirection);
+Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
+Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
+Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
+# 14 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 65 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+typedef enum {
+    INTERRUPT_PRIORETY_LOW,
+    INTERRUPT_PRIORETY_HIGH
+}Interrupt_Priorety_cfg_t;
+# 12 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
+# 93 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+typedef enum {
+    INTERRUPT_EDGE_FALLING,
+    INTERRUPT_EDGE_RISING
+}Interrupt_INTx_edge_t;
+
+typedef enum {
+    INTERRUPT_EXTERNAL_INT0,
+    INTERRUPT_EXTERNAL_INT1,
+    INTERRUPT_EXTERNAL_INT2
+}Interrupt_INTx_src_t;
+
+typedef struct {
+    void (* EX_InterruptHandler)(void);
+    Pin_cfg_t MCU_Pin;
+    Interrupt_INTx_edge_t Edge;
+    Interrupt_INTx_src_t Source;
+    Interrupt_Priorety_cfg_t Priorety;
 }Interrupt_INTx_t;
 
 typedef struct {
-
+    void (* EX_InterruptHandler)(void);
+    Pin_cfg_t MCU_Pin;
+    Interrupt_Priorety_cfg_t Priorety;
 }Interrupt_RBx_t;
 
 
@@ -4759,3 +4838,245 @@ Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
 Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
 # 9 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c" 2
 
+
+static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
+static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
+static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx);
+static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx);
+static Std_Return INTERRUPT_INTx_PinInit(const Interrupt_INTx_t *copyINTx);
+static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx);
+
+static Std_Return INTERRUPT_RBx_Enable(const Interrupt_RBx_t *copyINTx);
+static Std_Return INTERRUPT_RBx_Disable(const Interrupt_RBx_t *copyINTx);
+static Std_Return INTERRUPT_RBx_PrioretyInit(const Interrupt_RBx_t *copyINTx);
+static Std_Return INTERRUPT_RBx_PinInit(const Interrupt_RBx_t *copyINTx);
+
+Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+
+        INTERRUPT_INTx_Disable(copyINTx);
+
+
+        INTERRUPT_INTx_ClearFlag(copyINTx);
+
+
+        INTERRUPT_INTx_PrioretyInit(copyINTx);
+
+
+        INTERRUPT_INTx_EdgInit(copyINTx);
+
+
+        INTERRUPT_INTx_PinInit(&copyINTx);
+
+
+
+
+        INTERRUPT_INTx_Enable(copyINTx);
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        INTERRUPT_INTx_Disable(copyINTx);
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+
+
+static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                (INTCONbits.INT0IE = 1);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT1:
+                (INTCON3bits.INT1IE = 1);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                (INTCON3bits.INT2IE = 1);
+                retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+    }
+    return retValue;
+}
+static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                (INTCONbits.INT0IE = 0);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT1:
+                (INTCON3bits.INT1IE = 0);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                (INTCON3bits.INT2IE = 0);
+                retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+    }
+    return retValue;
+}
+
+
+static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx) {
+     uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT1:
+                switch(copyINTx->Priorety) {
+                    case INTERRUPT_PRIORETY_LOW: (INTCON3bits.INT1IP = 0); break;
+                    case INTERRUPT_PRIORETY_HIGH: (INTCON3bits.INT1IP = 1); break;
+                    default: retValue = (Std_Return)0; break;
+                }
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                switch(copyINTx->Priorety) {
+                    case INTERRUPT_PRIORETY_LOW: (INTCON3bits.INT2IP = 0); break;
+                    case INTERRUPT_PRIORETY_HIGH: (INTCON3bits.INT2IP = 1); break;
+                    default: retValue = (Std_Return)0; break;
+                }
+                retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+
+static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                switch(copyINTx->Edge) {
+                    case INTERRUPT_EDGE_RISING: (INTCON2bits.INTEDG0 = 1); break;
+                    case INTERRUPT_EDGE_FALLING: (INTCON2bits.INTEDG0 = 0); break;
+                    default: retValue = (Std_Return)0; break;
+                }
+                retValue = (Std_Return)1;
+                break;
+
+            case INTERRUPT_EXTERNAL_INT1:
+                switch(copyINTx->Edge) {
+                    case INTERRUPT_EDGE_RISING: (INTCON2bits.INTEDG1 = 1); break;
+                    case INTERRUPT_EDGE_FALLING: (INTCON2bits.INTEDG1 = 0); break;
+                    default: retValue = (Std_Return)0; break;
+                }
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                switch(copyINTx->Edge) {
+                    case INTERRUPT_EDGE_RISING: (INTCON2bits.INTEDG2 = 1); break;
+                    case INTERRUPT_EDGE_FALLING: (INTCON2bits.INTEDG2 = 0); break;
+                    default: retValue = (Std_Return)0; break;
+                }
+                retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+static Std_Return INTERRUPT_INTx_PinInit(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        Mcal_GPIO_initPinDirection(&(copyINTx->MCU_Pin));
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                (INTCONbits.INT0IF = 0);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT1:
+                (INTCON3bits.INT1IF = 0);
+                retValue = (Std_Return)1;
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                (INTCON3bits.INT2IF = 0);
+                retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
