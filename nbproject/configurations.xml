@@ -48,6 +48,7 @@
         <itemPath>Mcal/Mcal_Std_Types.h</itemPath>
         <itemPath>Mcal/Mcal_Bit_Math.h</itemPath>
         <itemPath>Mcal/Mcal_Compiler.h</itemPath>
+        <itemPath>Mcal/Mcal_dfs.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -101,6 +102,7 @@
           <itemPath>Mcal/Mcal_interrupt/Mcal_internal_interrupt.c</itemPath>
         </logicalFolder>
         <itemPath>Mcal/Mcal_Device_cfg.c</itemPath>
+        <itemPath>Mcal/Mcal_dfs.c</itemPath>
       </logicalFolder>
     </logicalFolder>
   </logicalFolder>

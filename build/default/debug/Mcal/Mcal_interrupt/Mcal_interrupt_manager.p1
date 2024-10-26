@@ -1,4 +1,49 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T39 __interrupt ]
+"6380 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6380:     struct {
+[s S266 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S266 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6390
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6390:     struct {
+[s S267 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S267 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6400
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6400:     struct {
+[s S268 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S268 . . GIEL GIEH ]
+"6379
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6379: typedef union {
+[u S265 `S266 1 `S267 1 `S268 1 ]
+[n S265 . . . . ]
+"6406
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6406: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS265 ~T0 @X0 0 e@4082 ]
+"25 Mcal/Mcal_interrupt/Mcal_interrupt_manager.h
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 25: void INT0_ISR(void);
+[v _INT0_ISR `(v ~T0 @X0 0 ef ]
+"6218 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6218:     struct {
+[s S259 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S259 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"6228
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6228:     struct {
+[s S260 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S260 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"6217
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6217: typedef union {
+[u S258 `S259 1 `S260 1 ]
+[n S258 . . . ]
+"6239
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6239: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
+[v _INTCON3bits `VS258 ~T0 @X0 0 e@4080 ]
+"26 Mcal/Mcal_interrupt/Mcal_interrupt_manager.h
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 26: void INT1_ISR(void);
+[v _INT1_ISR `(v ~T0 @X0 0 ef ]
+"27
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 27: void INT2_ISR(void);
+[v _INT2_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -410,3 +455,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+[v $root$_MCAL_InterruptManager `(v ~T0 @X0 0 e ]
+"24 Mcal/Mcal_interrupt/Mcal_interrupt_manager.c
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 24: void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
+[v _MCAL_InterruptManager `(v ~T39 @X0 1 ef ]
+{
+[e :U _MCAL_InterruptManager ]
+[f ]
+"25
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 25:     if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)) {
+[e $ ! && == -> 1 `i -> . . _INTCONbits 0 4 `i == -> 1 `i -> . . _INTCONbits 0 1 `i 275  ]
+{
+"26
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 26:         INT0_ISR();
+[e ( _INT0_ISR ..  ]
+"27
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 27:     }
+}
+[e :U 275 ]
+"28
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 28:     if((1 == INTCON3bits.INT1IE) && (1 == INTCON3bits.INT1IF)) {
+[e $ ! && == -> 1 `i -> . . _INTCON3bits 0 3 `i == -> 1 `i -> . . _INTCON3bits 0 0 `i 276  ]
+{
+"29
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 29:         INT1_ISR();
+[e ( _INT1_ISR ..  ]
+"30
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 30:     }
+}
+[e :U 276 ]
+"31
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 31:     if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)) {
+[e $ ! && == -> 1 `i -> . . _INTCON3bits 0 4 `i == -> 1 `i -> . . _INTCON3bits 0 1 `i 277  ]
+{
+"32
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 32:         INT2_ISR();
+[e ( _INT2_ISR ..  ]
+"33
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 33:     }
+}
+[e :U 277 ]
+"34
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 34: }
+[e :UE 274 ]
+}

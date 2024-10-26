@@ -8,12 +8,22 @@
 
 #include "Mcal_external_interrupt.h"
 
+static void (*INT0_interruptHandler)(void) = NULL;
+static void (*INT1_interruptHandler)(void) = NULL;
+static void (*INT2_interruptHandler)(void) = NULL;
+
 static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_PinInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx);
+
+
+static Std_Return INT0_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INT1_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INT2_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INTERRUPT_INTx_setInterruptHandler(const Interrupt_INTx_t *copyINTx);
 
 static Std_Return INTERRUPT_RBx_Enable(const Interrupt_RBx_t *copyINTx);
 static Std_Return INTERRUPT_RBx_Disable(const Interrupt_RBx_t *copyINTx);
@@ -32,9 +42,11 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
         /* Clear Flag External Interrupt */
         INTERRUPT_INTx_ClearFlag(copyINTx);
         
+        #if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
         /* Configure Priority External Interrupt */
         INTERRUPT_INTx_PrioretyInit(copyINTx);
-        
+        #endif
+
         /* Configure EDG State External Interrupt */
         INTERRUPT_INTx_EdgInit(copyINTx);
         
@@ -42,6 +54,7 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
         INTERRUPT_INTx_PinInit(&copyINTx);
         
         /* Configure Default iInterrupt CallBack */
+        INTERRUPT_INTx_setInterruptHandler(copyINTx);
         
         /* Enable External Interrupt */
         INTERRUPT_INTx_Enable(copyINTx);
@@ -49,6 +62,49 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
     } 
     return retValue;
 }
+
+void INT0_ISR(void) {
+    /* External Interrupt Must Flag is Clear */
+    MCAL_EX_INT0_clearInterruptFlage();
+    /* Code */
+    
+    /*Call Back Function get Called Every time this ISR Execute */
+    if(INT0_interruptHandler) {
+        INT0_interruptHandler();
+    }
+    else {
+        /* Nothing */
+    }
+}
+
+void INT1_ISR(void) {
+    /* External Interrupt Must Flag is Clear */
+    MCAL_EX_INT1_clearInterruptFlage();
+    /* Code */
+    
+    /*Call Back Function get Called Every time this ISR Execute */
+    if(INT1_interruptHandler) {
+        INT1_interruptHandler();
+    }
+    else {
+        /* Nothing */
+    }
+}
+
+void INT2_ISR(void) {
+    /* External Interrupt Must Flag is Clear */
+    MCAL_EX_INT2_clearInterruptFlage();
+    /* Code */
+    
+    /*Call Back Function get Called Every time this ISR Execute */
+    if(INT2_interruptHandler) {
+        INT2_interruptHandler();
+    }
+    else {
+        /* Nothing */
+    }
+}
+
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = R_ERROR;
     if(copyINTx == NULL) {
@@ -93,14 +149,20 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
     else {
         switch(copyINTx->Source) {
             case INTERRUPT_EXTERNAL_INT0:
+                MCAL_INTERRUPT_GlobaleInterruptEnable();
+                MCAL_INTERRUPT_PeripheralInterruptEnable();
                 MCAL_EX_INT0_InterruptEnable();
                 retValue = R_OK;
                 break;
             case INTERRUPT_EXTERNAL_INT1:
+                MCAL_INTERRUPT_GlobaleInterruptEnable();
+                MCAL_INTERRUPT_PeripheralInterruptEnable();
                 MCAL_EX_INT1_InterruptEnable();
                 retValue = R_OK;
                 break;  
             case INTERRUPT_EXTERNAL_INT2:
+                MCAL_INTERRUPT_GlobaleInterruptEnable();
+                MCAL_INTERRUPT_PeripheralInterruptEnable();
                 MCAL_EX_INT2_InterruptEnable();
                 retValue = R_OK;
                 break;
@@ -248,4 +310,62 @@ static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx) {
         retValue = R_OK;
     }
     return retValue;    
+}
+
+static Std_Return INT0_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = R_ERROR;
+    if(interruptHandler == NULL) {
+        retValue = R_ERROR;
+    }
+    else {
+        INT0_interruptHandler = interruptHandler;
+    }
+    return retValue;        
+}
+
+static Std_Return INT1_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = R_ERROR;
+    if(interruptHandler == NULL) {
+        retValue = R_ERROR;
+    }
+    else {
+        INT1_interruptHandler = interruptHandler;
+    }
+    return retValue;      
+}
+
+static Std_Return INT2_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = R_ERROR;
+    if(interruptHandler == NULL) {
+        retValue = R_ERROR;
+    }
+    else {
+        INT2_interruptHandler = interruptHandler;
+    }
+    return retValue;      
+}
+
+static Std_Return INTERRUPT_INTx_setInterruptHandler(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = R_ERROR;
+    if(copyINTx == NULL) {
+        retValue = R_ERROR;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                retValue = INT0_setInterruprHandler(copyINTx->EX_InterruptHandler);
+                break;
+            case INTERRUPT_EXTERNAL_INT1:
+                retValue = INT1_setInterruprHandler(copyINTx->EX_InterruptHandler);
+                break;  
+            case INTERRUPT_EXTERNAL_INT2:
+                retValue = INT2_setInterruprHandler(copyINTx->EX_InterruptHandler);
+                break;
+            default : 
+                retValue = R_OK; 
+                break;
+        }
+        retValue = R_OK;
+    }
+    return retValue;     
 }

@@ -27,36 +27,36 @@
 #if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
 
 /* @brief : Macros Enable priority levels */
-#define MCAL_INTERRUPT_PriorityLevelEnable(void)                (RCONbits_t.IPEN = 1)
+#define MCAL_INTERRUPT_PriorityLevelEnable(void)                (RCONbits.IPEN = 1)
 
 /* @brief : Macros Disable priority levels */
-#define MCAL_INTERRUPT_PriorityLevelDisable(void)               (RCONbits_t.IPEN = 0)
+#define MCAL_INTERRUPT_PriorityLevelDisable(void)               (RCONbits.IPEN = 0)
 
 /* @brief : Macros Enable High priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptHighEnable(void)         (INTCONbits_t.GIEH = 1)
+#define MCAL_INTERRUPT_GlobaleInterruptHighEnable(void)         (INTCONbits.GIEH = 1)
 
 /* @brief : Macros Disable High priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptHighDisable(void)        (INTCONbits_t.GIEH = 0)
+#define MCAL_INTERRUPT_GlobaleInterruptHighDisable(void)        (INTCONbits.GIEH = 0)
 
 /* @brief : Macros Enable Low priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptLowEnable(void)          (INTCONbits_t.GIEL = 1)
+#define MCAL_INTERRUPT_GlobaleInterruptLowEnable(void)          (INTCONbits.GIEL = 1)
 
 /* @brief : Macros Disable Low priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptLowDisable(void)         (INTCONbits_t.GIEL = 0)
+#define MCAL_INTERRUPT_GlobaleInterruptLowDisable(void)         (INTCONbits.GIEL = 0)
 
 #elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
 
 /* @brief : Macros Enable High priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptEnable(void)             (INTCONbits_t.GIE = 1)
+#define MCAL_INTERRUPT_GlobaleInterruptEnable(void)             (INTCONbits.GIE = 1)
 
 /* @brief : Macros Disable High priority Global interrupt */
-#define MCAL_INTERRUPT_GlobaleInterruptDisable(void)            (INTCONbits_t.GIE = 0)
+#define MCAL_INTERRUPT_GlobaleInterruptDisable(void)            (INTCONbits.GIE = 0)
 
 /* @brief : Macros Enable Peripheral interrupt */
-#define MCAL_INTERRUPT_PeripheralInterruptEnable(void)          (INTCONbits_t.PEIE = 1)
+#define MCAL_INTERRUPT_PeripheralInterruptEnable(void)          (INTCONbits.PEIE = 1)
 
 /* @brief : Macros Disable Peripheral interrupt */
-#define MCAL_INTERRUPT_PeripheralInterruptDisable(void)         (INTCONbits_t.PEIE = 0)
+#define MCAL_INTERRUPT_PeripheralInterruptDisable(void)         (INTCONbits.PEIE = 0)
 
 #endif
 /* -------------------- Functions Macro End -------------------- */

@@ -4839,12 +4839,22 @@ Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
 # 9 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c" 2
 
 
+static void (*INT0_interruptHandler)(void) = ((void*)0);
+static void (*INT1_interruptHandler)(void) = ((void*)0);
+static void (*INT2_interruptHandler)(void) = ((void*)0);
+
 static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_PinInit(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx);
+
+
+static Std_Return INT0_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INT1_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INT2_setInterruprHandler(void (*interruptHandler)(void));
+static Std_Return INTERRUPT_INTx_setInterruptHandler(const Interrupt_INTx_t *copyINTx);
 
 static Std_Return INTERRUPT_RBx_Enable(const Interrupt_RBx_t *copyINTx);
 static Std_Return INTERRUPT_RBx_Disable(const Interrupt_RBx_t *copyINTx);
@@ -4864,7 +4874,9 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
         INTERRUPT_INTx_ClearFlag(copyINTx);
 
 
-        INTERRUPT_INTx_PrioretyInit(copyINTx);
+
+
+
 
 
         INTERRUPT_INTx_EdgInit(copyINTx);
@@ -4873,6 +4885,7 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
         INTERRUPT_INTx_PinInit(&copyINTx);
 
 
+        INTERRUPT_INTx_setInterruptHandler(copyINTx);
 
 
         INTERRUPT_INTx_Enable(copyINTx);
@@ -4880,6 +4893,49 @@ Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx) {
     }
     return retValue;
 }
+
+void INT0_ISR(void) {
+
+    (INTCONbits.INT0IF = 0);
+
+
+
+    if(INT0_interruptHandler) {
+        INT0_interruptHandler();
+    }
+    else {
+
+    }
+}
+
+void INT1_ISR(void) {
+
+    (INTCON3bits.INT1IF = 0);
+
+
+
+    if(INT1_interruptHandler) {
+        INT1_interruptHandler();
+    }
+    else {
+
+    }
+}
+
+void INT2_ISR(void) {
+
+    (INTCON3bits.INT2IF = 0);
+
+
+
+    if(INT2_interruptHandler) {
+        INT2_interruptHandler();
+    }
+    else {
+
+    }
+}
+
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = (Std_Return)0;
     if(copyINTx == ((void*)0)) {
@@ -4924,14 +4980,20 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
     else {
         switch(copyINTx->Source) {
             case INTERRUPT_EXTERNAL_INT0:
+                (INTCONbits.GIE = 1);
+                (INTCONbits.PEIE = 1);
                 (INTCONbits.INT0IE = 1);
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT1:
+                (INTCONbits.GIE = 1);
+                (INTCONbits.PEIE = 1);
                 (INTCON3bits.INT1IE = 1);
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT2:
+                (INTCONbits.GIE = 1);
+                (INTCONbits.PEIE = 1);
                 (INTCON3bits.INT2IE = 1);
                 retValue = (Std_Return)1;
                 break;
@@ -4968,40 +5030,7 @@ static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx) {
     }
     return retValue;
 }
-
-
-static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx) {
-     uint8_t retValue = (Std_Return)0;
-    if(copyINTx == ((void*)0)) {
-        retValue = (Std_Return)0;
-    }
-    else {
-        switch(copyINTx->Source) {
-            case INTERRUPT_EXTERNAL_INT1:
-                switch(copyINTx->Priorety) {
-                    case INTERRUPT_PRIORETY_LOW: (INTCON3bits.INT1IP = 0); break;
-                    case INTERRUPT_PRIORETY_HIGH: (INTCON3bits.INT1IP = 1); break;
-                    default: retValue = (Std_Return)0; break;
-                }
-                retValue = (Std_Return)1;
-                break;
-            case INTERRUPT_EXTERNAL_INT2:
-                switch(copyINTx->Priorety) {
-                    case INTERRUPT_PRIORETY_LOW: (INTCON3bits.INT2IP = 0); break;
-                    case INTERRUPT_PRIORETY_HIGH: (INTCON3bits.INT2IP = 1); break;
-                    default: retValue = (Std_Return)0; break;
-                }
-                retValue = (Std_Return)1;
-                break;
-            default :
-                retValue = (Std_Return)1;
-                break;
-        }
-        retValue = (Std_Return)1;
-    }
-    return retValue;
-}
-
+# 236 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
 static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = (Std_Return)0;
     if(copyINTx == ((void*)0)) {
@@ -5071,6 +5100,64 @@ static Std_Return INTERRUPT_INTx_ClearFlag(const Interrupt_INTx_t *copyINTx) {
             case INTERRUPT_EXTERNAL_INT2:
                 (INTCON3bits.INT2IF = 0);
                 retValue = (Std_Return)1;
+                break;
+            default :
+                retValue = (Std_Return)1;
+                break;
+        }
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+
+static Std_Return INT0_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = (Std_Return)0;
+    if(interruptHandler == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        INT0_interruptHandler = interruptHandler;
+    }
+    return retValue;
+}
+
+static Std_Return INT1_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = (Std_Return)0;
+    if(interruptHandler == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        INT1_interruptHandler = interruptHandler;
+    }
+    return retValue;
+}
+
+static Std_Return INT2_setInterruprHandler(void (*interruptHandler)(void)) {
+    uint8_t retValue = (Std_Return)0;
+    if(interruptHandler == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        INT2_interruptHandler = interruptHandler;
+    }
+    return retValue;
+}
+
+static Std_Return INTERRUPT_INTx_setInterruptHandler(const Interrupt_INTx_t *copyINTx) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyINTx == ((void*)0)) {
+        retValue = (Std_Return)0;
+    }
+    else {
+        switch(copyINTx->Source) {
+            case INTERRUPT_EXTERNAL_INT0:
+                retValue = INT0_setInterruprHandler(copyINTx->EX_InterruptHandler);
+                break;
+            case INTERRUPT_EXTERNAL_INT1:
+                retValue = INT1_setInterruprHandler(copyINTx->EX_InterruptHandler);
+                break;
+            case INTERRUPT_EXTERNAL_INT2:
+                retValue = INT2_setInterruprHandler(copyINTx->EX_InterruptHandler);
                 break;
             default :
                 retValue = (Std_Return)1;

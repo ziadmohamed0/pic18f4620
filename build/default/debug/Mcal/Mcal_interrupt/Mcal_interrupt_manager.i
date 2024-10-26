@@ -4803,5 +4803,20 @@ typedef enum {
     INTERRUPT_PRIORETY_HIGH
 }Interrupt_Priorety_cfg_t;
 # 12 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.h" 2
+# 25 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.h"
+void INT0_ISR(void);
+void INT1_ISR(void);
+void INT2_ISR(void);
 # 9 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c" 2
-
+# 24 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c"
+void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
+    if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)) {
+        INT0_ISR();
+    }
+    if((1 == INTCON3bits.INT1IE) && (1 == INTCON3bits.INT1IF)) {
+        INT1_ISR();
+    }
+    if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)) {
+        INT2_ISR();
+    }
+}

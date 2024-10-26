@@ -8,6 +8,25 @@
 
 #include "Hall_dfs.h"
 
+    /* Led Pins */
+Led_t Led1 = {
+    .LED_PORTx  = GPIO_Port_Index_C,
+    .LED_PINx   = GPIO_Pin_Index_0,
+    .LED_Status = GPIO_Status_Low,
+};
+
+Led_t Led2 = {
+    .LED_PORTx  = GPIO_Port_Index_C,
+    .LED_PINx   = GPIO_Pin_Index_1,
+    .LED_Status = GPIO_Status_Low,
+};
+
+Led_t Led3 = {
+    .LED_PORTx  = GPIO_Port_Index_C,
+    .LED_PINx   = GPIO_Pin_Index_2,
+    .LED_Status = GPIO_Status_Low,
+};
+
     /* DC Motor Pins */
 DC_Motor_t Motor1 = {
     .DC_MOTOR[0].DC_Motor_Port                      = GPIO_Port_Index_B,

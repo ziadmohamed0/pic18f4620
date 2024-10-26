@@ -18,10 +18,10 @@
 #include "LCD/Hall_lcd_init.h"
 /* -------------------- Include End  -------------------- */
 
-/* -------------------- Globale Variables Start -------------------- */
+/* -------------------- Global Variables Start -------------------- */
 uint8_t *RetValue_KeyPad = NULL;
 uint8_t *RetValue_BTN = NULL;
-/* -------------------- Globale Variables End  -------------------- */
+/* -------------------- Global Variables End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */
 /* -------------------- Macro End  -------------------- */
@@ -33,6 +33,10 @@ uint8_t *RetValue_BTN = NULL;
 /* -------------------- Standard Types End -------------------- */
 
 /* -------------------- peripherals init Start -------------------- */
+    /* Led Pins */
+Led_t Led1;
+Led_t Led2;
+Led_t Led3;
 
     /* DC Motor Pins */
 DC_Motor_t Motor1;

@@ -1,4 +1,4 @@
-# 1 "Hall/Key_Pad/Hall_Key_Pad_prog.c"
+# 1 "Mcal/Mcal_dfs.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Hall/Key_Pad/Hall_Key_Pad_prog.c" 2
+# 1 "Mcal/Mcal_dfs.c" 2
 
 
 
@@ -15,16 +15,14 @@
 
 
 
-# 1 "Hall/Key_Pad/Hall_Key_Pad_init.h" 1
-# 12 "Hall/Key_Pad/Hall_Key_Pad_init.h"
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h"
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
+# 1 "Mcal/Mcal_dfs.h" 1
+# 12 "Mcal/Mcal_dfs.h"
+# 1 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 1
+# 12 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+# 1 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 1
+# 12 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+# 1 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -100,7 +98,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 12 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -254,10 +252,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 13 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_Compiler.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_Compiler.h"
+# 1 "Mcal/Mcal_Compiler.h" 1
+# 12 "Mcal/Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4722,12 +4720,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_Compiler.h" 2
-# 14 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 12 "Mcal/Mcal_Compiler.h" 2
+# 14 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_Bit_Math.h" 1
-# 15 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
-# 70 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
+# 1 "Mcal/Mcal_Bit_Math.h" 1
+# 15 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 70 "Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4740,16 +4738,16 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 12 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
-# 13 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 1 "Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
+# 13 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4800,14 +4798,14 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
-# 14 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
-# 65 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+# 14 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 65 "Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
 typedef enum {
     INTERRUPT_PRIORETY_LOW,
     INTERRUPT_PRIORETY_HIGH
 }Interrupt_Priorety_cfg_t;
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
-# 93 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+# 12 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
+# 93 "Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
 typedef enum {
     INTERRUPT_EDGE_FALLING,
     INTERRUPT_EDGE_RISING
@@ -4840,18 +4838,18 @@ Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
 
 Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
 Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
-# 12 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 2
+# 12 "Mcal/Mcal_dfs.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 1
-# 13 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 2
+# 1 "Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 1
+# 13 "Mcal/Mcal_dfs.h" 2
 
-# 1 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h" 1
-# 25 "Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h"
+# 1 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.h" 1
+# 25 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.h"
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
-# 14 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 2
-# 31 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h"
+# 14 "Mcal/Mcal_dfs.h" 2
+# 31 "Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
@@ -4862,68 +4860,39 @@ void INT2_isr(void);
 Interrupt_INTx_t EX_INT0;
 Interrupt_INTx_t EX_INT1;
 Interrupt_INTx_t EX_INT2;
-# 12 "Hall/Key_Pad/Hall_Key_Pad_init.h" 2
-# 24 "Hall/Key_Pad/Hall_Key_Pad_init.h"
-typedef struct {
-    Pin_cfg_t Keypad_Row_Pins[4];
-    Pin_cfg_t Keypad_Column_Pins[4];
-}KeyPad_t;
+# 9 "Mcal/Mcal_dfs.c" 2
 
 
 
-Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad);
-Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore);
-# 9 "Hall/Key_Pad/Hall_Key_Pad_prog.c" 2
+Interrupt_INTx_t EX_INT0 = {
+    .EX_InterruptHandler = INT0_isr,
+    .Edge = INTERRUPT_EDGE_RISING,
+    .Priorety = INTERRUPT_PRIORETY_HIGH,
+    .Source = INTERRUPT_EXTERNAL_INT0,
+    .MCU_Pin.Port = GPIO_Port_Index_B,
+    .MCU_Pin.Pin = GPIO_Pin_Index_0,
+    .MCU_Pin.Direction = GPIO_Dircetion_Input,
+    .MCU_Pin.Status = GPIO_Status_Low,
+};
 
+Interrupt_INTx_t EX_INT1 = {
+    .EX_InterruptHandler = INT1_isr,
+    .Edge = INTERRUPT_EDGE_RISING,
+    .Priorety = INTERRUPT_PRIORETY_HIGH,
+    .Source = INTERRUPT_EXTERNAL_INT1,
+    .MCU_Pin.Port = GPIO_Port_Index_B,
+    .MCU_Pin.Pin = GPIO_Pin_Index_1,
+    .MCU_Pin.Direction = GPIO_Dircetion_Input,
+    .MCU_Pin.Status = GPIO_Status_Low,
+};
 
-static const uint8_t btn_Value[4][4] ={
-                                                                            {7,8,9,'/'},
-                                                                            {4,5,6,'*'},
-                                                                            {1,2,3,'-'},
-                                                                            {'#',0,'=','+'}
-                                                                        };
-
-Std_Return HALL_KeyPad_init(const KeyPad_t* copyKeyPad) {
-    uint8_t retvalue = (Std_Return)0;
-    uint8_t Rows_Conter = 0;
-    uint8_t Columns_Conter = 0;
-    if(copyKeyPad == ((void*)0)) {
-        retvalue = (Std_Return)0;
-    }
-    else {
-        for(Rows_Conter = 0; Rows_Conter < 4; Rows_Conter++) {
-            MCAL_GPIO_init(&(copyKeyPad->Keypad_Row_Pins[Rows_Conter]));
-        }
-        for(Columns_Conter = 0; Columns_Conter < 4; Columns_Conter++) {
-            Mcal_GPIO_initPinDirection(&(copyKeyPad->Keypad_Column_Pins[Columns_Conter]));
-        }
-        retvalue = (Std_Return)1;
-    }
-    return retvalue;
-}
-Std_Return HALL_KeyPad_getValue(const KeyPad_t* copyKeyPad, uint8_t *copyValueStore) {
-    uint8_t retvalue = (Std_Return)0;
-    uint8_t Rows_Conter = 0;
-    uint8_t Columns_Conter = 0;
-    uint8_t Counter = 0;
-    uint8_t Column_Value = 0;
-    if(copyKeyPad == ((void*)0)) {
-        retvalue = (Std_Return)0;
-    }
-    else {
-        for(Rows_Conter = 0; Rows_Conter < 4; Rows_Conter++) {
-            for(Counter = 0; Counter < 4; Counter++) {
-                MCAL_GPIO_writePinStatus(&(copyKeyPad->Keypad_Row_Pins[Counter]), GPIO_Status_Low);
-            }
-            MCAL_GPIO_writePinStatus(&(copyKeyPad->Keypad_Row_Pins[Rows_Conter]), GPIO_Status_High);
-            for(Columns_Conter = 0; Columns_Conter < 4; Columns_Conter++) {
-                MCAL_GPIO_getPinStatus(&(copyKeyPad->Keypad_Column_Pins[Columns_Conter]), &Column_Value);
-                if(Column_Value == GPIO_Status_High) {
-                    *copyValueStore = btn_Value[Rows_Conter][Columns_Conter];
-                }
-            }
-        }
-        retvalue = (Std_Return)1;
-    }
-    return retvalue;
-}
+Interrupt_INTx_t EX_INT2 = {
+    .EX_InterruptHandler = INT2_isr,
+    .Edge = INTERRUPT_EDGE_RISING,
+    .Priorety = INTERRUPT_PRIORETY_HIGH,
+    .Source = INTERRUPT_EXTERNAL_INT2,
+    .MCU_Pin.Port = GPIO_Port_Index_B,
+    .MCU_Pin.Pin = GPIO_Pin_Index_2,
+    .MCU_Pin.Direction = GPIO_Dircetion_Input,
+    .MCU_Pin.Status = GPIO_Status_Low,
+};

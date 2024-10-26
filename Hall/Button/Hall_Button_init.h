@@ -9,7 +9,7 @@
 #define	HALL_BUTTON_INIT_H
 
 /* -------------------- Include Start -------------------- */
-#include "../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+#include "../../Mcal/Mcal_dfs.h"
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */

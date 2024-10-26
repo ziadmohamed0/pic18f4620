@@ -19,13 +19,14 @@
 # 12 "Hall/Hall_dfs.h"
 # 1 "Hall/Led/Hall_Led_init.h" 1
 # 12 "Hall/Led/Hall_Led_init.h"
-# 1 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
-
-# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 1
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Led/../../Mcal/Mcal_dfs.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_dfs.h"
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -101,7 +102,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -255,10 +256,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 13 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 1
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h"
+# 1 "Hall/Led/../../Mcal/Mcal_Compiler.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4723,12 +4724,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Compiler.h" 2
-# 14 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
+# 12 "Hall/Led/../../Mcal/Mcal_Compiler.h" 2
+# 14 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Bit_Math.h" 1
-# 15 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h" 2
-# 70 "Hall/Led/../../Mcal/Mcal_GPIO/../Mcal_Std_Types.h"
+# 1 "Hall/Led/../../Mcal/Mcal_Bit_Math.h" 1
+# 15 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 70 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4741,8 +4742,16 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 13 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h"
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
+# 13 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4793,6 +4802,68 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
+# 14 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 65 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+typedef enum {
+    INTERRUPT_PRIORETY_LOW,
+    INTERRUPT_PRIORETY_HIGH
+}Interrupt_Priorety_cfg_t;
+# 12 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
+# 93 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+typedef enum {
+    INTERRUPT_EDGE_FALLING,
+    INTERRUPT_EDGE_RISING
+}Interrupt_INTx_edge_t;
+
+typedef enum {
+    INTERRUPT_EXTERNAL_INT0,
+    INTERRUPT_EXTERNAL_INT1,
+    INTERRUPT_EXTERNAL_INT2
+}Interrupt_INTx_src_t;
+
+typedef struct {
+    void (* EX_InterruptHandler)(void);
+    Pin_cfg_t MCU_Pin;
+    Interrupt_INTx_edge_t Edge;
+    Interrupt_INTx_src_t Source;
+    Interrupt_Priorety_cfg_t Priorety;
+}Interrupt_INTx_t;
+
+typedef struct {
+    void (* EX_InterruptHandler)(void);
+    Pin_cfg_t MCU_Pin;
+    Interrupt_Priorety_cfg_t Priorety;
+}Interrupt_RBx_t;
+
+
+
+Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
+
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
+# 12 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
+
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 1
+# 13 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
+
+# 1 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h" 1
+# 25 "Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h"
+void INT0_ISR(void);
+void INT1_ISR(void);
+void INT2_ISR(void);
+# 14 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
+# 31 "Hall/Led/../../Mcal/Mcal_dfs.h"
+void INT0_isr(void);
+void INT1_isr(void);
+void INT2_isr(void);
+
+
+
+
+Interrupt_INTx_t EX_INT0;
+Interrupt_INTx_t EX_INT1;
+Interrupt_INTx_t EX_INT2;
 # 12 "Hall/Led/Hall_Led_init.h" 2
 # 22 "Hall/Led/Hall_Led_init.h"
 typedef enum {
@@ -4950,7 +5021,12 @@ Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR);
 
 uint8_t *RetValue_KeyPad = ((void*)0);
 uint8_t *RetValue_BTN = ((void*)0);
-# 38 "Hall/Hall_dfs.h"
+# 37 "Hall/Hall_dfs.h"
+Led_t Led1;
+Led_t Led2;
+Led_t Led3;
+
+
 DC_Motor_t Motor1;
 DC_Motor_t Motor2;
 
@@ -4968,6 +5044,25 @@ LCD_4Bit_t LCD1_4Bit;
 LCD_8Bit_t LCD1_8Bit;
 # 9 "Hall/Hall_dfs.c" 2
 
+
+
+Led_t Led1 = {
+    .LED_PORTx = GPIO_Port_Index_C,
+    .LED_PINx = GPIO_Pin_Index_0,
+    .LED_Status = GPIO_Status_Low,
+};
+
+Led_t Led2 = {
+    .LED_PORTx = GPIO_Port_Index_C,
+    .LED_PINx = GPIO_Pin_Index_1,
+    .LED_Status = GPIO_Status_Low,
+};
+
+Led_t Led3 = {
+    .LED_PORTx = GPIO_Port_Index_C,
+    .LED_PINx = GPIO_Pin_Index_2,
+    .LED_Status = GPIO_Status_Low,
+};
 
 
 DC_Motor_t Motor1 = {
