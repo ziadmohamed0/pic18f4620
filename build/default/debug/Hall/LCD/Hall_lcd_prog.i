@@ -4838,8 +4838,8 @@ typedef struct {
 Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx);
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
 
-Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
-Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx);
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
 # 12 "Hall/LCD/../../Mcal/Mcal_dfs.h" 2
 
 # 1 "Hall/LCD/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 1
@@ -4850,11 +4850,20 @@ Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
+
+void RB4_ISR(void);
 # 14 "Hall/LCD/../../Mcal/Mcal_dfs.h" 2
-# 31 "Hall/LCD/../../Mcal/Mcal_dfs.h"
+# 33 "Hall/LCD/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
+
+
+void RB4_isr(void);
+void RB5_isr(void);
+void RB6_isr(void);
+void RB7_isr(void);
+
 
 
 
@@ -4862,6 +4871,12 @@ void INT2_isr(void);
 Interrupt_INTx_t EX_INT0;
 Interrupt_INTx_t EX_INT1;
 Interrupt_INTx_t EX_INT2;
+
+
+Interrupt_RBx_t RB_4;
+Interrupt_RBx_t RB_5;
+Interrupt_RBx_t RB_6;
+Interrupt_RBx_t RB_7;
 # 12 "Hall/LCD/Hall_lcd_init.h" 2
 # 43 "Hall/LCD/Hall_lcd_init.h"
 typedef struct {

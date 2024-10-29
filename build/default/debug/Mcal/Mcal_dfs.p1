@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58 Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"38 Mcal/Mcal_dfs.h
-[; ;Mcal/Mcal_dfs.h: 38: Interrupt_INTx_t EX_INT0;
+"47 Mcal/Mcal_dfs.h
+[; ;Mcal/Mcal_dfs.h: 47: Interrupt_INTx_t EX_INT0;
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
@@ -15,8 +15,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 104: typedef struct {
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
-"31 Mcal/Mcal_dfs.h
-[; ;Mcal/Mcal_dfs.h: 31: void INT0_isr(void);
+[v F3063 `(v ~T0 @X0 0 tf ]
+"112
+[; ;Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
+[s S275 `*F3063 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+"33 Mcal/Mcal_dfs.h
+[; ;Mcal/Mcal_dfs.h: 33: void INT0_isr(void);
 [v _INT0_isr `(v ~T0 @X0 0 ef ]
 "12 Mcal/Mcal_dfs.c
 [; ;Mcal/Mcal_dfs.c: 12: Interrupt_INTx_t EX_INT0 = {
@@ -28,12 +33,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E2986 . GPIO_Dircetion_Input GPIO_Dircetion_Output  ]
 [c E2982 0 1 .. ]
 [n E2982 . GPIO_Status_Low GPIO_Status_High  ]
-"32 Mcal/Mcal_dfs.h
-[; ;Mcal/Mcal_dfs.h: 32: void INT1_isr(void);
+"34 Mcal/Mcal_dfs.h
+[; ;Mcal/Mcal_dfs.h: 34: void INT1_isr(void);
 [v _INT1_isr `(v ~T0 @X0 0 ef ]
-"33
-[; ;Mcal/Mcal_dfs.h: 33: void INT2_isr(void);
+"35
+[; ;Mcal/Mcal_dfs.h: 35: void INT2_isr(void);
 [v _INT2_isr `(v ~T0 @X0 0 ef ]
+"38
+[; ;Mcal/Mcal_dfs.h: 38: void RB4_isr(void);
+[v _RB4_isr `(v ~T0 @X0 0 ef ]
+"39
+[; ;Mcal/Mcal_dfs.h: 39: void RB5_isr(void);
+[v _RB5_isr `(v ~T0 @X0 0 ef ]
+"40
+[; ;Mcal/Mcal_dfs.h: 40: void RB6_isr(void);
+[v _RB6_isr `(v ~T0 @X0 0 ef ]
+"41
+[; ;Mcal/Mcal_dfs.h: 41: void RB7_isr(void);
+[v _RB7_isr `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -445,15 +462,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"38 Mcal/Mcal_dfs.h
-[; ;Mcal/Mcal_dfs.h: 38: Interrupt_INTx_t EX_INT0;
+"47 Mcal/Mcal_dfs.h
+[; ;Mcal/Mcal_dfs.h: 47: Interrupt_INTx_t EX_INT0;
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
-"39
-[; ;Mcal/Mcal_dfs.h: 39: Interrupt_INTx_t EX_INT1;
+"48
+[; ;Mcal/Mcal_dfs.h: 48: Interrupt_INTx_t EX_INT1;
 [v _EX_INT1 `S274 ~T0 @X0 1 e ]
-"40
-[; ;Mcal/Mcal_dfs.h: 40: Interrupt_INTx_t EX_INT2;
+"49
+[; ;Mcal/Mcal_dfs.h: 49: Interrupt_INTx_t EX_INT2;
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
+"52
+[; ;Mcal/Mcal_dfs.h: 52: Interrupt_RBx_t RB_4;
+[v _RB_4 `S275 ~T0 @X0 1 e ]
+"53
+[; ;Mcal/Mcal_dfs.h: 53: Interrupt_RBx_t RB_5;
+[v _RB_5 `S275 ~T0 @X0 1 e ]
+"54
+[; ;Mcal/Mcal_dfs.h: 54: Interrupt_RBx_t RB_6;
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+"55
+[; ;Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_7;
+[v _RB_7 `S275 ~T0 @X0 1 e ]
 "12 Mcal/Mcal_dfs.c
 [; ;Mcal/Mcal_dfs.c: 12: Interrupt_INTx_t EX_INT0 = {
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
@@ -513,6 +542,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 . `E3044 1
 . `E3048 2
+. `E3040 1
+..
+..
+]
+"47
+[; ;Mcal/Mcal_dfs.c: 47: Interrupt_RBx_t RB_4 = {
+[v _RB_4 `S275 ~T0 @X0 1 e ]
+[i _RB_4
+:U ..
+:U ..
+&U _RB4_isr
+:U ..
+:U ..
+-> . `E3000 1 `uc
+-> . `E2990 4 `uc
+-> . `E2986 0 `uc
+-> . `E2982 0 `uc
+..
+..
+. `E3040 1
+..
+..
+]
+"56
+[; ;Mcal/Mcal_dfs.c: 56: Interrupt_RBx_t RB_5 = {
+[v _RB_5 `S275 ~T0 @X0 1 e ]
+[i _RB_5
+:U ..
+:U ..
+&U _RB5_isr
+:U ..
+:U ..
+-> . `E3000 1 `uc
+-> . `E2990 5 `uc
+-> . `E2986 0 `uc
+-> . `E2982 0 `uc
+..
+..
+. `E3040 1
+..
+..
+]
+"65
+[; ;Mcal/Mcal_dfs.c: 65: Interrupt_RBx_t RB_6 = {
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+[i _RB_6
+:U ..
+:U ..
+&U _RB6_isr
+:U ..
+:U ..
+-> . `E3000 1 `uc
+-> . `E2990 6 `uc
+-> . `E2986 0 `uc
+-> . `E2982 0 `uc
+..
+..
+. `E3040 1
+..
+..
+]
+"74
+[; ;Mcal/Mcal_dfs.c: 74: Interrupt_RBx_t RB_7 = {
+[v _RB_7 `S275 ~T0 @X0 1 e ]
+[i _RB_7
+:U ..
+:U ..
+&U _RB7_isr
+:U ..
+:U ..
+-> . `E3000 1 `uc
+-> . `E2990 7 `uc
+-> . `E2986 0 `uc
+-> . `E2982 0 `uc
+..
+..
 . `E3040 1
 ..
 ..

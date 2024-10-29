@@ -12,6 +12,12 @@ static void (*INT0_interruptHandler)(void) = NULL;
 static void (*INT1_interruptHandler)(void) = NULL;
 static void (*INT2_interruptHandler)(void) = NULL;
 
+static void (*RB4_interruptHandler)(void) = NULL;
+static void (*RB5_interruptHandler)(void) = NULL;
+static void (*RB6_interruptHandler)(void) = NULL;
+static void (*RB7_interruptHandler)(void) = NULL;
+
+
 static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_PrioretyInit(const Interrupt_INTx_t *copyINTx);
@@ -105,6 +111,20 @@ void INT2_ISR(void) {
     }
 }
 
+void RB4_ISR(void) {
+    /* External Interrupt Must Flag is Clear */
+    MCAL_RBx_clearInterruptFlage();
+    /* Code */
+    
+    /*Call Back Function get Called Every time this ISR Execute */
+    if(RB4_interruptHandler) {
+        RB4_interruptHandler();
+    }
+    else {
+        /* Nothing */
+    }
+}
+
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = R_ERROR;
     if(copyINTx == NULL) {
@@ -117,20 +137,54 @@ Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     return retValue;    
 }
 
-Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx) {
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx) {
     uint8_t retValue = R_ERROR;
-    if(copyINTx == NULL) {
+    if(copyRBx == NULL) {
         retValue = R_ERROR;
     }
     else {
-        
+        MCAL_RBx_InterruptDisable();
+        MCAL_RBx_clearInterruptFlage();
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
+        MCAL_INTERRUPT_PriorityLevelEnable();
+        switch(copyRBx->Priorety) {
+            case INTERRUPT_PRIORETY_LOW:  
+                MCAL_INTERRUPT_GlobaleInterruptLowEnable(); 
+                MCAL_EX_RBx_LowPrioritySet();
+                break;
+            case INTERRUPT_PRIORETY_HIGH: 
+                MCAL_INTERRUPT_GlobaleInterruptHighEnable(); 
+                MCAL_EX_RBx_HighPrioritySet();
+                break;
+            default: retValue = R_ERROR; break;
+        }
+#elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
+        MCAL_INTERRUPT_GlobaleInterruptEnable();
+        MCAL_INTERRUPT_PeripheralInterruptEnable();
+#endif
+        MCAL_GPIO_init(&(copyRBx->MCU_Pin));
+        switch(copyRBx->MCU_Pin.Pin) {
+            case GPIO_Pin_Index_4:
+                RB4_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;
+            case GPIO_Pin_Index_5:
+                RB5_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;    
+            case GPIO_Pin_Index_6:
+                RB6_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;    
+            case GPIO_Pin_Index_7:
+                RB7_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;    
+        }
+        MCAL_RBx_InterruptEnable();
         retValue = R_OK;
     }
     return retValue;    
 }
-Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx) {
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx) {
     uint8_t retValue = R_ERROR;
-    if(copyINTx == NULL) {
+    if(copyRBx == NULL) {
         retValue = R_ERROR;
     }
     else {
@@ -149,20 +203,43 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
     else {
         switch(copyINTx->Source) {
             case INTERRUPT_EXTERNAL_INT0:
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
+                MCAL_INTERRUPT_PriorityLevelEnable();
+                MCAL_INTERRUPT_GlobaleInterruptHighEnable();
+#elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
                 MCAL_INTERRUPT_GlobaleInterruptEnable();
                 MCAL_INTERRUPT_PeripheralInterruptEnable();
+#endif
                 MCAL_EX_INT0_InterruptEnable();
                 retValue = R_OK;
                 break;
             case INTERRUPT_EXTERNAL_INT1:
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
+                MCAL_INTERRUPT_PriorityLevelEnable();
+                switch(copyINTx->Priorety) {
+                    case INTERRUPT_PRIORETY_LOW:  MCAL_INTERRUPT_GlobaleInterruptLowEnable();  break;
+                    case INTERRUPT_PRIORETY_HIGH: MCAL_INTERRUPT_GlobaleInterruptHighEnable(); break;
+                    default: retValue = R_ERROR; break;
+                }
+#elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
                 MCAL_INTERRUPT_GlobaleInterruptEnable();
                 MCAL_INTERRUPT_PeripheralInterruptEnable();
+#endif
                 MCAL_EX_INT1_InterruptEnable();
                 retValue = R_OK;
                 break;  
             case INTERRUPT_EXTERNAL_INT2:
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
+                MCAL_INTERRUPT_PriorityLevelEnable();
+                switch(copyINTx->Priorety) {
+                    case INTERRUPT_PRIORETY_LOW:  MCAL_INTERRUPT_GlobaleInterruptLowEnable();  break;
+                    case INTERRUPT_PRIORETY_HIGH: MCAL_INTERRUPT_GlobaleInterruptHighEnable(); break;
+                    default: retValue = R_ERROR; break;
+                }
+#elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
                 MCAL_INTERRUPT_GlobaleInterruptEnable();
                 MCAL_INTERRUPT_PeripheralInterruptEnable();
+#endif
                 MCAL_EX_INT2_InterruptEnable();
                 retValue = R_OK;
                 break;

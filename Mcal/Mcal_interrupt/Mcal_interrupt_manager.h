@@ -25,6 +25,7 @@
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
+void RB4_ISR(void);
 /* -------------------- API End -------------------- */
 
 #endif	/* MCAL_INTERRUPT_MANAGER_H */

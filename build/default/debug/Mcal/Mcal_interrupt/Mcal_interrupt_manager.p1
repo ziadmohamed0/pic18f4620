@@ -44,6 +44,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 27: void INT2_ISR(void);
 [v _INT2_ISR `(v ~T0 @X0 0 ef ]
+"29
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 29: void RB4_ISR(void);
+[v _RB4_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -456,46 +459,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_MCAL_InterruptManager `(v ~T0 @X0 0 e ]
-"24 Mcal/Mcal_interrupt/Mcal_interrupt_manager.c
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 24: void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
+"31 Mcal/Mcal_interrupt/Mcal_interrupt_manager.c
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 31: void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
 [v _MCAL_InterruptManager `(v ~T39 @X0 1 ef ]
 {
 [e :U _MCAL_InterruptManager ]
 [f ]
-"25
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 25:     if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)) {
+"32
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 32:     if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)) {
 [e $ ! && == -> 1 `i -> . . _INTCONbits 0 4 `i == -> 1 `i -> . . _INTCONbits 0 1 `i 275  ]
 {
-"26
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 26:         INT0_ISR();
+"33
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 33:         INT0_ISR();
 [e ( _INT0_ISR ..  ]
-"27
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 27:     }
+"34
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 34:     }
 }
 [e :U 275 ]
-"28
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 28:     if((1 == INTCON3bits.INT1IE) && (1 == INTCON3bits.INT1IF)) {
+"35
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 35:     if((1 == INTCON3bits.INT1IE) && (1 == INTCON3bits.INT1IF)) {
 [e $ ! && == -> 1 `i -> . . _INTCON3bits 0 3 `i == -> 1 `i -> . . _INTCON3bits 0 0 `i 276  ]
 {
-"29
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 29:         INT1_ISR();
+"36
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 36:         INT1_ISR();
 [e ( _INT1_ISR ..  ]
-"30
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 30:     }
+"37
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 37:     }
 }
 [e :U 276 ]
-"31
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 31:     if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)) {
+"38
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 38:     if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)) {
 [e $ ! && == -> 1 `i -> . . _INTCON3bits 0 4 `i == -> 1 `i -> . . _INTCON3bits 0 1 `i 277  ]
 {
-"32
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 32:         INT2_ISR();
+"39
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 39:         INT2_ISR();
 [e ( _INT2_ISR ..  ]
-"33
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 33:     }
+"40
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 40:     }
 }
 [e :U 277 ]
-"34
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 34: }
+"41
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 41:     if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF)) {
+[e $ ! && == -> 1 `i -> . . _INTCONbits 0 3 `i == -> 1 `i -> . . _INTCONbits 0 0 `i 278  ]
+{
+"42
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 42:         RB4_ISR();
+[e ( _RB4_ISR ..  ]
+"43
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 43:     }
+}
+[e :U 278 ]
+"44
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 44: }
 [e :UE 274 ]
 }

@@ -27,7 +27,7 @@
 /* @brief : Macros Set Falling Age External interrupt 0 */
 #define MCAL_EX_INT0_fallingSet(void)                           (INTCON2bits.INTEDG0 = 0)
 
-        /* @groupMacros : INT0 interrupt */
+        /* @groupMacros : INT1 interrupt */
 /* @brief : Macros Enable External interrupt 1 */
 #define MCAL_EX_INT1_InterruptEnable(void)                      (INTCON3bits.INT1IE = 1)
 /* @brief : Macros Disable External interrupt 1 */
@@ -70,20 +70,20 @@
 #if EXTERNAL_INTERRUPT_OnChange_ENABLE_FUTURE == INTERRUPT_ENABLE_FUTURE
 
 /* @brief : Macros Enable External interrupt Port B */
-#define MCAL_RBx_InterruptEnable()                          (INTCONbits_t.RBIE = 1)
+#define MCAL_RBx_InterruptEnable()                          (INTCONbits.RBIE = 1)
 
 /* @brief : Macros Disable External interrupt Port B */
-#define MCAL_RBx_InterruptDisable()                         (INTCONbits_t.RBIE = 0)
+#define MCAL_RBx_InterruptDisable()                         (INTCONbits.RBIE = 0)
 
 /* @brief : Macros Clear Flag External interrupt Port B */
-#define MCAL_RBx_clearInterruptFlage()                      (INTCONbits_t.RBIF = 0)
+#define MCAL_RBx_clearInterruptFlage()                      (INTCONbits.RBIF = 0)
 
 #if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
 
 /* @brief : Macros Set high priority External interrupt Port B */
-#define MCAL_EX_RBx_HighPrioritySet()                      (INTCON2bits_t.RBIP = 1)
+#define MCAL_EX_RBx_HighPrioritySet()                      (INTCON2bits.RBIP = 1)
 /* @brief : Macros Set low priority External interrupt Port B */
-#define MCAL_EX_RBx_LowPrioritySet()                       (INTCON2bits_t.RBIP  = 0)
+#define MCAL_EX_RBx_LowPrioritySet()                       (INTCON2bits.RBIP  = 0)
 
 #endif
 
@@ -120,8 +120,8 @@ typedef struct {
 Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx);
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
 
-Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
-Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx);
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
 
 /* -------------------- Standard Types End -------------------- */
 

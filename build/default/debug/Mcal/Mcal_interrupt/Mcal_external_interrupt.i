@@ -4834,14 +4834,20 @@ typedef struct {
 Std_Return MCAL_INTERRUPT_INTx_init(const Interrupt_INTx_t *copyINTx);
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
 
-Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx);
-Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx);
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx);
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
 # 9 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c" 2
 
 
 static void (*INT0_interruptHandler)(void) = ((void*)0);
 static void (*INT1_interruptHandler)(void) = ((void*)0);
 static void (*INT2_interruptHandler)(void) = ((void*)0);
+
+static void (*RB4_interruptHandler)(void) = ((void*)0);
+static void (*RB5_interruptHandler)(void) = ((void*)0);
+static void (*RB6_interruptHandler)(void) = ((void*)0);
+static void (*RB7_interruptHandler)(void) = ((void*)0);
+
 
 static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
@@ -4936,6 +4942,20 @@ void INT2_ISR(void) {
     }
 }
 
+void RB4_ISR(void) {
+
+    (INTCONbits.RBIF = 0);
+
+
+
+    if(RB4_interruptHandler) {
+        RB4_interruptHandler();
+    }
+    else {
+
+    }
+}
+
 Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = (Std_Return)0;
     if(copyINTx == ((void*)0)) {
@@ -4948,20 +4968,41 @@ Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx) {
     return retValue;
 }
 
-Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_INTx_t *copyINTx) {
+Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx) {
     uint8_t retValue = (Std_Return)0;
-    if(copyINTx == ((void*)0)) {
+    if(copyRBx == ((void*)0)) {
         retValue = (Std_Return)0;
     }
     else {
+        (INTCONbits.RBIE = 0);
+        (INTCONbits.RBIF = 0);
+# 162 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+        (INTCONbits.GIE = 1);
+        (INTCONbits.PEIE = 1);
 
+        MCAL_GPIO_init(&(copyRBx->MCU_Pin));
+        switch(copyRBx->MCU_Pin.Pin) {
+            case GPIO_Pin_Index_4:
+                RB4_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;
+            case GPIO_Pin_Index_5:
+                RB5_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;
+            case GPIO_Pin_Index_6:
+                RB6_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;
+            case GPIO_Pin_Index_7:
+                RB7_interruptHandler = copyRBx->EX_InterruptHandler;
+                break;
+        }
+        (INTCONbits.RBIE = 1);
         retValue = (Std_Return)1;
     }
     return retValue;
 }
-Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_INTx_t *copyINTx) {
+Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx) {
     uint8_t retValue = (Std_Return)0;
-    if(copyINTx == ((void*)0)) {
+    if(copyRBx == ((void*)0)) {
         retValue = (Std_Return)0;
     }
     else {
@@ -4980,20 +5021,29 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
     else {
         switch(copyINTx->Source) {
             case INTERRUPT_EXTERNAL_INT0:
+
+
+
+
                 (INTCONbits.GIE = 1);
                 (INTCONbits.PEIE = 1);
+
                 (INTCONbits.INT0IE = 1);
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT1:
+# 225 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
                 (INTCONbits.GIE = 1);
                 (INTCONbits.PEIE = 1);
+
                 (INTCON3bits.INT1IE = 1);
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT2:
+# 240 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
                 (INTCONbits.GIE = 1);
                 (INTCONbits.PEIE = 1);
+
                 (INTCON3bits.INT2IE = 1);
                 retValue = (Std_Return)1;
                 break;
@@ -5030,7 +5080,7 @@ static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx) {
     }
     return retValue;
 }
-# 236 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+# 313 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
 static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = (Std_Return)0;
     if(copyINTx == ((void*)0)) {

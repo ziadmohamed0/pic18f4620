@@ -12,11 +12,18 @@
 #if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
 
 void __interrupt() MCAL_InterruptManagerHigh(void) {
-
+    if((MCAL_INTERRUPT_ENABLE == INTCONbits.INT0IE) && (MCAL_INTERRUPT_OCCUR == INTCONbits.INT0IF)) {
+        INT0_ISR();
+    }
+    if((MCAL_INTERRUPT_ENABLE == INTCON3bits.INT2IE) && (MCAL_INTERRUPT_OCCUR == INTCON3bits.INT2IF)) {
+        INT2_ISR();
+    }    
 }
 
 void __interrupt(low_priority) MCAL_InterruptManagerLow(void) {
-
+    if((MCAL_INTERRUPT_ENABLE == INTCON3bits.INT1IE) && (MCAL_INTERRUPT_OCCUR == INTCON3bits.INT1IF)) {
+        INT1_ISR();
+    }
 }
 
 #elif INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
@@ -31,6 +38,13 @@ void __interrupt() MCAL_InterruptManager(void) {
     if((MCAL_INTERRUPT_ENABLE == INTCON3bits.INT2IE) && (MCAL_INTERRUPT_OCCUR == INTCON3bits.INT2IF)) {
         INT2_ISR();
     }    
+    
+    if((MCAL_INTERRUPT_ENABLE == INTCONbits.RBIE) && (MCAL_INTERRUPT_OCCUR == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_Status_Low)) {
+        RB4_ISR();
+    }  
+    if((MCAL_INTERRUPT_ENABLE == INTCONbits.RBIE) && (MCAL_INTERRUPT_OCCUR == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_Status_High)) {
+        RB4_ISR();
+    }  
 }
 
 #endif
