@@ -16,10 +16,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
+[v F3065 `(v ~T0 @X0 0 tf ]
 "112
 [; ;Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
-[s S275 `*F3063 1 `S273 1 `E3040 1 ]
-[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+[s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 "27 Hall/Led/Hall_Led_init.h
 [; ;Hall/Led/Hall_Led_init.h: 27: typedef struct {
 [s S276 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
@@ -496,8 +497,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Led/Hall_Led_prog.c: 15:     else {
 [e :U 278 ]
 {
-[v F3113 `S273 ~T0 @X0 1 s ]
-[i F3113
+[v F3122 `S273 ~T0 @X0 1 s ]
+[i F3122
 :U ..
 :U ..
 "16
@@ -510,7 +511,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3113 ]
+[e = _objLed F3122 ]
 [e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
 "23
 [; ;Hall/Led/Hall_Led_prog.c: 23:         MCAL_GPIO_init(&objLed);
@@ -553,8 +554,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Led/Hall_Led_prog.c: 33:     else {
 [e :U 281 ]
 {
-[v F3118 `S273 ~T0 @X0 1 s ]
-[i F3118
+[v F3127 `S273 ~T0 @X0 1 s ]
+[i F3127
 :U ..
 :U ..
 "34
@@ -567,7 +568,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3118 ]
+[e = _objLed F3127 ]
 [e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
 "41
 [; ;Hall/Led/Hall_Led_prog.c: 41:         MCAL_GPIO_writePinStatus(&objLed, GPIO_Status_High);
@@ -610,8 +611,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Led/Hall_Led_prog.c: 51:     else {
 [e :U 284 ]
 {
-[v F3123 `S273 ~T0 @X0 1 s ]
-[i F3123
+[v F3132 `S273 ~T0 @X0 1 s ]
+[i F3132
 :U ..
 :U ..
 "52
@@ -624,7 +625,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3123 ]
+[e = _objLed F3132 ]
 [e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
 "59
 [; ;Hall/Led/Hall_Led_prog.c: 59:         MCAL_GPIO_writePinStatus(&objLed, GPIO_Status_Low);
@@ -667,8 +668,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Led/Hall_Led_prog.c: 69:     else {
 [e :U 287 ]
 {
-[v F3128 `S273 ~T0 @X0 1 s ]
-[i F3128
+[v F3137 `S273 ~T0 @X0 1 s ]
+[i F3137
 :U ..
 :U ..
 "70
@@ -681,7 +682,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objLed `S273 ~T0 @X0 1 a ]
-[e = _objLed F3128 ]
+[e = _objLed F3137 ]
 [e ; = . _objLed 0 . *U _copyLed 0 ; = . _objLed 1 . *U _copyLed 1 ; = . _objLed 2 -> . `E2986 1 `uc = . _objLed 3 . *U _copyLed 2 ]
 "77
 [; ;Hall/Led/Hall_Led_prog.c: 77:         MCAL_GPIO_togglePin(&objLed);

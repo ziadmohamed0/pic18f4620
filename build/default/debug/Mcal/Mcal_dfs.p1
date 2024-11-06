@@ -16,10 +16,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
+[v F3065 `(v ~T0 @X0 0 tf ]
 "112
 [; ;Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
-[s S275 `*F3063 1 `S273 1 `E3040 1 ]
-[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+[s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 "33 Mcal/Mcal_dfs.h
 [; ;Mcal/Mcal_dfs.h: 33: void INT0_isr(void);
 [v _INT0_isr `(v ~T0 @X0 0 ef ]
@@ -42,15 +43,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;Mcal/Mcal_dfs.h: 38: void RB4_isr(void);
 [v _RB4_isr `(v ~T0 @X0 0 ef ]
+[v F3110 `(v ~T0 @X0 0 tf ]
 "39
 [; ;Mcal/Mcal_dfs.h: 39: void RB5_isr(void);
 [v _RB5_isr `(v ~T0 @X0 0 ef ]
+[v F3113 `(v ~T0 @X0 0 tf ]
 "40
 [; ;Mcal/Mcal_dfs.h: 40: void RB6_isr(void);
 [v _RB6_isr `(v ~T0 @X0 0 ef ]
+[v F3116 `(v ~T0 @X0 0 tf ]
 "41
 [; ;Mcal/Mcal_dfs.h: 41: void RB7_isr(void);
 [v _RB7_isr `(v ~T0 @X0 0 ef ]
+[v F3119 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -553,6 +558,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 &U _RB4_isr
+-> -> 0 `i `*F3110
 :U ..
 :U ..
 -> . `E3000 1 `uc
@@ -572,6 +578,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 &U _RB5_isr
+-> -> 0 `i `*F3113
 :U ..
 :U ..
 -> . `E3000 1 `uc
@@ -591,6 +598,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 &U _RB6_isr
+-> -> 0 `i `*F3116
 :U ..
 :U ..
 -> . `E3000 1 `uc
@@ -610,6 +618,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 &U _RB7_isr
+-> -> 0 `i `*F3119
 :U ..
 :U ..
 -> . `E3000 1 `uc

@@ -16,17 +16,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
+[v F3065 `(v ~T0 @X0 0 tf ]
 "112
 [; ;Hall/Seven_seg/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
-[s S275 `*F3063 1 `S273 1 `E3040 1 ]
-[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+[s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 "11 Hall/Seven_seg/Hall_Seven_seg_prog.c
 [; ;Hall/Seven_seg/Hall_Seven_seg_prog.c: 11: Std_Return HALL_SEVEN_SEGEMENT_init(const Segement_t* copySevenSegement) {
-[c E3093 0 1 .. ]
-[n E3093 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
+[c E3102 0 1 .. ]
+[n E3102 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
 "31 Hall/Seven_seg/Hall_Seven_seg_init.h
 [; ;Hall/Seven_seg/Hall_Seven_seg_init.h: 31: typedef struct {
-[s S276 `S273 -> 4 `i `E3093 1 ]
+[s S276 `S273 -> 4 `i `E3102 1 ]
 [n S276 . Segement_Pins SegmentType ]
 "72 Hall/Seven_seg/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [v _MCAL_GPIO_init `(uc ~T0 @X0 0 ef1`*CS273 ]

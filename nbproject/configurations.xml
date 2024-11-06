@@ -32,6 +32,9 @@
         <itemPath>Hall/Hall_dfs.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
+        <logicalFolder name="Mcal_EEPROM" displayName="Mcal_EEPROM" projectFiles="true">
+          <itemPath>Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="Mcal_GPIO" displayName="Mcal_GPIO" projectFiles="true">
           <itemPath>Mcal/Mcal_GPIO/Mcal_GPIO_init.h</itemPath>
         </logicalFolder>
@@ -91,6 +94,9 @@
         <itemPath>Hall/Hall_dfs.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
+        <logicalFolder name="Mcal_EEPROM" displayName="Mcal_EEPROM" projectFiles="true">
+          <itemPath>Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="Mcal_GPIO" displayName="Mcal_GPIO" projectFiles="true">
           <itemPath>Mcal/Mcal_GPIO/Mcal_GPIO_prog.c</itemPath>
         </logicalFolder>

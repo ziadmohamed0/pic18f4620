@@ -16,10 +16,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
+[v F3065 `(v ~T0 @X0 0 tf ]
 "112
 [; ;Hall/Key_Pad/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
-[s S275 `*F3063 1 `S273 1 `E3040 1 ]
-[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+[s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 "24 Hall/Key_Pad/Hall_Key_Pad_init.h
 [; ;Hall/Key_Pad/Hall_Key_Pad_init.h: 24: typedef struct {
 [s S276 `S273 -> 4 `i `S273 -> 4 `i ]
@@ -468,10 +469,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;Hall/Key_Pad/../../Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_7;
 [v _RB_7 `S275 ~T0 @X0 1 e ]
-[v F3103 `Cuc ~T0 @X0 -> 4 `i t ]
+[v F3112 `Cuc ~T0 @X0 -> 4 `i t ]
 "11 Hall/Key_Pad/Hall_Key_Pad_prog.c
 [; ;Hall/Key_Pad/Hall_Key_Pad_prog.c: 11: static const uint8_t btn_Value[4][4] ={
-[v _btn_Value `F3103 ~T0 @X0 -> 4 `i s ]
+[v _btn_Value `F3112 ~T0 @X0 -> 4 `i s ]
 [i _btn_Value
 :U ..
 :U ..

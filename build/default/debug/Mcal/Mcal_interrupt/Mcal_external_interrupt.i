@@ -4824,7 +4824,8 @@ typedef struct {
 }Interrupt_INTx_t;
 
 typedef struct {
-    void (* EX_InterruptHandler)(void);
+    void (* EX_InterruptHandler_High)(void);
+    void (* EX_InterruptHandler_Low)(void);
     Pin_cfg_t MCU_Pin;
     Interrupt_Priorety_cfg_t Priorety;
 }Interrupt_RBx_t;
@@ -4843,11 +4844,14 @@ static void (*INT0_interruptHandler)(void) = ((void*)0);
 static void (*INT1_interruptHandler)(void) = ((void*)0);
 static void (*INT2_interruptHandler)(void) = ((void*)0);
 
-static void (*RB4_interruptHandler)(void) = ((void*)0);
-static void (*RB5_interruptHandler)(void) = ((void*)0);
-static void (*RB6_interruptHandler)(void) = ((void*)0);
-static void (*RB7_interruptHandler)(void) = ((void*)0);
-
+static void (*RB4_interruptHandler_High)(void) = ((void*)0);
+static void (*RB4_interruptHandler_Low)(void) = ((void*)0);
+static void (*RB5_interruptHandler_High)(void) = ((void*)0);
+static void (*RB5_interruptHandler_Low)(void) = ((void*)0);
+static void (*RB6_interruptHandler_High)(void) = ((void*)0);
+static void (*RB6_interruptHandler_Low)(void) = ((void*)0);
+static void (*RB7_interruptHandler_High)(void) = ((void*)0);
+static void (*RB7_interruptHandler_Low)(void) = ((void*)0);
 
 static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx);
 static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx);
@@ -4942,17 +4946,99 @@ void INT2_ISR(void) {
     }
 }
 
-void RB4_ISR(void) {
+void RB4_ISR(uint8_t copySource) {
 
     (INTCONbits.RBIF = 0);
 
 
 
-    if(RB4_interruptHandler) {
-        RB4_interruptHandler();
-    }
-    else {
+    if(copySource == 0) {
+        if(RB4_interruptHandler_High) {
+            RB4_interruptHandler_High();
+        }
+        else {
 
+        }
+    }
+    else if(copySource == 0) {
+        if(RB4_interruptHandler_Low) {
+            RB4_interruptHandler_Low();
+        }
+        else {
+
+        }
+    }
+}
+
+void RB5_ISR(uint8_t copySource) {
+
+    (INTCONbits.RBIF = 0);
+
+
+
+    if(copySource == 0) {
+        if(RB5_interruptHandler_High) {
+            RB5_interruptHandler_High();
+        }
+        else {
+
+        }
+    }
+    else if(copySource == 0) {
+        if(RB5_interruptHandler_Low) {
+            RB5_interruptHandler_Low();
+        }
+        else {
+
+        }
+    }
+}
+
+void RB6_ISR(uint8_t copySource) {
+
+    (INTCONbits.RBIF = 0);
+
+
+
+    if(copySource == 0) {
+        if(RB6_interruptHandler_High) {
+            RB6_interruptHandler_High();
+        }
+        else {
+
+        }
+    }
+    else if(copySource == 0) {
+        if(RB6_interruptHandler_Low) {
+            RB6_interruptHandler_Low();
+        }
+        else {
+
+        }
+    }
+}
+
+void RB7_ISR(uint8_t copySource) {
+
+    (INTCONbits.RBIF = 0);
+
+
+
+    if(copySource == 0) {
+        if(RB7_interruptHandler_High) {
+            RB7_interruptHandler_High();
+        }
+        else {
+
+        }
+    }
+    else if(copySource == 0) {
+        if(RB7_interruptHandler_Low) {
+            RB7_interruptHandler_Low();
+        }
+        else {
+
+        }
     }
 }
 
@@ -4976,23 +5062,27 @@ Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx) {
     else {
         (INTCONbits.RBIE = 0);
         (INTCONbits.RBIF = 0);
-# 162 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+# 247 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
         (INTCONbits.GIE = 1);
         (INTCONbits.PEIE = 1);
 
         MCAL_GPIO_init(&(copyRBx->MCU_Pin));
         switch(copyRBx->MCU_Pin.Pin) {
             case GPIO_Pin_Index_4:
-                RB4_interruptHandler = copyRBx->EX_InterruptHandler;
+                RB4_interruptHandler_High = copyRBx->EX_InterruptHandler_High;
+                RB4_interruptHandler_Low = copyRBx->EX_InterruptHandler_Low;
                 break;
             case GPIO_Pin_Index_5:
-                RB5_interruptHandler = copyRBx->EX_InterruptHandler;
+                RB5_interruptHandler_High = copyRBx->EX_InterruptHandler_High;
+                RB5_interruptHandler_Low = copyRBx->EX_InterruptHandler_Low;
                 break;
             case GPIO_Pin_Index_6:
-                RB6_interruptHandler = copyRBx->EX_InterruptHandler;
+                RB6_interruptHandler_High = copyRBx->EX_InterruptHandler_High;
+                RB6_interruptHandler_Low = copyRBx->EX_InterruptHandler_Low;
                 break;
             case GPIO_Pin_Index_7:
-                RB7_interruptHandler = copyRBx->EX_InterruptHandler;
+                RB7_interruptHandler_High = copyRBx->EX_InterruptHandler_High;
+                RB7_interruptHandler_Low = copyRBx->EX_InterruptHandler_Low;
                 break;
         }
         (INTCONbits.RBIE = 1);
@@ -5032,7 +5122,7 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT1:
-# 225 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+# 314 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
                 (INTCONbits.GIE = 1);
                 (INTCONbits.PEIE = 1);
 
@@ -5040,7 +5130,7 @@ static Std_Return INTERRUPT_INTx_Enable(const Interrupt_INTx_t *copyINTx) {
                 retValue = (Std_Return)1;
                 break;
             case INTERRUPT_EXTERNAL_INT2:
-# 240 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+# 329 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
                 (INTCONbits.GIE = 1);
                 (INTCONbits.PEIE = 1);
 
@@ -5080,7 +5170,7 @@ static Std_Return INTERRUPT_INTx_Disable(const Interrupt_INTx_t *copyINTx) {
     }
     return retValue;
 }
-# 313 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
+# 402 "Mcal/Mcal_interrupt/Mcal_external_interrupt.c"
 static Std_Return INTERRUPT_INTx_EdgInit(const Interrupt_INTx_t *copyINTx) {
     uint8_t retValue = (Std_Return)0;
     if(copyINTx == ((void*)0)) {

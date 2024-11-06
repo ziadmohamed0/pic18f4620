@@ -16,19 +16,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
+[v F3065 `(v ~T0 @X0 0 tf ]
 "112
 [; ;Hall/Button/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
-[s S275 `*F3063 1 `S273 1 `E3040 1 ]
-[n S275 . EX_InterruptHandler MCU_Pin Priorety ]
+[s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
+[n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 "12 Hall/Button/Hall_Button_prog.c
 [; ;Hall/Button/Hall_Button_prog.c: 12: Std_Return HALL_BTN_init(const BTN_t *copyBTN) {
-[c E3093 0 1 .. ]
-[n E3093 . BTN_Pressed BTN_Released  ]
-[c E3097 0 1 .. ]
-[n E3097 . BTN_Active_High BTN_Active_Low  ]
+[c E3102 0 1 .. ]
+[n E3102 . BTN_Pressed BTN_Released  ]
+[c E3106 0 1 .. ]
+[n E3106 . BTN_Active_High BTN_Active_Low  ]
 "29 Hall/Button/Hall_Button_init.h
 [; ;Hall/Button/Hall_Button_init.h: 29: typedef struct {
-[s S276 `S273 1 `E3093 1 `E3097 1 ]
+[s S276 `S273 1 `E3102 1 `E3106 1 ]
 [n S276 . BTN_Pin BTN_Status BTN_Connection ]
 "67 Hall/Button/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [v _Mcal_GPIO_initPinDirection `(uc ~T0 @X0 0 ef1`*CS273 ]
@@ -513,11 +514,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "23
 [; ;Hall/Button/Hall_Button_prog.c: 23: Std_Return HALL_BTN_readStatus(const BTN_t *copyBTN, BTN_status_t *copyBTN_State) {
-[v _HALL_BTN_readStatus `(uc ~T0 @X0 1 ef2`*CS276`*E3093 ]
+[v _HALL_BTN_readStatus `(uc ~T0 @X0 1 ef2`*CS276`*E3102 ]
 {
 [e :U _HALL_BTN_readStatus ]
 [v _copyBTN `*CS276 ~T0 @X0 1 r1 ]
-[v _copyBTN_State `*E3093 ~T0 @X0 1 r2 ]
+[v _copyBTN_State `*E3102 ~T0 @X0 1 r2 ]
 [f ]
 "24
 [; ;Hall/Button/Hall_Button_prog.c: 24:     uint8_t retvalue = (Std_Return)0;
@@ -529,7 +530,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _objStatus_pin . `E2982 0 ]
 "26
 [; ;Hall/Button/Hall_Button_prog.c: 26:     if((copyBTN == ((void*)0)) || (copyBTN_State == ((void*)0))) {
-[e $ ! || == _copyBTN -> -> -> 0 `i `*v `*CS276 == _copyBTN_State -> -> -> 0 `i `*v `*E3093 281  ]
+[e $ ! || == _copyBTN -> -> -> 0 `i `*v `*CS276 == _copyBTN_State -> -> -> 0 `i `*v `*E3102 281  ]
 {
 "27
 [; ;Hall/Button/Hall_Button_prog.c: 27:         retvalue = (Std_Return)0;
@@ -547,7 +548,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _MCAL_GPIO_getPinStatus (2 , &U . *U _copyBTN 0 &U _objStatus_pin ]
 "32
 [; ;Hall/Button/Hall_Button_prog.c: 32:         if(copyBTN->BTN_Connection == BTN_Active_High) {
-[e $ ! == -> . *U _copyBTN 2 `ui -> . `E3097 0 `ui 283  ]
+[e $ ! == -> . *U _copyBTN 2 `ui -> . `E3106 0 `ui 283  ]
 {
 "33
 [; ;Hall/Button/Hall_Button_prog.c: 33:             if(objStatus_pin == GPIO_Status_High) {
@@ -555,7 +556,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "34
 [; ;Hall/Button/Hall_Button_prog.c: 34:                 *copyBTN_State = BTN_Pressed;
-[e = *U _copyBTN_State . `E3093 0 ]
+[e = *U _copyBTN_State . `E3102 0 ]
 "35
 [; ;Hall/Button/Hall_Button_prog.c: 35:             }
 }
@@ -566,7 +567,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "37
 [; ;Hall/Button/Hall_Button_prog.c: 37:                 *copyBTN_State = BTN_Released;
-[e = *U _copyBTN_State . `E3093 1 ]
+[e = *U _copyBTN_State . `E3102 1 ]
 "38
 [; ;Hall/Button/Hall_Button_prog.c: 38:             }
 }
@@ -578,7 +579,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;Hall/Button/Hall_Button_prog.c: 40:         else if(copyBTN->BTN_Connection == BTN_Active_Low) {
 [e :U 283 ]
-[e $ ! == -> . *U _copyBTN 2 `ui -> . `E3097 1 `ui 287  ]
+[e $ ! == -> . *U _copyBTN 2 `ui -> . `E3106 1 `ui 287  ]
 {
 "41
 [; ;Hall/Button/Hall_Button_prog.c: 41:             if(objStatus_pin == GPIO_Status_High) {
@@ -586,7 +587,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "42
 [; ;Hall/Button/Hall_Button_prog.c: 42:                 *copyBTN_State = BTN_Released;
-[e = *U _copyBTN_State . `E3093 1 ]
+[e = *U _copyBTN_State . `E3102 1 ]
 "43
 [; ;Hall/Button/Hall_Button_prog.c: 43:             }
 }
@@ -597,7 +598,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "45
 [; ;Hall/Button/Hall_Button_prog.c: 45:                 *copyBTN_State = BTN_Pressed;
-[e = *U _copyBTN_State . `E3093 0 ]
+[e = *U _copyBTN_State . `E3102 0 ]
 "46
 [; ;Hall/Button/Hall_Button_prog.c: 46:             }
 }

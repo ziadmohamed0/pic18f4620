@@ -4807,11 +4807,14 @@ typedef enum {
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
-
-void RB4_ISR(void);
+void RB4_ISR(uint8_t copySource);
+void RB5_ISR(uint8_t copySource);
+void RB6_ISR(uint8_t copySource);
+void RB7_ISR(uint8_t copySource);
 # 9 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c" 2
 # 31 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c"
 void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
+
     if((1 == INTCONbits.INT0IE) && (1 == INTCONbits.INT0IF)) {
         INT0_ISR();
     }
@@ -4821,7 +4824,28 @@ void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
     if((1 == INTCON3bits.INT2IE) && (1 == INTCON3bits.INT2IF)) {
         INT2_ISR();
     }
-    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF)) {
-        RB4_ISR();
+
+
+
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_Status_Low)) {
+        RB4_ISR(0);
     }
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB4 == GPIO_Status_High)) {
+        RB4_ISR(1);
+    }
+
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB5 == GPIO_Status_Low)) {
+        RB5_ISR(0);
+    }
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB5 == GPIO_Status_High)) {
+        RB5_ISR(1);
+    }
+
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB6 == GPIO_Status_Low)) {
+        RB6_ISR(0);
+    }
+    if((1 == INTCONbits.RBIE) && (1 == INTCONbits.RBIF) && (PORTBbits.RB6 == GPIO_Status_High)) {
+        RB6_ISR(1);
+    }
+
 }

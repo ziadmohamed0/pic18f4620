@@ -4826,7 +4826,8 @@ typedef struct {
 }Interrupt_INTx_t;
 
 typedef struct {
-    void (* EX_InterruptHandler)(void);
+    void (* EX_InterruptHandler_High)(void);
+    void (* EX_InterruptHandler_Low)(void);
     Pin_cfg_t MCU_Pin;
     Interrupt_Priorety_cfg_t Priorety;
 }Interrupt_RBx_t;
@@ -4848,8 +4849,10 @@ Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
-
-void RB4_ISR(void);
+void RB4_ISR(uint8_t copySource);
+void RB5_ISR(uint8_t copySource);
+void RB6_ISR(uint8_t copySource);
+void RB7_ISR(uint8_t copySource);
 # 14 "Mcal/Mcal_dfs.h" 2
 # 33 "Mcal/Mcal_dfs.h"
 void INT0_isr(void);
@@ -4915,7 +4918,7 @@ Interrupt_INTx_t EX_INT2 = {
 
 
 Interrupt_RBx_t RB_4 = {
-    .EX_InterruptHandler = RB4_isr,
+    .EX_InterruptHandler_High = RB4_isr,
     .MCU_Pin.Port = GPIO_Port_Index_B,
     .MCU_Pin.Pin = GPIO_Pin_Index_4,
     .MCU_Pin.Direction = GPIO_Dircetion_Input,
@@ -4924,7 +4927,7 @@ Interrupt_RBx_t RB_4 = {
 };
 
 Interrupt_RBx_t RB_5 = {
-    .EX_InterruptHandler = RB5_isr,
+    .EX_InterruptHandler_High = RB5_isr,
     .MCU_Pin.Port = GPIO_Port_Index_B,
     .MCU_Pin.Pin = GPIO_Pin_Index_5,
     .MCU_Pin.Direction = GPIO_Dircetion_Input,
@@ -4933,7 +4936,7 @@ Interrupt_RBx_t RB_5 = {
 };
 
 Interrupt_RBx_t RB_6 = {
-    .EX_InterruptHandler = RB6_isr,
+    .EX_InterruptHandler_High = RB6_isr,
     .MCU_Pin.Port = GPIO_Port_Index_B,
     .MCU_Pin.Pin = GPIO_Pin_Index_6,
     .MCU_Pin.Direction = GPIO_Dircetion_Input,
@@ -4942,7 +4945,7 @@ Interrupt_RBx_t RB_6 = {
 };
 
 Interrupt_RBx_t RB_7 = {
-    .EX_InterruptHandler = RB7_isr,
+    .EX_InterruptHandler_High = RB7_isr,
     .MCU_Pin.Port = GPIO_Port_Index_B,
     .MCU_Pin.Pin = GPIO_Pin_Index_7,
     .MCU_Pin.Direction = GPIO_Dircetion_Input,

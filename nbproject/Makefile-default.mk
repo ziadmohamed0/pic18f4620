@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=App/Main.c Hall/Button/Hall_Button_prog.c Hall/DC_Motor/Hall_Dc_Motor_prog.c Hall/Key_Pad/Hall_Key_Pad_prog.c Hall/LCD/Hall_lcd_prog.c Hall/Led/Hall_Led_prog.c Hall/Relay/Hall_Relay_prog.c Hall/Seven_seg/Hall_Seven_seg_prog.c Hall/Hall_dfs.c Mcal/Mcal_GPIO/Mcal_GPIO_prog.c Mcal/Mcal_interrupt/Mcal_external_interrupt.c Mcal/Mcal_interrupt/Mcal_interrupt_manager.c Mcal/Mcal_interrupt/Mcal_internal_interrupt.c Mcal/Mcal_Device_cfg.c Mcal/Mcal_dfs.c
+SOURCEFILES_QUOTED_IF_SPACED=App/Main.c Hall/Button/Hall_Button_prog.c Hall/DC_Motor/Hall_Dc_Motor_prog.c Hall/Key_Pad/Hall_Key_Pad_prog.c Hall/LCD/Hall_lcd_prog.c Hall/Led/Hall_Led_prog.c Hall/Relay/Hall_Relay_prog.c Hall/Seven_seg/Hall_Seven_seg_prog.c Hall/Hall_dfs.c Mcal/Mcal_GPIO/Mcal_GPIO_prog.c Mcal/Mcal_interrupt/Mcal_external_interrupt.c Mcal/Mcal_interrupt/Mcal_interrupt_manager.c Mcal/Mcal_interrupt/Mcal_internal_interrupt.c Mcal/Mcal_Device_cfg.c Mcal/Mcal_dfs.c Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/App/Main.p1 ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1 ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1 ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1 ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1 ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1 ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1 ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1 ${OBJECTDIR}/Hall/Hall_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1 ${OBJECTDIR}/Mcal/Mcal_dfs.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/App/Main.p1.d ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1.d ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1.d ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1.d ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1.d ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1.d ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1.d ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1.d ${OBJECTDIR}/Hall/Hall_dfs.p1.d ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1.d ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1.d ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/App/Main.p1 ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1 ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1 ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1 ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1 ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1 ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1 ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1 ${OBJECTDIR}/Hall/Hall_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1 ${OBJECTDIR}/Mcal/Mcal_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/App/Main.p1.d ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1.d ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1.d ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1.d ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1.d ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1.d ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1.d ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1.d ${OBJECTDIR}/Hall/Hall_dfs.p1.d ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1.d ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1.d ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1.d ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/App/Main.p1 ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1 ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1 ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1 ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1 ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1 ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1 ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1 ${OBJECTDIR}/Hall/Hall_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1 ${OBJECTDIR}/Mcal/Mcal_dfs.p1
+OBJECTFILES=${OBJECTDIR}/App/Main.p1 ${OBJECTDIR}/Hall/Button/Hall_Button_prog.p1 ${OBJECTDIR}/Hall/DC_Motor/Hall_Dc_Motor_prog.p1 ${OBJECTDIR}/Hall/Key_Pad/Hall_Key_Pad_prog.p1 ${OBJECTDIR}/Hall/LCD/Hall_lcd_prog.p1 ${OBJECTDIR}/Hall/Led/Hall_Led_prog.p1 ${OBJECTDIR}/Hall/Relay/Hall_Relay_prog.p1 ${OBJECTDIR}/Hall/Seven_seg/Hall_Seven_seg_prog.p1 ${OBJECTDIR}/Hall/Hall_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_GPIO/Mcal_GPIO_prog.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_external_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_interrupt_manager.p1 ${OBJECTDIR}/Mcal/Mcal_interrupt/Mcal_internal_interrupt.p1 ${OBJECTDIR}/Mcal/Mcal_Device_cfg.p1 ${OBJECTDIR}/Mcal/Mcal_dfs.p1 ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1
 
 # Source Files
-SOURCEFILES=App/Main.c Hall/Button/Hall_Button_prog.c Hall/DC_Motor/Hall_Dc_Motor_prog.c Hall/Key_Pad/Hall_Key_Pad_prog.c Hall/LCD/Hall_lcd_prog.c Hall/Led/Hall_Led_prog.c Hall/Relay/Hall_Relay_prog.c Hall/Seven_seg/Hall_Seven_seg_prog.c Hall/Hall_dfs.c Mcal/Mcal_GPIO/Mcal_GPIO_prog.c Mcal/Mcal_interrupt/Mcal_external_interrupt.c Mcal/Mcal_interrupt/Mcal_interrupt_manager.c Mcal/Mcal_interrupt/Mcal_internal_interrupt.c Mcal/Mcal_Device_cfg.c Mcal/Mcal_dfs.c
+SOURCEFILES=App/Main.c Hall/Button/Hall_Button_prog.c Hall/DC_Motor/Hall_Dc_Motor_prog.c Hall/Key_Pad/Hall_Key_Pad_prog.c Hall/LCD/Hall_lcd_prog.c Hall/Led/Hall_Led_prog.c Hall/Relay/Hall_Relay_prog.c Hall/Seven_seg/Hall_Seven_seg_prog.c Hall/Hall_dfs.c Mcal/Mcal_GPIO/Mcal_GPIO_prog.c Mcal/Mcal_interrupt/Mcal_external_interrupt.c Mcal/Mcal_interrupt/Mcal_interrupt_manager.c Mcal/Mcal_interrupt/Mcal_internal_interrupt.c Mcal/Mcal_Device_cfg.c Mcal/Mcal_dfs.c Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c
 
 
 
@@ -208,6 +208,14 @@ ${OBJECTDIR}/Mcal/Mcal_dfs.p1: Mcal/Mcal_dfs.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/Mcal/Mcal_dfs.d ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1: Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Mcal/Mcal_EEPROM" 
+	@${RM} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d 
+	@${RM} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1 Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c 
+	@-${MV} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.d ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/App/Main.p1: App/Main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/App" 
@@ -328,6 +336,14 @@ ${OBJECTDIR}/Mcal/Mcal_dfs.p1: Mcal/Mcal_dfs.c  nbproject/Makefile-${CND_CONF}.m
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Mcal/Mcal_dfs.p1 Mcal/Mcal_dfs.c 
 	@-${MV} ${OBJECTDIR}/Mcal/Mcal_dfs.d ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Mcal/Mcal_dfs.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1: Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/Mcal/Mcal_EEPROM" 
+	@${RM} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d 
+	@${RM} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1 Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c 
+	@-${MV} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.d ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

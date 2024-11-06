@@ -4827,7 +4827,8 @@ typedef struct {
 }Interrupt_INTx_t;
 
 typedef struct {
-    void (* EX_InterruptHandler)(void);
+    void (* EX_InterruptHandler_High)(void);
+    void (* EX_InterruptHandler_Low)(void);
     Pin_cfg_t MCU_Pin;
     Interrupt_Priorety_cfg_t Priorety;
 }Interrupt_RBx_t;
@@ -4849,8 +4850,10 @@ Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
-
-void RB4_ISR(void);
+void RB4_ISR(uint8_t copySource);
+void RB5_ISR(uint8_t copySource);
+void RB6_ISR(uint8_t copySource);
+void RB7_ISR(uint8_t copySource);
 # 14 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
 # 33 "Hall/Led/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
