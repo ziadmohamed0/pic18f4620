@@ -13,6 +13,8 @@
 #include "Mcal_interrupt/Mcal_internal_interrupt.h"
 #include "Mcal_interrupt/Mcal_interrupt_manager.h"
 #include "Mcal_GPIO/Mcal_GPIO_init.h"
+#include "Mcal_EEPROM/Mcal_EEPROM_init.h"
+#include "Mcal_ADC/Mcal_ADC_init.h"
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */

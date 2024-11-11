@@ -4855,7 +4855,14 @@ void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
 # 14 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
-# 33 "Hall/Led/../../Mcal/Mcal_dfs.h"
+
+
+# 1 "Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h" 1
+# 36 "Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h"
+Std_Return MCAL_EEPROM_DataWriteByte(uint16_t copybAdd, uint8_t copybData);
+Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
+# 16 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
+# 34 "Hall/Led/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);

@@ -14,6 +14,7 @@ App/../Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h  \
 App/../Hall/Led/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h  \
 App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
 App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
+App/../Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h  \
 App/../Hall/Button/Hall_Button_init.h  \
 App/../Hall/Relay/Hall_Relay_init.h  \
 App/../Hall/DC_Motor/Hall_Dc_Motor_init.h  \

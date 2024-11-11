@@ -32,6 +32,9 @@
         <itemPath>Hall/Hall_dfs.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
+        <logicalFolder name="Mcal_ADC" displayName="Mcal_ADC" projectFiles="true">
+          <itemPath>Mcal/Mcal_ADC/Mcal_ADC_init.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="Mcal_EEPROM" displayName="Mcal_EEPROM" projectFiles="true">
           <itemPath>Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h</itemPath>
         </logicalFolder>
@@ -94,6 +97,9 @@
         <itemPath>Hall/Hall_dfs.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
+        <logicalFolder name="Mcal_ADC" displayName="Mcal_ADC" projectFiles="true">
+          <itemPath>Mcal/Mcal_ADC/Mcal_ADC_prog.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="Mcal_EEPROM" displayName="Mcal_EEPROM" projectFiles="true">
           <itemPath>Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c</itemPath>
         </logicalFolder>

@@ -3,7 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58 App/../Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"47 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"48 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
@@ -34,21 +34,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S280 . DC_MOTOR ]
 "46 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 46: Segement_t Seg1;
-[c E3164 0 1 .. ]
-[n E3164 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
+[c E3170 0 1 .. ]
+[n E3170 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
 "31 App/../Hall/Seven_seg/Hall_Seven_seg_init.h
 [; ;App/../Hall/Seven_seg/Hall_Seven_seg_init.h: 31: typedef struct {
-[s S281 `S273 -> 4 `i `E3164 1 ]
+[s S281 `S273 -> 4 `i `E3170 1 ]
 [n S281 . Segement_Pins SegmentType ]
 "49 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 49: BTN_t BTN1;
-[c E3119 0 1 .. ]
-[n E3119 . BTN_Pressed BTN_Released  ]
-[c E3123 0 1 .. ]
-[n E3123 . BTN_Active_High BTN_Active_Low  ]
+[c E3125 0 1 .. ]
+[n E3125 . BTN_Pressed BTN_Released  ]
+[c E3129 0 1 .. ]
+[n E3129 . BTN_Active_High BTN_Active_Low  ]
 "29 App/../Hall/Button/Hall_Button_init.h
 [; ;App/../Hall/Button/Hall_Button_init.h: 29: typedef struct {
-[s S277 `S273 1 `E3119 1 `E3123 1 ]
+[s S277 `S273 1 `E3125 1 `E3129 1 ]
 [n S277 . BTN_Pin BTN_Status BTN_Connection ]
 "24 App/../Hall/Key_Pad/Hall_Key_Pad_init.h
 [; ;App/../Hall/Key_Pad/Hall_Key_Pad_init.h: 24: typedef struct {
@@ -63,6 +63,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S284 `S273 1 `S273 1 `S273 -> 8 `i ]
 [n S284 . LCD_rs LCD_en LCD_D ]
 [p mainexit ]
+"36 App/../Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h
+[; ;App/../Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h: 36: Std_Return MCAL_EEPROM_DataWriteByte(uint16_t copybAdd, uint8_t copybData);
+[v _MCAL_EEPROM_DataWriteByte `(uc ~T0 @X0 0 ef2`us`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -474,19 +477,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"47 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"48 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
-"48
-[v _EX_INT1 `S274 ~T0 @X0 1 e ]
 "49
+[v _EX_INT1 `S274 ~T0 @X0 1 e ]
+"50
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
-"52
-[v _RB_4 `S275 ~T0 @X0 1 e ]
 "53
-[v _RB_5 `S275 ~T0 @X0 1 e ]
+[v _RB_4 `S275 ~T0 @X0 1 e ]
 "54
-[v _RB_6 `S275 ~T0 @X0 1 e ]
+[v _RB_5 `S275 ~T0 @X0 1 e ]
 "55
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+"56
 [v _RB_7 `S275 ~T0 @X0 1 e ]
 "22 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 22: uint8_t *RetValue_KeyPad = ((void*)0);
@@ -538,86 +541,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "10
-[; ;App/Main.c: 10:     while(1) {
+[; ;App/Main.c: 10:     MCAL_EEPROM_DataWriteByte(0x3ff, 9);
+[e ( _MCAL_EEPROM_DataWriteByte (2 , -> -> 1023 `i `us -> -> 9 `i `uc ]
+"11
+[; ;App/Main.c: 11:     while(1) {
 [e :U 287 ]
 {
-"12
-[; ;App/Main.c: 12:     }
+"13
+[; ;App/Main.c: 13:     }
 }
 [e :U 286 ]
 [e $U 287  ]
 [e :U 288 ]
-"13
-[; ;App/Main.c: 13: }
+"14
+[; ;App/Main.c: 14: }
 [e :UE 285 ]
 }
-"19
-[; ;App/Main.c: 19: void INT0_isr(void) {
+"20
+[; ;App/Main.c: 20: void INT0_isr(void) {
 [v _INT0_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT0_isr ]
 [f ]
-"22
-[; ;App/Main.c: 22: }
+"23
+[; ;App/Main.c: 23: }
 [e :UE 289 ]
 }
-"24
-[; ;App/Main.c: 24: void INT1_isr(void) {
+"25
+[; ;App/Main.c: 25: void INT1_isr(void) {
 [v _INT1_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT1_isr ]
 [f ]
-"27
-[; ;App/Main.c: 27: }
+"28
+[; ;App/Main.c: 28: }
 [e :UE 290 ]
 }
-"29
-[; ;App/Main.c: 29: void INT2_isr(void) {
+"30
+[; ;App/Main.c: 30: void INT2_isr(void) {
 [v _INT2_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT2_isr ]
 [f ]
-"32
-[; ;App/Main.c: 32: }
+"33
+[; ;App/Main.c: 33: }
 [e :UE 291 ]
 }
-"35
-[; ;App/Main.c: 35: void RB4_isr(void) {
+"36
+[; ;App/Main.c: 36: void RB4_isr(void) {
 [v _RB4_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB4_isr ]
 [f ]
-"38
-[; ;App/Main.c: 38: }
+"39
+[; ;App/Main.c: 39: }
 [e :UE 292 ]
 }
-"40
-[; ;App/Main.c: 40: void RB5_isr(void) {
+"41
+[; ;App/Main.c: 41: void RB5_isr(void) {
 [v _RB5_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB5_isr ]
 [f ]
-"43
-[; ;App/Main.c: 43: }
+"44
+[; ;App/Main.c: 44: }
 [e :UE 293 ]
 }
-"45
-[; ;App/Main.c: 45: void RB6_isr(void) {
+"46
+[; ;App/Main.c: 46: void RB6_isr(void) {
 [v _RB6_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB6_isr ]
 [f ]
-"48
-[; ;App/Main.c: 48: }
+"49
+[; ;App/Main.c: 49: }
 [e :UE 294 ]
 }
-"50
-[; ;App/Main.c: 50: void RB7_isr(void) {
+"51
+[; ;App/Main.c: 51: void RB7_isr(void) {
 [v _RB7_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB7_isr ]
 [f ]
-"53
-[; ;App/Main.c: 53: }
+"54
+[; ;App/Main.c: 54: }
 [e :UE 295 ]
 }

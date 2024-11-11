@@ -13,6 +13,20 @@
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */
+#define ACCESS_FLASH_MEMORY                         1U
+#define ACCESS_EEPROM_MEMORY                        0U
+
+#define ACCESS_CONFIG_REGISTER                      1U
+#define ACCESS_FLASH_EEPROM_MEMORY                  0U
+
+#define ALLOW_EEPROM_MEMORY                         1U
+#define INHIBITS_EEPROM_MEMORY                      0U
+
+#define INITIATES_EEPROM_WRITE_ERASE                1U
+#define Data_EEPROM_WRITE_ERASE_COMPLETED       `   0U
+
+#define INITIATES_EEPROM_READ                       1U
+
 /* -------------------- Macro End  -------------------- */
 
 /* -------------------- Functions Macro Start -------------------- */

@@ -11,4 +11,5 @@ Hall/Relay/../../Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h  \
 Hall/Relay/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h  \
 Hall/Relay/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h  \
 Hall/Relay/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
-Hall/Relay/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h 
+Hall/Relay/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
+Hall/Relay/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h 
