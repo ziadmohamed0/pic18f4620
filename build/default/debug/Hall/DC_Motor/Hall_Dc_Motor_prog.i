@@ -4859,11 +4859,73 @@ void RB7_ISR(uint8_t copySource);
 
 
 # 1 "Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h" 1
-# 36 "Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h"
+# 39 "Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h"
 Std_Return MCAL_EEPROM_DataWriteByte(uint16_t copybAdd, uint8_t copybData);
 Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
 # 16 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
-# 34 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h"
+
+# 1 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 1
+# 64 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+typedef enum {
+    ADC_CHANAL_AN1 = 0,
+    ADC_CHANAL_AN2,
+    ADC_CHANAL_AN3,
+    ADC_CHANAL_AN4,
+    ADC_CHANAL_AN5,
+    ADC_CHANAL_AN6,
+    ADC_CHANAL_AN7,
+    ADC_CHANAL_AN8,
+    ADC_CHANAL_AN9,
+    ADC_CHANAL_AN10,
+    ADC_CHANAL_AN11,
+    ADC_CHANAL_AN12,
+    ADC_CHANAL_AN13,
+}ADC_chanal_select_t;
+
+typedef enum {
+    ADC_TAD_0 = 0,
+    ADC_TAD_2,
+    ADC_TAD_4,
+    ADC_TAD_6,
+    ADC_TAD_8,
+    ADC_TAD_12,
+    ADC_TAD_16,
+    ADC_TAD_20,
+}ADC_TAD_t;
+
+typedef enum {
+    ADC_CLK_CONVERSION_FOSC_DIV_2 = 0,
+    ADC_CLK_CONVERSION_FOSC_DIV_8,
+    ADC_CLK_CONVERSION_FOSC_DIV_32,
+    ADC_CLK_CONVERSION_FOSC_DIV_FRC,
+    ADC_CLK_CONVERSION_FOSC_DIV_4,
+    ADC_CLK_CONVERSION_FOSC_DIV_16,
+    ADC_CLK_CONVERSION_FOSC_DIV_64,
+}ADC_Conversion_CLK_t;
+
+typedef struct {
+    void(* ADCinterruptHandler)(void);
+    ADC_TAD_t AcquisitionClock;
+    ADC_Conversion_CLK_t ConversionClock;
+    ADC_chanal_select_t AdcChanall;
+    uint8_t VolatageRefrance :1;
+    uint8_t ResultFormat :1;
+    uint8_t ADC_Reserved :6;
+}ADC_t;
+
+typedef uint16_t ADC_Resulte_t;
+
+
+
+Std_Return MCAL_ADC_init(const ADC_t *copyADC);
+Std_Return MCAL_ADC_Deinit(const ADC_t *copyADC);
+Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
+Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
+Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
+Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
+Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+# 17 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 35 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);

@@ -12,4 +12,5 @@ Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h  \
 Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h  \
 Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
 Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
-Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h 
+Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h  \
+Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h 

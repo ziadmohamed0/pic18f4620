@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -18,20 +18,20 @@ INTERRUPT_PRIORETY_LOW 0
 INTERRUPT_PRIORETY_HIGH 1
 ]
 "46 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Hall/Hall_dfs.h
-[e E3170 . `uc
+[e E3234 . `uc
 SEGEMENT_COMMON_ANODE 0
 SEGEMENT_COMMON_CATHOD 1
 ]
 "49
-[e E3125 . `uc
+[e E3189 . `uc
 BTN_Pressed 0
 BTN_Released 1
 ]
-[e E3129 . `uc
+[e E3193 . `uc
 BTN_Active_High 0
 BTN_Active_Low 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -46,11 +46,11 @@ INTERRUPT_PRIORETY_LOW 0
 INTERRUPT_PRIORETY_HIGH 1
 ]
 "12 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Hall/Button/Hall_Button_prog.c
-[e E3108 . `uc
+[e E3172 . `uc
 BTN_Pressed 0
 BTN_Released 1
 ]
-[e E3112 . `uc
+[e E3176 . `uc
 BTN_Active_High 0
 BTN_Active_Low 1
 ]
@@ -59,7 +59,7 @@ BTN_Active_Low 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -83,7 +83,7 @@ GPIO_Dircetion_Output 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -102,7 +102,7 @@ INTERRUPT_PRIORETY_HIGH 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"47 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -121,7 +121,7 @@ INTERRUPT_PRIORETY_HIGH 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -145,7 +145,7 @@ GPIO_Dircetion_Output 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -169,7 +169,7 @@ GPIO_Dircetion_Output 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -184,7 +184,7 @@ INTERRUPT_PRIORETY_LOW 0
 INTERRUPT_PRIORETY_HIGH 1
 ]
 "11 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Hall/Seven_seg/Hall_Seven_seg_prog.c
-[e E3108 . `uc
+[e E3172 . `uc
 SEGEMENT_COMMON_ANODE 0
 SEGEMENT_COMMON_CATHOD 1
 ]
@@ -193,7 +193,7 @@ SEGEMENT_COMMON_CATHOD 1
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620/Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -208,16 +208,16 @@ INTERRUPT_PRIORETY_LOW 0
 INTERRUPT_PRIORETY_HIGH 1
 ]
 "46 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Hall/Hall_dfs.h
-[e E3170 . `uc
+[e E3234 . `uc
 SEGEMENT_COMMON_ANODE 0
 SEGEMENT_COMMON_CATHOD 1
 ]
 "49
-[e E3125 . `uc
+[e E3189 . `uc
 BTN_Pressed 0
 BTN_Released 1
 ]
-[e E3129 . `uc
+[e E3193 . `uc
 BTN_Active_High 0
 BTN_Active_Low 1
 ]
@@ -296,7 +296,7 @@ GPIO_Pin_Index_7 7
 GPIO_Status_Low 0
 GPIO_Status_High 1
 ]
-"48 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_dfs.h
+"49 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_dfs.h
 [e E3044 . `uc
 INTERRUPT_EDGE_FALLING 0
 INTERRUPT_EDGE_RISING 1
@@ -335,6 +335,41 @@ GPIO_Dircetion_Output 1
 [e E2982 . `uc
 GPIO_Status_Low 0
 GPIO_Status_High 1
+]
+"16 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_ADC/Mcal_ADC_prog.c
+[e E3059 . `uc
+ADC_TAD_0 0
+ADC_TAD_2 1
+ADC_TAD_4 2
+ADC_TAD_6 3
+ADC_TAD_8 4
+ADC_TAD_12 5
+ADC_TAD_16 6
+ADC_TAD_20 7
+]
+[e E3069 . `uc
+ADC_CLK_CONVERSION_FOSC_DIV_2 0
+ADC_CLK_CONVERSION_FOSC_DIV_8 1
+ADC_CLK_CONVERSION_FOSC_DIV_32 2
+ADC_CLK_CONVERSION_FOSC_DIV_FRC 3
+ADC_CLK_CONVERSION_FOSC_DIV_4 4
+ADC_CLK_CONVERSION_FOSC_DIV_16 5
+ADC_CLK_CONVERSION_FOSC_DIV_64 6
+]
+[e E3044 . `uc
+ADC_CHANAL_AN1 0
+ADC_CHANAL_AN2 1
+ADC_CHANAL_AN3 2
+ADC_CHANAL_AN4 3
+ADC_CHANAL_AN5 4
+ADC_CHANAL_AN6 5
+ADC_CHANAL_AN7 6
+ADC_CHANAL_AN8 7
+ADC_CHANAL_AN9 8
+ADC_CHANAL_AN10 9
+ADC_CHANAL_AN11 10
+ADC_CHANAL_AN12 11
+ADC_CHANAL_AN13 12
 ]
 "9 E:\Tracks\Embedded\PIC\Driver\pic18f4620\App/Main.c
 [v _main main `(v  1 e 1 0 ]
@@ -398,8 +433,12 @@ GPIO_Status_High 1
 [v _LCD_sendEnableSignal4Bits LCD_sendEnableSignal4Bits `(uc  1 s 1 LCD_sendEnableSignal4Bits ]
 "299
 [v _LCD_sendEnableSignal8Bits LCD_sendEnableSignal8Bits `(uc  1 s 1 LCD_sendEnableSignal8Bits ]
-"11 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c
-[v _MCAL_EEPROM_DataWriteByte MCAL_EEPROM_DataWriteByte `(uc  1 e 1 0 ]
+"121 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_ADC/Mcal_ADC_prog.c
+[v _ADC_input_chanal_configuration ADC_input_chanal_configuration `T(v  1 s 1 ADC_input_chanal_configuration ]
+"139
+[v _ADC_SelectResultFormat ADC_SelectResultFormat `T(v  1 s 1 ADC_SelectResultFormat ]
+"146
+[v _ADC_VolatgeReferance ADC_VolatgeReferance `T(v  1 s 1 ADC_VolatgeReferance ]
 "11 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_GPIO/Mcal_GPIO_prog.c
 [v _Mcal_GPIO_initPinDirection Mcal_GPIO_initPinDirection `(uc  1 e 1 0 ]
 "117
@@ -448,7 +487,7 @@ GPIO_Status_High 1
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "189
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S1719 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1793 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -458,7 +497,7 @@ GPIO_Status_High 1
 `uc 1 RB7 1 0 :1:7 
 ]
 "230
-[s S1728 . 1 `uc 1 INT0 1 0 :1:0 
+[s S1802 . 1 `uc 1 INT0 1 0 :1:0 
 `uc 1 INT1 1 0 :1:1 
 `uc 1 INT2 1 0 :1:2 
 `uc 1 CCP2 1 0 :1:3 
@@ -467,7 +506,7 @@ GPIO_Status_High 1
 `uc 1 KBI2 1 0 :1:6 
 `uc 1 KBI3 1 0 :1:7 
 ]
-[s S1737 . 1 `uc 1 AN12 1 0 :1:0 
+[s S1811 . 1 `uc 1 AN12 1 0 :1:0 
 `uc 1 AN10 1 0 :1:1 
 `uc 1 AN8 1 0 :1:2 
 `uc 1 AN9 1 0 :1:3 
@@ -476,11 +515,11 @@ GPIO_Status_High 1
 `uc 1 PGC 1 0 :1:6 
 `uc 1 PGD 1 0 :1:7 
 ]
-[s S1746 . 1 `uc 1 . 1 0 :3:0 
+[s S1820 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1749 . 1 `S1719 1 . 1 0 `S1728 1 . 1 0 `S1737 1 . 1 0 `S1746 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1749  1 e 1 @3969 ]
+[u S1823 . 1 `S1793 1 . 1 0 `S1802 1 . 1 0 `S1811 1 . 1 0 `S1820 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1823  1 e 1 @3969 ]
 "360
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
 "535
@@ -507,7 +546,7 @@ GPIO_Status_High 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2268
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S1921 . 1 `uc 1 RD 1 0 :1:0 
+[s S1205 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -517,11 +556,11 @@ GPIO_Status_High 1
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "2947
-[s S1930 . 1 `uc 1 . 1 0 :6:0 
+[s S1214 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 EEFS 1 0 :1:6 
 ]
-[u S1933 . 1 `S1921 1 . 1 0 `S1930 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1933  1 e 1 @4006 ]
+[u S1217 . 1 `S1205 1 . 1 0 `S1214 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1217  1 e 1 @4006 ]
 "2992
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "2999
@@ -530,7 +569,72 @@ GPIO_Status_High 1
 [v _EEADR EEADR `VEuc  1 e 1 @4009 ]
 "3013
 [v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
-[s S1378 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S2073 . 1 `uc 1 ADCS 1 0 :3:0 
+`uc 1 ACQT 1 0 :3:3 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"4394
+[s S2078 . 1 `uc 1 ADCS0 1 0 :1:0 
+`uc 1 ADCS1 1 0 :1:1 
+`uc 1 ADCS2 1 0 :1:2 
+`uc 1 ACQT0 1 0 :1:3 
+`uc 1 ACQT1 1 0 :1:4 
+`uc 1 ACQT2 1 0 :1:5 
+]
+[u S2085 . 1 `S2073 1 . 1 0 `S2078 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES2085  1 e 1 @4032 ]
+[s S2122 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 VCFG 1 0 :2:4 
+]
+"4469
+[s S2125 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+]
+[s S2132 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CHSN3 1 0 :1:3 
+`uc 1 VCFG01 1 0 :1:4 
+`uc 1 VCFG11 1 0 :1:5 
+]
+[u S2137 . 1 `S2122 1 . 1 0 `S2125 1 . 1 0 `S2132 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES2137  1 e 1 @4033 ]
+[s S2005 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"4573
+[s S2008 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S2012 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S2019 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S2022 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S2025 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S2028 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[s S2031 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S2034 . 1 `S2005 1 . 1 0 `S2008 1 . 1 0 `S2012 1 . 1 0 `S2019 1 . 1 0 `S2022 1 . 1 0 `S2025 1 . 1 0 `S2028 1 . 1 0 `S2031 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2034  1 e 1 @4034 ]
+[s S1460 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -540,7 +644,7 @@ GPIO_Status_High 1
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "6239
-[s S1387 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S1469 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -549,13 +653,13 @@ GPIO_Status_High 1
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S1396 . 1 `S1378 1 . 1 0 `S1387 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES1396  1 e 1 @4080 ]
-[s S1445 . 1 `uc 1 . 1 0 :7:0 
+[u S1478 . 1 `S1460 1 . 1 0 `S1469 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES1478  1 e 1 @4080 ]
+[s S1527 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "6329
-[s S1448 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S1530 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -564,12 +668,12 @@ GPIO_Status_High 1
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S1457 . 1 `uc 1 . 1 0 :7:0 
+[s S1539 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S1460 . 1 `S1445 1 . 1 0 `S1448 1 . 1 0 `S1457 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES1460  1 e 1 @4081 ]
-[s S1328 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S1542 . 1 `S1527 1 . 1 0 `S1530 1 . 1 0 `S1539 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES1542  1 e 1 @4081 ]
+[s S1153 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -579,7 +683,7 @@ GPIO_Status_High 1
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "6406
-[s S1337 . 1 `uc 1 . 1 0 :1:0 
+[s S1162 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -588,12 +692,12 @@ GPIO_Status_High 1
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S1346 . 1 `uc 1 . 1 0 :6:0 
+[s S1171 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S1350 . 1 `S1328 1 . 1 0 `S1337 1 . 1 0 `S1346 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES1350  1 e 1 @4082 ]
+[u S1175 . 1 `S1153 1 . 1 0 `S1162 1 . 1 0 `S1171 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1175  1 e 1 @4082 ]
 [s S25 . 1 `uc 1 Port 1 0 :3:0 
 `uc 1 Pin 1 0 :3:3 
 `uc 1 Direction 1 0 :1:6 
@@ -639,16 +743,6 @@ GPIO_Status_High 1
 [v _main main `(v  1 e 1 0 ]
 {
 "14
-} 0
-"11 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_EEPROM/Mcal_EEPROM_prog.c
-[v _MCAL_EEPROM_DataWriteByte MCAL_EEPROM_DataWriteByte `(uc  1 e 1 0 ]
-{
-"15
-[v MCAL_EEPROM_DataWriteByte@Globale_interrupt_Status Globale_interrupt_Status `uc  1 a 1 6 ]
-"11
-[v MCAL_EEPROM_DataWriteByte@copybAdd copybAdd `us  1 p 2 3 ]
-[v MCAL_EEPROM_DataWriteByte@copybData copybData `uc  1 p 1 5 ]
-"51
 } 0
 "35 E:\Tracks\Embedded\PIC\Driver\pic18f4620\Mcal/Mcal_interrupt/Mcal_interrupt_manager.c
 [v _MCAL_InterruptManager MCAL_InterruptManager `IIH(v  1 e 1 0 ]
