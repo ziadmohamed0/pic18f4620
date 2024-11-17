@@ -4811,6 +4811,7 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
+void ADC_ISR();
 # 9 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c" 2
 
 
@@ -4876,5 +4877,12 @@ void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
         RB7_Flag = 1;
         RB7_ISR(1);
     }
+
+
+
+    if((1 == PIE1bits.ADIE) && (1 == PIR1bits.ADIF)) {
+        ADC_ISR();
+    }
+
 
 }

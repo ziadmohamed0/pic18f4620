@@ -14,7 +14,10 @@
 /* -------------------- Macro Start -------------------- */
 #define INTERRUPT_ENABLE_FUTURE                             1     
 #define INTERRUPT_DISABLE_FUTURE                            0
+#define ADC_INTERRUPT_FUTUR_ENABLE                          1
+#define ADC_INTERRUPT_FUTUR_DISABLE                         0
 
+#define ADC_INTERRUPT_FUTUR                                 ADC_INTERRUPT_FUTUR_ENABLE
 #define INTERRUPT_PRIORETY_LEVELS_ENABLE                    INTERRUPT_DISABLE_FUTURE
 #define EXTERNAL_INTERRUPT_INTx_ENABLE_FUTURE               INTERRUPT_ENABLE_FUTURE
 #define EXTERNAL_INTERRUPT_OnChange_ENABLE_FUTURE           INTERRUPT_ENABLE_FUTURE

@@ -3,7 +3,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58 App/../Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"49 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"50 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
@@ -20,6 +20,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
 [s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
 [n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
+[v F3131 `(v ~T0 @X0 0 tf ]
+"67 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+[c E3110 0 1 2 3 4 5 6 7 .. ]
+[n E3110 . ADC_TAD_0 ADC_TAD_2 ADC_TAD_4 ADC_TAD_6 ADC_TAD_8 ADC_TAD_12 ADC_TAD_16 ADC_TAD_20  ]
+[c E3120 0 1 2 3 4 5 6 .. ]
+[n E3120 . ADC_CLK_CONVERSION_FOSC_DIV_2 ADC_CLK_CONVERSION_FOSC_DIV_8 ADC_CLK_CONVERSION_FOSC_DIV_32 ADC_CLK_CONVERSION_FOSC_DIV_FRC ADC_CLK_CONVERSION_FOSC_DIV_4 ADC_CLK_CONVERSION_FOSC_DIV_16 ADC_CLK_CONVERSION_FOSC_DIV_64  ]
+[c E3095 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3095 . ADC_CHANAL_AN1 ADC_CHANAL_AN2 ADC_CHANAL_AN3 ADC_CHANAL_AN4 ADC_CHANAL_AN5 ADC_CHANAL_AN6 ADC_CHANAL_AN7 ADC_CHANAL_AN8 ADC_CHANAL_AN9 ADC_CHANAL_AN10 ADC_CHANAL_AN11 ADC_CHANAL_AN12 ADC_CHANAL_AN13  ]
+"106 App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 106: typedef struct {
+[s S276 `*F3131 1 `E3040 1 `E3110 1 `E3120 1 `E3095 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S276 . ADCinterruptHandler Priorety AcquisitionClock ConversionClock AdcChanall VolatageRefrance ResultFormat ADC_Reserved ]
 "27 App/../Hall/Led/Hall_Led_init.h
 [; ;App/../Hall/Led/Hall_Led_init.h: 27: typedef struct {
 [s S277 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
@@ -34,21 +46,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S281 . DC_MOTOR ]
 "46 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 46: Segement_t Seg1;
-[c E3234 0 1 .. ]
-[n E3234 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
+[c E3248 0 1 .. ]
+[n E3248 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
 "31 App/../Hall/Seven_seg/Hall_Seven_seg_init.h
 [; ;App/../Hall/Seven_seg/Hall_Seven_seg_init.h: 31: typedef struct {
-[s S282 `S273 -> 4 `i `E3234 1 ]
+[s S282 `S273 -> 4 `i `E3248 1 ]
 [n S282 . Segement_Pins SegmentType ]
 "49 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 49: BTN_t BTN1;
-[c E3189 0 1 .. ]
-[n E3189 . BTN_Pressed BTN_Released  ]
-[c E3193 0 1 .. ]
-[n E3193 . BTN_Active_High BTN_Active_Low  ]
+[c E3203 0 1 .. ]
+[n E3203 . BTN_Pressed BTN_Released  ]
+[c E3207 0 1 .. ]
+[n E3207 . BTN_Active_High BTN_Active_Low  ]
 "29 App/../Hall/Button/Hall_Button_init.h
 [; ;App/../Hall/Button/Hall_Button_init.h: 29: typedef struct {
-[s S278 `S273 1 `E3189 1 `E3193 1 ]
+[s S278 `S273 1 `E3203 1 `E3207 1 ]
 [n S278 . BTN_Pin BTN_Status BTN_Connection ]
 "24 App/../Hall/Key_Pad/Hall_Key_Pad_init.h
 [; ;App/../Hall/Key_Pad/Hall_Key_Pad_init.h: 24: typedef struct {
@@ -63,6 +75,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S285 `S273 1 `S273 1 `S273 -> 8 `i ]
 [n S285 . LCD_rs LCD_en LCD_D ]
 [p mainexit ]
+"125 App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 125: Std_Return MCAL_ADC_init(const ADC_t *copyADC);
+[v _MCAL_ADC_init `(uc ~T0 @X0 0 ef1`*CS276 ]
+"57 App/../Hall/LCD/Hall_lcd_init.h
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 57: Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD);
+[v _HALL_LCD_4bit_init `(uc ~T0 @X0 0 ef1`*CS284 ]
+"62
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 62: Std_Return HALL_LCD_4bit_sendSTRPos(const LCD_4Bit_t* copyLCD, uint8_t copyRow, uint8_t copyColumn, uint8_t *copyData);
+[v _HALL_LCD_4bit_sendSTRPos `(uc ~T0 @X0 0 ef4`*CS284`uc`uc`*uc ]
+"132 App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 132: Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
+[v _MCAL_ADC_startConversion_Interrupt `(uc ~T0 @X0 0 ef2`*CS276`E3095 ]
+"75 App/../Hall/LCD/Hall_lcd_init.h
+[; ;App/../Hall/LCD/Hall_lcd_init.h: 75: Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR);
+[v _HALL_LCD_convertU16toSTR `(uc ~T0 @X0 0 ef2`us`*uc ]
+"130 App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 130: Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
+[v _MCAL_ADC_getConversionResult `(uc ~T0 @X0 0 ef2`*CS276`*us ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -474,20 +504,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"49 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"50 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
-"50
-[v _EX_INT1 `S274 ~T0 @X0 1 e ]
 "51
+[v _EX_INT1 `S274 ~T0 @X0 1 e ]
+"52
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
-"54
-[v _RB_4 `S275 ~T0 @X0 1 e ]
 "55
-[v _RB_5 `S275 ~T0 @X0 1 e ]
+[v _RB_4 `S275 ~T0 @X0 1 e ]
 "56
-[v _RB_6 `S275 ~T0 @X0 1 e ]
+[v _RB_5 `S275 ~T0 @X0 1 e ]
 "57
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+"58
 [v _RB_7 `S275 ~T0 @X0 1 e ]
+"61
+[v _retADC1 `us ~T0 @X0 1 e ]
+"62
+[v _retADC2 `us ~T0 @X0 1 e ]
+"63
+[v _retADC3 `us ~T0 @X0 1 e ]
+"64
+[v _retADC4 `us ~T0 @X0 1 e ]
+"67
+[v _adc1 `S276 ~T0 @X0 1 e ]
+"68
+[v _adc2 `S276 ~T0 @X0 1 e ]
+"69
+[v _adc3 `S276 ~T0 @X0 1 e ]
+"70
+[v _adc4 `S276 ~T0 @X0 1 e ]
 "22 App/../Hall/Hall_dfs.h
 [; ;App/../Hall/Hall_dfs.h: 22: uint8_t *RetValue_KeyPad = ((void*)0);
 [v _RetValue_KeyPad `*uc ~T0 @X0 1 e ]
@@ -530,94 +576,163 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;App/../Hall/Hall_dfs.h: 56: LCD_8Bit_t LCD1_8Bit;
 [v _LCD1_8Bit `S285 ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
 "9 App/Main.c
-[; ;App/Main.c: 9: void main(void) {
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;App/Main.c: 9: uint16_t retLCD_Num[6];
+[v _retLCD_Num `us ~T0 @X0 -> 6 `i e ]
+"10
+[; ;App/Main.c: 10: uint16_t retValu1 = 0;
+[v _retValu1 `us ~T0 @X0 1 e ]
+[i _retValu1
+-> -> 0 `i `us
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"12
+[; ;App/Main.c: 12: int main(void) {
+[v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"11
-[; ;App/Main.c: 11:     while(1) {
+"14
+[; ;App/Main.c: 14:     MCAL_ADC_init(&adc1);
+[e ( _MCAL_ADC_init (1 -> &U _adc1 `*CS276 ]
+"15
+[; ;App/Main.c: 15:     MCAL_ADC_init(&adc2);
+[e ( _MCAL_ADC_init (1 -> &U _adc2 `*CS276 ]
+"16
+[; ;App/Main.c: 16:     MCAL_ADC_init(&adc3);
+[e ( _MCAL_ADC_init (1 -> &U _adc3 `*CS276 ]
+"17
+[; ;App/Main.c: 17:     MCAL_ADC_init(&adc4);
+[e ( _MCAL_ADC_init (1 -> &U _adc4 `*CS276 ]
+"18
+[; ;App/Main.c: 18:     HALL_LCD_4bit_init(&LCD1_4Bit);
+[e ( _HALL_LCD_4bit_init (1 -> &U _LCD1_4Bit `*CS284 ]
+"19
+[; ;App/Main.c: 19:     HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 1, 1, "POT1: ");
+[e ( _HALL_LCD_4bit_sendSTRPos (4 , , , -> &U _LCD1_4Bit `*CS284 -> -> 1 `i `uc -> -> 1 `i `uc :s 1C ]
+"20
+[; ;App/Main.c: 20:     HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 2, 1, "POT2: ");
+[e ( _HALL_LCD_4bit_sendSTRPos (4 , , , -> &U _LCD1_4Bit `*CS284 -> -> 2 `i `uc -> -> 1 `i `uc :s 2C ]
+"21
+[; ;App/Main.c: 21:     HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 3, 1, "POT3: ");
+[e ( _HALL_LCD_4bit_sendSTRPos (4 , , , -> &U _LCD1_4Bit `*CS284 -> -> 3 `i `uc -> -> 1 `i `uc :s 3C ]
+"22
+[; ;App/Main.c: 22:     HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 4, 1, "POT4: ");
+[e ( _HALL_LCD_4bit_sendSTRPos (4 , , , -> &U _LCD1_4Bit `*CS284 -> -> 4 `i `uc -> -> 1 `i `uc :s 4C ]
+"23
+[; ;App/Main.c: 23:     while(1) {
 [e :U 288 ]
 {
-"13
-[; ;App/Main.c: 13:     }
+"25
+[; ;App/Main.c: 25:         MCAL_ADC_startConversion_Interrupt(&adc1, ADC_CHANAL_AN1);
+[e ( _MCAL_ADC_startConversion_Interrupt (2 , -> &U _adc1 `*CS276 . `E3095 0 ]
+"26
+[; ;App/Main.c: 26:         HALL_LCD_convertU16toSTR(retValu1,&retLCD_Num);
+[e ( _HALL_LCD_convertU16toSTR (2 , _retValu1 -> &U _retLCD_Num `*uc ]
+"27
+[; ;App/Main.c: 27:         HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 1, 7, retLCD_Num);
+[e ( _HALL_LCD_4bit_sendSTRPos (4 , , , -> &U _LCD1_4Bit `*CS284 -> -> 1 `i `uc -> -> 7 `i `uc -> &U _retLCD_Num `*uc ]
+"28
+[; ;App/Main.c: 28:     }
 }
 [e :U 287 ]
 [e $U 288  ]
 [e :U 289 ]
-"14
-[; ;App/Main.c: 14: }
+"29
+[; ;App/Main.c: 29:     return 0;
+[e ) -> 0 `i ]
+[e $UE 286  ]
+"30
+[; ;App/Main.c: 30: }
 [e :UE 286 ]
 }
-"20
-[; ;App/Main.c: 20: void INT0_isr(void) {
+"36
+[; ;App/Main.c: 36: void INT0_isr(void) {
 [v _INT0_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT0_isr ]
 [f ]
-"23
-[; ;App/Main.c: 23: }
+"39
+[; ;App/Main.c: 39: }
 [e :UE 290 ]
 }
-"25
-[; ;App/Main.c: 25: void INT1_isr(void) {
+"41
+[; ;App/Main.c: 41: void INT1_isr(void) {
 [v _INT1_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT1_isr ]
 [f ]
-"28
-[; ;App/Main.c: 28: }
+"44
+[; ;App/Main.c: 44: }
 [e :UE 291 ]
 }
-"30
-[; ;App/Main.c: 30: void INT2_isr(void) {
+"46
+[; ;App/Main.c: 46: void INT2_isr(void) {
 [v _INT2_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _INT2_isr ]
 [f ]
-"33
-[; ;App/Main.c: 33: }
+"49
+[; ;App/Main.c: 49: }
 [e :UE 292 ]
 }
-"36
-[; ;App/Main.c: 36: void RB4_isr(void) {
+"52
+[; ;App/Main.c: 52: void RB4_isr(void) {
 [v _RB4_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB4_isr ]
 [f ]
-"39
-[; ;App/Main.c: 39: }
+"55
+[; ;App/Main.c: 55: }
 [e :UE 293 ]
 }
-"41
-[; ;App/Main.c: 41: void RB5_isr(void) {
+"57
+[; ;App/Main.c: 57: void RB5_isr(void) {
 [v _RB5_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB5_isr ]
 [f ]
-"44
-[; ;App/Main.c: 44: }
+"60
+[; ;App/Main.c: 60: }
 [e :UE 294 ]
 }
-"46
-[; ;App/Main.c: 46: void RB6_isr(void) {
+"62
+[; ;App/Main.c: 62: void RB6_isr(void) {
 [v _RB6_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB6_isr ]
 [f ]
-"49
-[; ;App/Main.c: 49: }
+"65
+[; ;App/Main.c: 65: }
 [e :UE 295 ]
 }
-"51
-[; ;App/Main.c: 51: void RB7_isr(void) {
+"67
+[; ;App/Main.c: 67: void RB7_isr(void) {
 [v _RB7_isr `(v ~T0 @X0 1 ef ]
 {
 [e :U _RB7_isr ]
 [f ]
-"54
-[; ;App/Main.c: 54: }
+"70
+[; ;App/Main.c: 70: }
 [e :UE 296 ]
 }
+"73
+[; ;App/Main.c: 73: void ADC_isr(void) {
+[v _ADC_isr `(v ~T0 @X0 1 ef ]
+{
+[e :U _ADC_isr ]
+[f ]
+"74
+[; ;App/Main.c: 74:     retValu1 = 0;
+[e = _retValu1 -> -> 0 `i `us ]
+"75
+[; ;App/Main.c: 75:     MCAL_ADC_getConversionResult(&adc1, &retValu1);
+[e ( _MCAL_ADC_getConversionResult (2 , -> &U _adc1 `*CS276 &U _retValu1 ]
+"76
+[; ;App/Main.c: 76: }
+[e :UE 297 ]
+}
+[a 4C 80 79 84 52 58 32 0 ]
+[a 3C 80 79 84 51 58 32 0 ]
+[a 2C 80 79 84 50 58 32 0 ]
+[a 1C 80 79 84 49 58 32 0 ]

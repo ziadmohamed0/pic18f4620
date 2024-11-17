@@ -4857,6 +4857,7 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
+void ADC_ISR();
 # 14 "App/../Hall/Led/../../Mcal/Mcal_dfs.h" 2
 
 
@@ -4867,7 +4868,10 @@ Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
 # 16 "App/../Hall/Led/../../Mcal/Mcal_dfs.h" 2
 
 # 1 "App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 1
-# 64 "App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 13 "App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 1 "App/../Hall/Led/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h" 1
+# 13 "App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
+# 69 "App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
 typedef enum {
     ADC_CHANAL_AN1 = 0,
     ADC_CHANAL_AN2,
@@ -4906,7 +4910,12 @@ typedef enum {
 }ADC_Conversion_CLK_t;
 
 typedef struct {
+
     void(* ADCinterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+
+
     ADC_TAD_t AcquisitionClock;
     ADC_Conversion_CLK_t ConversionClock;
     ADC_chanal_select_t AdcChanall;
@@ -4925,9 +4934,10 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
 Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
 Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 # 17 "App/../Hall/Led/../../Mcal/Mcal_dfs.h" 2
-# 35 "App/../Hall/Led/../../Mcal/Mcal_dfs.h"
+# 34 "App/../Hall/Led/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
@@ -4938,6 +4948,8 @@ void RB5_isr(void);
 void RB6_isr(void);
 void RB7_isr(void);
 
+
+void ADC_isr(void);
 
 
 
@@ -4951,6 +4963,18 @@ Interrupt_RBx_t RB_4;
 Interrupt_RBx_t RB_5;
 Interrupt_RBx_t RB_6;
 Interrupt_RBx_t RB_7;
+
+
+uint16_t retADC1;
+uint16_t retADC2;
+uint16_t retADC3;
+uint16_t retADC4;
+
+
+ADC_t adc1;
+ADC_t adc2;
+ADC_t adc3;
+ADC_t adc4;
 # 12 "App/../Hall/Led/Hall_Led_init.h" 2
 # 22 "App/../Hall/Led/Hall_Led_init.h"
 typedef enum {
@@ -5133,11 +5157,27 @@ LCD_8Bit_t LCD1_8Bit;
 # 7 "App/Main.c" 2
 
 
-void main(void) {
+uint16_t retLCD_Num[6];
+uint16_t retValu1 = 0;
 
+int main(void) {
+
+    MCAL_ADC_init(&adc1);
+    MCAL_ADC_init(&adc2);
+    MCAL_ADC_init(&adc3);
+    MCAL_ADC_init(&adc4);
+    HALL_LCD_4bit_init(&LCD1_4Bit);
+    HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 1, 1, "POT1: ");
+    HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 2, 1, "POT2: ");
+    HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 3, 1, "POT3: ");
+    HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 4, 1, "POT4: ");
     while(1) {
 
+        MCAL_ADC_startConversion_Interrupt(&adc1, ADC_CHANAL_AN1);
+        HALL_LCD_convertU16toSTR(retValu1,&retLCD_Num);
+        HALL_LCD_4bit_sendSTRPos(&LCD1_4Bit, 1, 7, retLCD_Num);
     }
+    return 0;
 }
 
 
@@ -5178,4 +5218,10 @@ void RB6_isr(void) {
 void RB7_isr(void) {
 
 
+}
+
+
+void ADC_isr(void) {
+    retValu1 = 0;
+    MCAL_ADC_getConversionResult(&adc1, &retValu1);
 }

@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58 Hall/Relay/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"49 Hall/Relay/../../Mcal/Mcal_dfs.h
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 49: Interrupt_INTx_t EX_INT0;
+"50 Hall/Relay/../../Mcal/Mcal_dfs.h
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT0;
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
@@ -21,6 +21,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Relay/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
 [s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
 [n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
+[v F3131 `(v ~T0 @X0 0 tf ]
+"67 Hall/Relay/../../Mcal/Mcal_dfs.h
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 67: ADC_t adc1;
+[c E3110 0 1 2 3 4 5 6 7 .. ]
+[n E3110 . ADC_TAD_0 ADC_TAD_2 ADC_TAD_4 ADC_TAD_6 ADC_TAD_8 ADC_TAD_12 ADC_TAD_16 ADC_TAD_20  ]
+[c E3120 0 1 2 3 4 5 6 .. ]
+[n E3120 . ADC_CLK_CONVERSION_FOSC_DIV_2 ADC_CLK_CONVERSION_FOSC_DIV_8 ADC_CLK_CONVERSION_FOSC_DIV_32 ADC_CLK_CONVERSION_FOSC_DIV_FRC ADC_CLK_CONVERSION_FOSC_DIV_4 ADC_CLK_CONVERSION_FOSC_DIV_16 ADC_CLK_CONVERSION_FOSC_DIV_64  ]
+[c E3095 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3095 . ADC_CHANAL_AN1 ADC_CHANAL_AN2 ADC_CHANAL_AN3 ADC_CHANAL_AN4 ADC_CHANAL_AN5 ADC_CHANAL_AN6 ADC_CHANAL_AN7 ADC_CHANAL_AN8 ADC_CHANAL_AN9 ADC_CHANAL_AN10 ADC_CHANAL_AN11 ADC_CHANAL_AN12 ADC_CHANAL_AN13  ]
+"106 Hall/Relay/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;Hall/Relay/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 106: typedef struct {
+[s S276 `*F3131 1 `E3040 1 `E3110 1 `E3120 1 `E3095 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S276 . ADCinterruptHandler Priorety AcquisitionClock ConversionClock AdcChanall VolatageRefrance ResultFormat ADC_Reserved ]
 "24 Hall/Relay/Hall_Relay_init.h
 [; ;Hall/Relay/Hall_Relay_init.h: 24: typedef struct {
 [s S277 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
@@ -448,27 +461,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"49 Hall/Relay/../../Mcal/Mcal_dfs.h
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 49: Interrupt_INTx_t EX_INT0;
+"50 Hall/Relay/../../Mcal/Mcal_dfs.h
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT0;
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
-"50
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT1;
-[v _EX_INT1 `S274 ~T0 @X0 1 e ]
 "51
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT2;
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT1;
+[v _EX_INT1 `S274 ~T0 @X0 1 e ]
+"52
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 52: Interrupt_INTx_t EX_INT2;
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
-"54
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 54: Interrupt_RBx_t RB_4;
-[v _RB_4 `S275 ~T0 @X0 1 e ]
 "55
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_5;
-[v _RB_5 `S275 ~T0 @X0 1 e ]
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_4;
+[v _RB_4 `S275 ~T0 @X0 1 e ]
 "56
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 56: Interrupt_RBx_t RB_6;
-[v _RB_6 `S275 ~T0 @X0 1 e ]
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 56: Interrupt_RBx_t RB_5;
+[v _RB_5 `S275 ~T0 @X0 1 e ]
 "57
-[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 57: Interrupt_RBx_t RB_7;
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 57: Interrupt_RBx_t RB_6;
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+"58
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 58: Interrupt_RBx_t RB_7;
 [v _RB_7 `S275 ~T0 @X0 1 e ]
+"61
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 61: uint16_t retADC1;
+[v _retADC1 `us ~T0 @X0 1 e ]
+"62
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 62: uint16_t retADC2;
+[v _retADC2 `us ~T0 @X0 1 e ]
+"63
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 63: uint16_t retADC3;
+[v _retADC3 `us ~T0 @X0 1 e ]
+"64
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 64: uint16_t retADC4;
+[v _retADC4 `us ~T0 @X0 1 e ]
+"67
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 67: ADC_t adc1;
+[v _adc1 `S276 ~T0 @X0 1 e ]
+"68
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 68: ADC_t adc2;
+[v _adc2 `S276 ~T0 @X0 1 e ]
+"69
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 69: ADC_t adc3;
+[v _adc3 `S276 ~T0 @X0 1 e ]
+"70
+[; ;Hall/Relay/../../Mcal/Mcal_dfs.h: 70: ADC_t adc4;
+[v _adc4 `S276 ~T0 @X0 1 e ]
 "12 Hall/Relay/Hall_Relay_prog.c
 [; ;Hall/Relay/Hall_Relay_prog.c: 12: Std_Return HALL_Relay_init(const Relay_t* copyRelay) {
 [v _HALL_Relay_init `(uc ~T0 @X0 1 ef1`*CS277 ]
@@ -495,8 +532,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Relay/Hall_Relay_prog.c: 17:     else {
 [e :U 279 ]
 {
-[v F3186 `S273 ~T0 @X0 1 s ]
-[i F3186
+[v F3200 `S273 ~T0 @X0 1 s ]
+[i F3200
 :U ..
 :U ..
 "18
@@ -509,7 +546,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objPin `S273 ~T0 @X0 1 a ]
-[e = _objPin F3186 ]
+[e = _objPin F3200 ]
 [e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
 "24
 [; ;Hall/Relay/Hall_Relay_prog.c: 24:         MCAL_GPIO_init(&objPin);
@@ -555,8 +592,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Relay/Hall_Relay_prog.c: 34:     else {
 [e :U 282 ]
 {
-[v F3191 `S273 ~T0 @X0 1 s ]
-[i F3191
+[v F3205 `S273 ~T0 @X0 1 s ]
+[i F3205
 :U ..
 :U ..
 "35
@@ -569,7 +606,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objPin `S273 ~T0 @X0 1 a ]
-[e = _objPin F3191 ]
+[e = _objPin F3205 ]
 [e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
 "41
 [; ;Hall/Relay/Hall_Relay_prog.c: 41:         MCAL_GPIO_writePinStatus(&objPin, GPIO_Status_High);
@@ -615,8 +652,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/Relay/Hall_Relay_prog.c: 51:     else {
 [e :U 285 ]
 {
-[v F3196 `S273 ~T0 @X0 1 s ]
-[i F3196
+[v F3210 `S273 ~T0 @X0 1 s ]
+[i F3210
 :U ..
 :U ..
 "52
@@ -629,7 +666,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _objPin `S273 ~T0 @X0 1 a ]
-[e = _objPin F3196 ]
+[e = _objPin F3210 ]
 [e ; = . _objPin 0 . *U _copyRelay 0 ; = . _objPin 1 . *U _copyRelay 1 ; = . _objPin 2 -> . `E2986 1 `uc = . _objPin 3 . *U _copyRelay 2 ]
 "58
 [; ;Hall/Relay/Hall_Relay_prog.c: 58:         MCAL_GPIO_writePinStatus(&objPin, GPIO_Status_Low);

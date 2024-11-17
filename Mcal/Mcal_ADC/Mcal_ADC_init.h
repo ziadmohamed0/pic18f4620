@@ -10,6 +10,7 @@
 
 /* -------------------- Include Start -------------------- */
 #include "../Mcal_interrupt/Mcal_internal_interrupt.h"
+#include "MCAL_ADC_cfg.h"
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */
@@ -35,6 +36,10 @@
 
 #define ADC_VOLTAGE_REF_ENABLE                              0x01U
 #define ADC_VOLTAGE_REF_DISABLE                             0x00U
+
+#define ADC_CONVERSION_COMPLETED                            1U
+#define ADC_CONVERSION_INPROGRESS                           0U
+
 /* -------------------- Macro End  -------------------- */
 
 /* -------------------- Functions Macro Start -------------------- */
@@ -99,7 +104,12 @@ typedef enum {
 }ADC_Conversion_CLK_t;
 
 typedef struct {
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
     void(* ADCinterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+#elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
+    
+#endif
     ADC_TAD_t               AcquisitionClock;
     ADC_Conversion_CLK_t    ConversionClock;
     ADC_chanal_select_t     AdcChanall;
@@ -118,7 +128,8 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
 Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
 Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 
 /* -------------------- API End -------------------- */
 

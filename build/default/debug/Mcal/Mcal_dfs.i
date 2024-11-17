@@ -4853,6 +4853,7 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
+void ADC_ISR();
 # 14 "Mcal/Mcal_dfs.h" 2
 
 
@@ -4863,7 +4864,10 @@ Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
 # 16 "Mcal/Mcal_dfs.h" 2
 
 # 1 "Mcal/Mcal_ADC/Mcal_ADC_init.h" 1
-# 64 "Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 13 "Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 1 "Mcal/Mcal_ADC/MCAL_ADC_cfg.h" 1
+# 13 "Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
+# 69 "Mcal/Mcal_ADC/Mcal_ADC_init.h"
 typedef enum {
     ADC_CHANAL_AN1 = 0,
     ADC_CHANAL_AN2,
@@ -4902,7 +4906,12 @@ typedef enum {
 }ADC_Conversion_CLK_t;
 
 typedef struct {
+
     void(* ADCinterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+
+
     ADC_TAD_t AcquisitionClock;
     ADC_Conversion_CLK_t ConversionClock;
     ADC_chanal_select_t AdcChanall;
@@ -4921,9 +4930,10 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
 Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
 Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 # 17 "Mcal/Mcal_dfs.h" 2
-# 35 "Mcal/Mcal_dfs.h"
+# 34 "Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
@@ -4934,6 +4944,8 @@ void RB5_isr(void);
 void RB6_isr(void);
 void RB7_isr(void);
 
+
+void ADC_isr(void);
 
 
 
@@ -4947,6 +4959,18 @@ Interrupt_RBx_t RB_4;
 Interrupt_RBx_t RB_5;
 Interrupt_RBx_t RB_6;
 Interrupt_RBx_t RB_7;
+
+
+uint16_t retADC1;
+uint16_t retADC2;
+uint16_t retADC3;
+uint16_t retADC4;
+
+
+ADC_t adc1;
+ADC_t adc2;
+ADC_t adc3;
+ADC_t adc4;
 # 9 "Mcal/Mcal_dfs.c" 2
 
 
@@ -5020,4 +5044,62 @@ Interrupt_RBx_t RB_7 = {
     .MCU_Pin.Direction = GPIO_Dircetion_Input,
     .MCU_Pin.Status = GPIO_Status_Low,
     .Priorety = INTERRUPT_PRIORETY_HIGH,
+};
+
+
+
+ADC_t adc1 = {
+
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety = INTERRUPT_PRIORETY_LOW,
+
+
+
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN1,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = 0x01U,
+    .VolatageRefrance = 0x00U,
+};
+
+ADC_t adc2 = {
+
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety = INTERRUPT_PRIORETY_LOW,
+
+
+
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN2,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = 0x01U,
+    .VolatageRefrance = 0x00U,
+};
+
+ADC_t adc3 = {
+
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety = INTERRUPT_PRIORETY_LOW,
+
+
+
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN3,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = 0x01U,
+    .VolatageRefrance = 0x00U,
+};
+
+ADC_t adc4 = {
+
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety = INTERRUPT_PRIORETY_LOW,
+
+
+
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN4,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = 0x01U,
+    .VolatageRefrance = 0x00U,
 };

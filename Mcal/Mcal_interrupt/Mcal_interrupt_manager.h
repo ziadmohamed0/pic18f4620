@@ -29,6 +29,7 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
+void ADC_ISR();
 /* -------------------- API End -------------------- */
 
 #endif	/* MCAL_INTERRUPT_MANAGER_H */

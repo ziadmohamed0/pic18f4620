@@ -8,4 +8,5 @@ Mcal/Mcal_ADC/../Mcal_interrupt/../Mcal_Compiler.h  \
 Mcal/Mcal_ADC/../Mcal_interrupt/../Mcal_Bit_Math.h  \
 Mcal/Mcal_ADC/../Mcal_interrupt/Mcal_interrupt_gen_cfg.h  \
 Mcal/Mcal_ADC/../Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h  \
-Mcal/Mcal_ADC/../Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h 
+Mcal/Mcal_ADC/../Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h  \
+Mcal/Mcal_ADC/MCAL_ADC_cfg.h 

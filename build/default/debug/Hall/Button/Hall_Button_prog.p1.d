@@ -13,4 +13,5 @@ Hall/Button/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h  \
 Hall/Button/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
 Hall/Button/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
 Hall/Button/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h  \
-Hall/Button/../../Mcal/Mcal_ADC/Mcal_ADC_init.h 
+Hall/Button/../../Mcal/Mcal_ADC/Mcal_ADC_init.h  \
+Hall/Button/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h 

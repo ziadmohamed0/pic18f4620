@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58 Hall/LCD/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"49 Hall/LCD/../../Mcal/Mcal_dfs.h
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 49: Interrupt_INTx_t EX_INT0;
+"50 Hall/LCD/../../Mcal/Mcal_dfs.h
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT0;
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
@@ -21,6 +21,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/LCD/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
 [s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
 [n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
+[v F3131 `(v ~T0 @X0 0 tf ]
+"67 Hall/LCD/../../Mcal/Mcal_dfs.h
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 67: ADC_t adc1;
+[c E3110 0 1 2 3 4 5 6 7 .. ]
+[n E3110 . ADC_TAD_0 ADC_TAD_2 ADC_TAD_4 ADC_TAD_6 ADC_TAD_8 ADC_TAD_12 ADC_TAD_16 ADC_TAD_20  ]
+[c E3120 0 1 2 3 4 5 6 .. ]
+[n E3120 . ADC_CLK_CONVERSION_FOSC_DIV_2 ADC_CLK_CONVERSION_FOSC_DIV_8 ADC_CLK_CONVERSION_FOSC_DIV_32 ADC_CLK_CONVERSION_FOSC_DIV_FRC ADC_CLK_CONVERSION_FOSC_DIV_4 ADC_CLK_CONVERSION_FOSC_DIV_16 ADC_CLK_CONVERSION_FOSC_DIV_64  ]
+[c E3095 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3095 . ADC_CHANAL_AN1 ADC_CHANAL_AN2 ADC_CHANAL_AN3 ADC_CHANAL_AN4 ADC_CHANAL_AN5 ADC_CHANAL_AN6 ADC_CHANAL_AN7 ADC_CHANAL_AN8 ADC_CHANAL_AN9 ADC_CHANAL_AN10 ADC_CHANAL_AN11 ADC_CHANAL_AN12 ADC_CHANAL_AN13  ]
+"106 Hall/LCD/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
+[; ;Hall/LCD/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 106: typedef struct {
+[s S276 `*F3131 1 `E3040 1 `E3110 1 `E3120 1 `E3095 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S276 . ADCinterruptHandler Priorety AcquisitionClock ConversionClock AdcChanall VolatageRefrance ResultFormat ADC_Reserved ]
 "43 Hall/LCD/Hall_lcd_init.h
 [; ;Hall/LCD/Hall_lcd_init.h: 43: typedef struct {
 [s S277 `S273 1 `S273 1 `S273 -> 4 `i ]
@@ -479,27 +492,51 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"49 Hall/LCD/../../Mcal/Mcal_dfs.h
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 49: Interrupt_INTx_t EX_INT0;
+"50 Hall/LCD/../../Mcal/Mcal_dfs.h
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT0;
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
-"50
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 50: Interrupt_INTx_t EX_INT1;
-[v _EX_INT1 `S274 ~T0 @X0 1 e ]
 "51
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT2;
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT1;
+[v _EX_INT1 `S274 ~T0 @X0 1 e ]
+"52
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 52: Interrupt_INTx_t EX_INT2;
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
-"54
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 54: Interrupt_RBx_t RB_4;
-[v _RB_4 `S275 ~T0 @X0 1 e ]
 "55
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_5;
-[v _RB_5 `S275 ~T0 @X0 1 e ]
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 55: Interrupt_RBx_t RB_4;
+[v _RB_4 `S275 ~T0 @X0 1 e ]
 "56
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 56: Interrupt_RBx_t RB_6;
-[v _RB_6 `S275 ~T0 @X0 1 e ]
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 56: Interrupt_RBx_t RB_5;
+[v _RB_5 `S275 ~T0 @X0 1 e ]
 "57
-[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 57: Interrupt_RBx_t RB_7;
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 57: Interrupt_RBx_t RB_6;
+[v _RB_6 `S275 ~T0 @X0 1 e ]
+"58
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 58: Interrupt_RBx_t RB_7;
 [v _RB_7 `S275 ~T0 @X0 1 e ]
+"61
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 61: uint16_t retADC1;
+[v _retADC1 `us ~T0 @X0 1 e ]
+"62
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 62: uint16_t retADC2;
+[v _retADC2 `us ~T0 @X0 1 e ]
+"63
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 63: uint16_t retADC3;
+[v _retADC3 `us ~T0 @X0 1 e ]
+"64
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 64: uint16_t retADC4;
+[v _retADC4 `us ~T0 @X0 1 e ]
+"67
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 67: ADC_t adc1;
+[v _adc1 `S276 ~T0 @X0 1 e ]
+"68
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 68: ADC_t adc2;
+[v _adc2 `S276 ~T0 @X0 1 e ]
+"69
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 69: ADC_t adc3;
+[v _adc3 `S276 ~T0 @X0 1 e ]
+"70
+[; ;Hall/LCD/../../Mcal/Mcal_dfs.h: 70: ADC_t adc4;
+[v _adc4 `S276 ~T0 @X0 1 e ]
 "15 Hall/LCD/Hall_lcd_prog.c
 [; ;Hall/LCD/Hall_lcd_prog.c: 15: Std_Return HALL_LCD_4bit_init(const LCD_4Bit_t* copyLCD) {
 [v _HALL_LCD_4bit_init `(uc ~T0 @X0 1 ef1`*CS277 ]
@@ -1523,177 +1560,210 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Hall/LCD/Hall_lcd_prog.c: 259:     uint8_t RetValue = (Std_Return)0;
 [v _RetValue `uc ~T0 @X0 1 a ]
 [e = _RetValue -> -> 0 `i `uc ]
+[v F3338 `uc ~T0 @X0 -> 6 `i s ]
+[i F3338
+:U ..
 "260
-[; ;Hall/LCD/Hall_lcd_prog.c: 260:     if(copySTR == ((void*)0)) {
+[; ;Hall/LCD/Hall_lcd_prog.c: 260:     uint8_t tempString[6] = {0};
+-> -> 0 `i `uc
+..
+]
+[v _tempString `uc ~T0 @X0 -> 6 `i a ]
+[e = _tempString F3338 ]
+"261
+[; ;Hall/LCD/Hall_lcd_prog.c: 261:     uint8_t DataCounter = 0;
+[v _DataCounter `uc ~T0 @X0 1 a ]
+[e = _DataCounter -> -> 0 `i `uc ]
+"262
+[; ;Hall/LCD/Hall_lcd_prog.c: 262:     if(copySTR == ((void*)0)) {
 [e $ ! == _copySTR -> -> -> 0 `i `*v `*uc 363  ]
 {
-"261
-[; ;Hall/LCD/Hall_lcd_prog.c: 261:         RetValue = (Std_Return)0;
+"263
+[; ;Hall/LCD/Hall_lcd_prog.c: 263:         RetValue = (Std_Return)0;
 [e = _RetValue -> -> 0 `i `uc ]
-"262
-[; ;Hall/LCD/Hall_lcd_prog.c: 262:     }
+"264
+[; ;Hall/LCD/Hall_lcd_prog.c: 264:     }
 }
 [e $U 364  ]
-"263
-[; ;Hall/LCD/Hall_lcd_prog.c: 263:     else {
+"265
+[; ;Hall/LCD/Hall_lcd_prog.c: 265:     else {
 [e :U 363 ]
 {
-"264
-[; ;Hall/LCD/Hall_lcd_prog.c: 264:         memset(copySTR, '\0', 6);
-[e ( _memset (3 , , -> _copySTR `*v -> -> 0 `ui `i -> -> 6 `i `ui ]
-"265
-[; ;Hall/LCD/Hall_lcd_prog.c: 265:         sprintf(copySTR, "%i", copyValue);
-[e ( _sprintf (1 , (. , -> _copySTR `*uc :s 2C -> _copyValue `ui ]
 "266
-[; ;Hall/LCD/Hall_lcd_prog.c: 266:         RetValue = (Std_Return)1;
-[e = _RetValue -> -> 1 `i `uc ]
+[; ;Hall/LCD/Hall_lcd_prog.c: 266:         memset(copySTR, ' ', 5);
+[e ( _memset (3 , , -> _copySTR `*v -> -> 32 `ui `i -> -> 5 `i `ui ]
 "267
-[; ;Hall/LCD/Hall_lcd_prog.c: 267:     }
+[; ;Hall/LCD/Hall_lcd_prog.c: 267:         sprintf(tempString, "%i", copyValue);
+[e ( _sprintf (1 , (. , -> &U _tempString `*uc :s 2C -> _copyValue `ui ]
+"268
+[; ;Hall/LCD/Hall_lcd_prog.c: 268:         while(tempString[DataCounter] != '\0') {
+[e $U 365  ]
+[e :U 366 ]
+{
+"269
+[; ;Hall/LCD/Hall_lcd_prog.c: 269:             copySTR[DataCounter] = tempString[DataCounter];
+[e = *U + _copySTR * -> _DataCounter `ux -> -> # *U _copySTR `ui `ux *U + &U _tempString * -> _DataCounter `ux -> -> # *U &U _tempString `ui `ux ]
+"270
+[; ;Hall/LCD/Hall_lcd_prog.c: 270:             DataCounter++;
+[e ++ _DataCounter -> -> 1 `i `uc ]
+"271
+[; ;Hall/LCD/Hall_lcd_prog.c: 271:         }
+}
+[e :U 365 ]
+"268
+[; ;Hall/LCD/Hall_lcd_prog.c: 268:         while(tempString[DataCounter] != '\0') {
+[e $ != -> *U + &U _tempString * -> _DataCounter `ux -> -> # *U &U _tempString `ui `ux `ui -> 0 `ui 366  ]
+[e :U 367 ]
+"272
+[; ;Hall/LCD/Hall_lcd_prog.c: 272:         RetValue = (Std_Return)1;
+[e = _RetValue -> -> 1 `i `uc ]
+"273
+[; ;Hall/LCD/Hall_lcd_prog.c: 273:     }
 }
 [e :U 364 ]
-"268
-[; ;Hall/LCD/Hall_lcd_prog.c: 268:     return RetValue;
+"274
+[; ;Hall/LCD/Hall_lcd_prog.c: 274:     return RetValue;
 [e ) _RetValue ]
 [e $UE 362  ]
-"269
-[; ;Hall/LCD/Hall_lcd_prog.c: 269: }
+"275
+[; ;Hall/LCD/Hall_lcd_prog.c: 275: }
 [e :UE 362 ]
 }
-"271
-[; ;Hall/LCD/Hall_lcd_prog.c: 271: Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR) {
+"277
+[; ;Hall/LCD/Hall_lcd_prog.c: 277: Std_Return HALL_LCD_convertU32toSTR(uint32_t copyValue, uint8_t* copySTR) {
 [v _HALL_LCD_convertU32toSTR `(uc ~T0 @X0 1 ef2`ul`*uc ]
 {
 [e :U _HALL_LCD_convertU32toSTR ]
 [v _copyValue `ul ~T0 @X0 1 r1 ]
 [v _copySTR `*uc ~T0 @X0 1 r2 ]
 [f ]
-"272
-[; ;Hall/LCD/Hall_lcd_prog.c: 272:     uint8_t RetValue = (Std_Return)0;
+"278
+[; ;Hall/LCD/Hall_lcd_prog.c: 278:     uint8_t RetValue = (Std_Return)0;
 [v _RetValue `uc ~T0 @X0 1 a ]
 [e = _RetValue -> -> 0 `i `uc ]
-"273
-[; ;Hall/LCD/Hall_lcd_prog.c: 273:     if(copySTR == ((void*)0)) {
-[e $ ! == _copySTR -> -> -> 0 `i `*v `*uc 366  ]
-{
-"274
-[; ;Hall/LCD/Hall_lcd_prog.c: 274:         RetValue = (Std_Return)0;
-[e = _RetValue -> -> 0 `i `uc ]
-"275
-[; ;Hall/LCD/Hall_lcd_prog.c: 275:     }
-}
-[e $U 367  ]
-"276
-[; ;Hall/LCD/Hall_lcd_prog.c: 276:     else {
-[e :U 366 ]
-{
-"277
-[; ;Hall/LCD/Hall_lcd_prog.c: 277:         memset(copySTR, '\0', 11);
-[e ( _memset (3 , , -> _copySTR `*v -> -> 0 `ui `i -> -> 11 `i `ui ]
-"278
-[; ;Hall/LCD/Hall_lcd_prog.c: 278:         sprintf(copySTR, "%i", copyValue);
-[e ( _sprintf (1 , (. , -> _copySTR `*uc :s 3C _copyValue ]
 "279
-[; ;Hall/LCD/Hall_lcd_prog.c: 279:         RetValue = (Std_Return)1;
-[e = _RetValue -> -> 1 `i `uc ]
+[; ;Hall/LCD/Hall_lcd_prog.c: 279:     if(copySTR == ((void*)0)) {
+[e $ ! == _copySTR -> -> -> 0 `i `*v `*uc 369  ]
+{
 "280
-[; ;Hall/LCD/Hall_lcd_prog.c: 280:     }
-}
-[e :U 367 ]
+[; ;Hall/LCD/Hall_lcd_prog.c: 280:         RetValue = (Std_Return)0;
+[e = _RetValue -> -> 0 `i `uc ]
 "281
-[; ;Hall/LCD/Hall_lcd_prog.c: 281:     return RetValue;
-[e ) _RetValue ]
-[e $UE 365  ]
-"282
-[; ;Hall/LCD/Hall_lcd_prog.c: 282: }
-[e :UE 365 ]
+[; ;Hall/LCD/Hall_lcd_prog.c: 281:     }
 }
+[e $U 370  ]
+"282
+[; ;Hall/LCD/Hall_lcd_prog.c: 282:     else {
+[e :U 369 ]
+{
+"283
+[; ;Hall/LCD/Hall_lcd_prog.c: 283:         memset(copySTR, '\0', 11);
+[e ( _memset (3 , , -> _copySTR `*v -> -> 0 `ui `i -> -> 11 `i `ui ]
 "284
-[; ;Hall/LCD/Hall_lcd_prog.c: 284: static Std_Return LCD_send4Bits(const LCD_4Bit_t* copyLCD, uint8_t copyData) {
+[; ;Hall/LCD/Hall_lcd_prog.c: 284:         sprintf(copySTR, "%i", copyValue);
+[e ( _sprintf (1 , (. , -> _copySTR `*uc :s 3C _copyValue ]
+"285
+[; ;Hall/LCD/Hall_lcd_prog.c: 285:         RetValue = (Std_Return)1;
+[e = _RetValue -> -> 1 `i `uc ]
+"286
+[; ;Hall/LCD/Hall_lcd_prog.c: 286:     }
+}
+[e :U 370 ]
+"287
+[; ;Hall/LCD/Hall_lcd_prog.c: 287:     return RetValue;
+[e ) _RetValue ]
+[e $UE 368  ]
+"288
+[; ;Hall/LCD/Hall_lcd_prog.c: 288: }
+[e :UE 368 ]
+}
+"290
+[; ;Hall/LCD/Hall_lcd_prog.c: 290: static Std_Return LCD_send4Bits(const LCD_4Bit_t* copyLCD, uint8_t copyData) {
 [v _LCD_send4Bits `(uc ~T0 @X0 1 sf2`*CS277`uc ]
 {
 [e :U _LCD_send4Bits ]
 [v _copyLCD `*CS277 ~T0 @X0 1 r1 ]
 [v _copyData `uc ~T0 @X0 1 r2 ]
 [f ]
-"285
-[; ;Hall/LCD/Hall_lcd_prog.c: 285:     uint8_t RetValue = (Std_Return)1;
+"291
+[; ;Hall/LCD/Hall_lcd_prog.c: 291:     uint8_t RetValue = (Std_Return)1;
 [v _RetValue `uc ~T0 @X0 1 a ]
 [e = _RetValue -> -> 1 `i `uc ]
-"286
-[; ;Hall/LCD/Hall_lcd_prog.c: 286:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[0]),(copyData >> 0) & (uint8_t)0x01);
-[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 0 `i -> -> -> 1 `i `uc `i `E2982 ]
-"287
-[; ;Hall/LCD/Hall_lcd_prog.c: 287:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[1]),(copyData >> 1) & (uint8_t)0x01);
-[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 1 `i -> -> -> 1 `i `uc `i `E2982 ]
-"288
-[; ;Hall/LCD/Hall_lcd_prog.c: 288:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[2]),(copyData >> 2) & (uint8_t)0x01);
-[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 2 `i -> -> -> 1 `i `uc `i `E2982 ]
-"289
-[; ;Hall/LCD/Hall_lcd_prog.c: 289:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[3]),(copyData >> 3) & (uint8_t)0x01);
-[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 3 `i -> -> -> 1 `i `uc `i `E2982 ]
-"290
-[; ;Hall/LCD/Hall_lcd_prog.c: 290:     return RetValue;
-[e ) _RetValue ]
-[e $UE 368  ]
-"291
-[; ;Hall/LCD/Hall_lcd_prog.c: 291: }
-[e :UE 368 ]
-}
 "292
-[; ;Hall/LCD/Hall_lcd_prog.c: 292: static Std_Return LCD_sendEnableSignal4Bits(const LCD_4Bit_t* copyLCD) {
+[; ;Hall/LCD/Hall_lcd_prog.c: 292:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[0]),(copyData >> 0) & (uint8_t)0x01);
+[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 0 `i -> -> -> 1 `i `uc `i `E2982 ]
+"293
+[; ;Hall/LCD/Hall_lcd_prog.c: 293:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[1]),(copyData >> 1) & (uint8_t)0x01);
+[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 1 `i -> -> -> 1 `i `uc `i `E2982 ]
+"294
+[; ;Hall/LCD/Hall_lcd_prog.c: 294:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[2]),(copyData >> 2) & (uint8_t)0x01);
+[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 2 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 2 `i -> -> -> 1 `i `uc `i `E2982 ]
+"295
+[; ;Hall/LCD/Hall_lcd_prog.c: 295:     RetValue = MCAL_GPIO_writePinStatus(&(copyLCD->LCD_D[3]),(copyData >> 3) & (uint8_t)0x01);
+[e = _RetValue ( _MCAL_GPIO_writePinStatus (2 , &U *U + &U . *U _copyLCD 2 * -> -> -> 3 `i `ui `ux -> -> # *U &U . *U _copyLCD 2 `ui `ux -> & >> -> _copyData `i -> 3 `i -> -> -> 1 `i `uc `i `E2982 ]
+"296
+[; ;Hall/LCD/Hall_lcd_prog.c: 296:     return RetValue;
+[e ) _RetValue ]
+[e $UE 371  ]
+"297
+[; ;Hall/LCD/Hall_lcd_prog.c: 297: }
+[e :UE 371 ]
+}
+"298
+[; ;Hall/LCD/Hall_lcd_prog.c: 298: static Std_Return LCD_sendEnableSignal4Bits(const LCD_4Bit_t* copyLCD) {
 [v _LCD_sendEnableSignal4Bits `(uc ~T0 @X0 1 sf1`*CS277 ]
 {
 [e :U _LCD_sendEnableSignal4Bits ]
 [v _copyLCD `*CS277 ~T0 @X0 1 r1 ]
 [f ]
-"293
-[; ;Hall/LCD/Hall_lcd_prog.c: 293:     uint8_t RetValue = (Std_Return)1;
+"299
+[; ;Hall/LCD/Hall_lcd_prog.c: 299:     uint8_t RetValue = (Std_Return)1;
 [v _RetValue `uc ~T0 @X0 1 a ]
 [e = _RetValue -> -> 1 `i `uc ]
-"294
-[; ;Hall/LCD/Hall_lcd_prog.c: 294:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
+"300
+[; ;Hall/LCD/Hall_lcd_prog.c: 300:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
 [e ( _MCAL_GPIO_writePinStatus (2 , &U . *U _copyLCD 1 . `E2982 1 ]
-"295
-[; ;Hall/LCD/Hall_lcd_prog.c: 295:     _delay((unsigned long)((5)*(4000000U/4000000.0)));
+"301
+[; ;Hall/LCD/Hall_lcd_prog.c: 301:     _delay((unsigned long)((5)*(4000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
-"296
-[; ;Hall/LCD/Hall_lcd_prog.c: 296:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
+"302
+[; ;Hall/LCD/Hall_lcd_prog.c: 302:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
 [e ( _MCAL_GPIO_writePinStatus (2 , &U . *U _copyLCD 1 . `E2982 0 ]
-"297
-[; ;Hall/LCD/Hall_lcd_prog.c: 297:     return RetValue;
+"303
+[; ;Hall/LCD/Hall_lcd_prog.c: 303:     return RetValue;
 [e ) _RetValue ]
-[e $UE 369  ]
-"298
-[; ;Hall/LCD/Hall_lcd_prog.c: 298: }
-[e :UE 369 ]
+[e $UE 372  ]
+"304
+[; ;Hall/LCD/Hall_lcd_prog.c: 304: }
+[e :UE 372 ]
 }
-"299
-[; ;Hall/LCD/Hall_lcd_prog.c: 299: static Std_Return LCD_sendEnableSignal8Bits(const LCD_8Bit_t* copyLCD) {
+"305
+[; ;Hall/LCD/Hall_lcd_prog.c: 305: static Std_Return LCD_sendEnableSignal8Bits(const LCD_8Bit_t* copyLCD) {
 [v _LCD_sendEnableSignal8Bits `(uc ~T0 @X0 1 sf1`*CS278 ]
 {
 [e :U _LCD_sendEnableSignal8Bits ]
 [v _copyLCD `*CS278 ~T0 @X0 1 r1 ]
 [f ]
-"300
-[; ;Hall/LCD/Hall_lcd_prog.c: 300:     uint8_t RetValue = (Std_Return)1;
+"306
+[; ;Hall/LCD/Hall_lcd_prog.c: 306:     uint8_t RetValue = (Std_Return)1;
 [v _RetValue `uc ~T0 @X0 1 a ]
 [e = _RetValue -> -> 1 `i `uc ]
-"301
-[; ;Hall/LCD/Hall_lcd_prog.c: 301:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
+"307
+[; ;Hall/LCD/Hall_lcd_prog.c: 307:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_High);
 [e ( _MCAL_GPIO_writePinStatus (2 , &U . *U _copyLCD 1 . `E2982 1 ]
-"302
-[; ;Hall/LCD/Hall_lcd_prog.c: 302:     _delay((unsigned long)((5)*(4000000U/4000000.0)));
+"308
+[; ;Hall/LCD/Hall_lcd_prog.c: 308:     _delay((unsigned long)((5)*(4000000U/4000000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
-"303
-[; ;Hall/LCD/Hall_lcd_prog.c: 303:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
+"309
+[; ;Hall/LCD/Hall_lcd_prog.c: 309:     MCAL_GPIO_writePinStatus(&(copyLCD->LCD_en), GPIO_Status_Low);
 [e ( _MCAL_GPIO_writePinStatus (2 , &U . *U _copyLCD 1 . `E2982 0 ]
-"304
-[; ;Hall/LCD/Hall_lcd_prog.c: 304:     return RetValue;
+"310
+[; ;Hall/LCD/Hall_lcd_prog.c: 310:     return RetValue;
 [e ) _RetValue ]
-[e $UE 370  ]
-"305
-[; ;Hall/LCD/Hall_lcd_prog.c: 305: }
-[e :UE 370 ]
+[e $UE 373  ]
+"311
+[; ;Hall/LCD/Hall_lcd_prog.c: 311: }
+[e :UE 373 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 37 105 0 ]

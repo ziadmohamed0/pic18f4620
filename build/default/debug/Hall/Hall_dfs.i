@@ -4857,6 +4857,7 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
+void ADC_ISR();
 # 14 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
 
 
@@ -4867,7 +4868,10 @@ Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
 # 16 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
 
 # 1 "Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 1
-# 64 "Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 13 "Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 1 "Hall/Led/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h" 1
+# 13 "Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
+# 69 "Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
 typedef enum {
     ADC_CHANAL_AN1 = 0,
     ADC_CHANAL_AN2,
@@ -4906,7 +4910,12 @@ typedef enum {
 }ADC_Conversion_CLK_t;
 
 typedef struct {
+
     void(* ADCinterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+
+
     ADC_TAD_t AcquisitionClock;
     ADC_Conversion_CLK_t ConversionClock;
     ADC_chanal_select_t AdcChanall;
@@ -4925,9 +4934,10 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
 Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
 Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 # 17 "Hall/Led/../../Mcal/Mcal_dfs.h" 2
-# 35 "Hall/Led/../../Mcal/Mcal_dfs.h"
+# 34 "Hall/Led/../../Mcal/Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
@@ -4938,6 +4948,8 @@ void RB5_isr(void);
 void RB6_isr(void);
 void RB7_isr(void);
 
+
+void ADC_isr(void);
 
 
 
@@ -4951,6 +4963,18 @@ Interrupt_RBx_t RB_4;
 Interrupt_RBx_t RB_5;
 Interrupt_RBx_t RB_6;
 Interrupt_RBx_t RB_7;
+
+
+uint16_t retADC1;
+uint16_t retADC2;
+uint16_t retADC3;
+uint16_t retADC4;
+
+
+ADC_t adc1;
+ADC_t adc2;
+ADC_t adc3;
+ADC_t adc4;
 # 12 "Hall/Led/Hall_Led_init.h" 2
 # 22 "Hall/Led/Hall_Led_init.h"
 typedef enum {
@@ -5252,32 +5276,32 @@ KeyPad_t KeyPad1 = {
 
 
 LCD_4Bit_t LCD1_4Bit = {
-    .LCD_rs.Port = GPIO_Port_Index_B,
+    .LCD_rs.Port = GPIO_Port_Index_D,
     .LCD_rs.Pin = GPIO_Pin_Index_0,
     .LCD_rs.Direction = GPIO_Dircetion_Output,
     .LCD_rs.Status = GPIO_Status_Low,
 
-    .LCD_en.Port = GPIO_Port_Index_B,
+    .LCD_en.Port = GPIO_Port_Index_D,
     .LCD_en.Pin = GPIO_Pin_Index_1,
     .LCD_en.Direction = GPIO_Dircetion_Output,
     .LCD_en.Status = GPIO_Status_Low,
 
-    .LCD_D[0].Port = GPIO_Port_Index_B,
+    .LCD_D[0].Port = GPIO_Port_Index_D,
     .LCD_D[0].Pin = GPIO_Pin_Index_2,
     .LCD_D[0].Direction = GPIO_Dircetion_Output,
     .LCD_D[0].Status = GPIO_Status_Low,
 
-    .LCD_D[1].Port = GPIO_Port_Index_B,
+    .LCD_D[1].Port = GPIO_Port_Index_D,
     .LCD_D[1].Pin = GPIO_Pin_Index_3,
     .LCD_D[1].Direction = GPIO_Dircetion_Output,
     .LCD_D[1].Status = GPIO_Status_Low,
 
-    .LCD_D[2].Port = GPIO_Port_Index_B,
+    .LCD_D[2].Port = GPIO_Port_Index_D,
     .LCD_D[2].Pin = GPIO_Pin_Index_4,
     .LCD_D[2].Direction = GPIO_Dircetion_Output,
     .LCD_D[2].Status = GPIO_Status_Low,
 
-    .LCD_D[3].Port = GPIO_Port_Index_B,
+    .LCD_D[3].Port = GPIO_Port_Index_D,
     .LCD_D[3].Pin = GPIO_Pin_Index_5,
     .LCD_D[3].Direction = GPIO_Dircetion_Output,
     .LCD_D[3].Status = GPIO_Status_Low,

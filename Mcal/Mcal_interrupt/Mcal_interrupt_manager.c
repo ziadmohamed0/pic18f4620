@@ -90,6 +90,13 @@ void __interrupt() MCAL_InterruptManager(void) {
         RB7_ISR(1);
     }
     /* ----------------------------- External interrupt RBx ISR End ----------------------------- */
+    
+    /* ----------------------------- ADC interrupt ISR Start ----------------------------- */
+    if((MCAL_INTERRUPT_ENABLE == PIE1bits.ADIE) && (MCAL_INTERRUPT_OCCUR == PIR1bits.ADIF)) {
+        ADC_ISR();
+    }
+    /* ----------------------------- ADC interrupt ISR End ----------------------------- */
+    
 }
 
 #endif

@@ -79,3 +79,61 @@ Interrupt_RBx_t RB_7 = {
     .MCU_Pin.Status         = GPIO_Status_Low,
     .Priorety               = INTERRUPT_PRIORETY_HIGH,
 };
+
+
+    /* ADC Bits */
+ADC_t adc1 = {
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety           = INTERRUPT_PRIORETY_LOW,
+#elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
+    
+#endif
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN1,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = ADC_RESULT_FORMAT_RIGHT,
+    .VolatageRefrance = ADC_VOLTAGE_REF_DISABLE,
+};
+
+ADC_t adc2 = {
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety           = INTERRUPT_PRIORETY_LOW,
+#elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
+    
+#endif
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN2,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = ADC_RESULT_FORMAT_RIGHT,
+    .VolatageRefrance = ADC_VOLTAGE_REF_DISABLE,
+};
+
+ADC_t adc3 = {
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety           = INTERRUPT_PRIORETY_LOW,
+#elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
+    
+#endif
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN3,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = ADC_RESULT_FORMAT_RIGHT,
+    .VolatageRefrance = ADC_VOLTAGE_REF_DISABLE,
+};
+
+ADC_t adc4 = {
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+    .ADCinterruptHandler = ADC_isr,
+    .Priorety           = INTERRUPT_PRIORETY_LOW,
+#elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
+    
+#endif
+    .AcquisitionClock = ADC_CLK_CONVERSION_FOSC_DIV_16,
+    .AdcChanall = ADC_CHANAL_AN4,
+    .AcquisitionClock = ADC_TAD_12,
+    .ResultFormat = ADC_RESULT_FORMAT_RIGHT,
+    .VolatageRefrance = ADC_VOLTAGE_REF_DISABLE,
+};

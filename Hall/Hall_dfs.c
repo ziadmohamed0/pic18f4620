@@ -128,32 +128,32 @@ KeyPad_t KeyPad1 = {
 
     /* LCD Pins */
 LCD_4Bit_t LCD1_4Bit = {
-    .LCD_rs.Port                                    = GPIO_Port_Index_B,
+    .LCD_rs.Port                                    = GPIO_Port_Index_D,
     .LCD_rs.Pin                                     = GPIO_Pin_Index_0,
     .LCD_rs.Direction                               = GPIO_Dircetion_Output,
     .LCD_rs.Status                                  = GPIO_Status_Low,
     
-    .LCD_en.Port                                    = GPIO_Port_Index_B,
+    .LCD_en.Port                                    = GPIO_Port_Index_D,
     .LCD_en.Pin                                     = GPIO_Pin_Index_1,
     .LCD_en.Direction                               = GPIO_Dircetion_Output,
     .LCD_en.Status                                  = GPIO_Status_Low,  
     
-    .LCD_D[0].Port                                  = GPIO_Port_Index_B,
+    .LCD_D[0].Port                                  = GPIO_Port_Index_D,
     .LCD_D[0].Pin                                   = GPIO_Pin_Index_2,
     .LCD_D[0].Direction                             = GPIO_Dircetion_Output,
     .LCD_D[0].Status                                = GPIO_Status_Low,
     
-    .LCD_D[1].Port                                  = GPIO_Port_Index_B,
+    .LCD_D[1].Port                                  = GPIO_Port_Index_D,
     .LCD_D[1].Pin                                   = GPIO_Pin_Index_3,
     .LCD_D[1].Direction                             = GPIO_Dircetion_Output,
     .LCD_D[1].Status                                = GPIO_Status_Low, 
     
-    .LCD_D[2].Port                                  = GPIO_Port_Index_B,
+    .LCD_D[2].Port                                  = GPIO_Port_Index_D,
     .LCD_D[2].Pin                                   = GPIO_Pin_Index_4,
     .LCD_D[2].Direction                             = GPIO_Dircetion_Output,
     .LCD_D[2].Status                                = GPIO_Status_Low,
     
-    .LCD_D[3].Port                                  = GPIO_Port_Index_B,
+    .LCD_D[3].Port                                  = GPIO_Port_Index_D,
     .LCD_D[3].Pin                                   = GPIO_Pin_Index_5,
     .LCD_D[3].Direction                             = GPIO_Dircetion_Output,
     .LCD_D[3].Status                                = GPIO_Status_Low,    

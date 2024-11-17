@@ -257,12 +257,18 @@ Std_Return HALL_LCD_convertU8toSTR(uint8_t copyValue, uint8_t* copySTR) {
 }
 Std_Return HALL_LCD_convertU16toSTR(uint16_t copyValue, uint8_t* copySTR) {
     uint8_t RetValue = R_ERROR;
+    uint8_t tempString[6] = {0};
+    uint8_t DataCounter = Zero_init;
     if(copySTR == NULL) {
         RetValue = R_ERROR;
     }
     else {
-        memset(copySTR, '\0', 6);
-        sprintf(copySTR, "%i", copyValue);
+        memset(copySTR, ' ', 5);
+        sprintf(tempString, "%i", copyValue);
+        while(tempString[DataCounter] != '\0') {
+            copySTR[DataCounter] = tempString[DataCounter];
+            DataCounter++;
+        }
         RetValue = R_OK;
     }
     return RetValue;     

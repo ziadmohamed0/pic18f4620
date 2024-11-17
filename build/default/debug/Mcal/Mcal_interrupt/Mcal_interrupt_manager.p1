@@ -83,6 +83,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31
 [; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 31: void RB7_ISR(uint8_t copySource);
 [v _RB7_ISR `(v ~T0 @X0 0 ef1`uc ]
+"2503 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2503:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"2513
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2513:     struct {
+[s S95 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S95 . . TX1IE RC1IE ]
+"2502
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2502: typedef union {
+[u S93 `S94 1 `S95 1 ]
+[n S93 . . . ]
+"2519
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2519: extern volatile PIE1bits_t PIE1bits __attribute__((address(0xF9D)));
+[v _PIE1bits `VS93 ~T0 @X0 0 e@3997 ]
+"2580
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2580:     struct {
+[s S97 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S97 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"2590
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2590:     struct {
+[s S98 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S98 . . TX1IF RC1IF ]
+"2579
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2579: typedef union {
+[u S96 `S97 1 `S98 1 ]
+[n S96 . . . ]
+"2596
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2596: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS96 ~T0 @X0 0 e@3998 ]
+"32 Mcal/Mcal_interrupt/Mcal_interrupt_manager.h
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 32: void ADC_ISR();
+[v _ADC_ISR `(v ~T0 @X0 0 e? ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -686,7 +719,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 91:     }
 }
 [e :U 285 ]
-"93
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 93: }
+"95
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 95:     if((1 == PIE1bits.ADIE) && (1 == PIR1bits.ADIF)) {
+[e $ ! && == -> 1 `i -> . . _PIE1bits 0 6 `i == -> 1 `i -> . . _PIR1bits 0 6 `i 286  ]
+{
+"96
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 96:         ADC_ISR();
+[e ( _ADC_ISR ..  ]
+"97
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 97:     }
+}
+[e :U 286 ]
+"100
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 100: }
 [e :UE 274 ]
 }

@@ -16,6 +16,18 @@
 /* -------------------- Macro End  -------------------- */
 
 /* -------------------- Functions Macro Start -------------------- */
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+/* @brief : Macros Enable ADC interrupt */
+#define Mcal_ADC_InterruptEnable(void)              (PIE1bits.ADIE = 1)
+/* @brief : Macros Disable ADC interrupt */
+#define Mcal_ADC_InterruptDisable(void)             (PIE1bits.ADIE = 0)
+/* @brief : Macros Clear Flag ADC interrupt */
+#define Mcal_ADC_ClearFlage(void)                   (PIR1bits.ADIF = 0)
+/* @brief : Macros Set high priority ADC interrupt */
+#define Mcal_ADC_HighPrioritySet(void)         (IPR1bits.ADIP = 1)
+/* @brief : Macros Set low priority ADC interrupt */
+#define Mcal_ADC_LowPrioritySet(void)          (IPR1bits.ADIP = 0)
+#endif
 /* -------------------- Functions Macro End -------------------- */
 
 /* -------------------- Standard Types Start -------------------- */

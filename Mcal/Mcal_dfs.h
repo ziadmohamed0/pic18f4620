@@ -30,7 +30,6 @@
 /* -------------------- Standard Types End -------------------- */
 
 /* -------------------- API Start -------------------- */
-
 /* External interrupt INTx ISR Functions Definetions */
 void INT0_isr(void);
 void INT1_isr(void);
@@ -42,6 +41,8 @@ void RB5_isr(void);
 void RB6_isr(void);
 void RB7_isr(void);
 
+/* Analog to Digital Converter ISR Functions Definetions */
+void ADC_isr(void);
 /* -------------------- API End -------------------- */
 
 /* -------------------- peripherals init Start -------------------- */
@@ -55,6 +56,18 @@ Interrupt_RBx_t RB_4;
 Interrupt_RBx_t RB_5;
 Interrupt_RBx_t RB_6;
 Interrupt_RBx_t RB_7;
+
+    /* ADC Variables return value */
+uint16_t retADC1;
+uint16_t retADC2;
+uint16_t retADC3;
+uint16_t retADC4;
+
+    /* ADC Bits */
+ADC_t adc1;
+ADC_t adc2;
+ADC_t adc3;
+ADC_t adc4;
 /* -------------------- peripherals init End -------------------- */
 
 #endif	/* MCAL_DFS_H */

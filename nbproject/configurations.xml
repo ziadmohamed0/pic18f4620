@@ -34,6 +34,7 @@
       <logicalFolder name="Mcal" displayName="Mcal" projectFiles="true">
         <logicalFolder name="Mcal_ADC" displayName="Mcal_ADC" projectFiles="true">
           <itemPath>Mcal/Mcal_ADC/Mcal_ADC_init.h</itemPath>
+          <itemPath>Mcal/Mcal_ADC/MCAL_ADC_cfg.h</itemPath>
         </logicalFolder>
         <logicalFolder name="Mcal_EEPROM" displayName="Mcal_EEPROM" projectFiles="true">
           <itemPath>Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h</itemPath>

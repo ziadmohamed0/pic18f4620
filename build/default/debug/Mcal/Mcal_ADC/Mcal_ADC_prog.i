@@ -4806,7 +4806,10 @@ typedef enum {
 }Interrupt_Priorety_cfg_t;
 # 12 "Mcal/Mcal_ADC/../Mcal_interrupt/Mcal_internal_interrupt.h" 2
 # 12 "Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
-# 64 "Mcal/Mcal_ADC/Mcal_ADC_init.h"
+
+# 1 "Mcal/Mcal_ADC/MCAL_ADC_cfg.h" 1
+# 13 "Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
+# 69 "Mcal/Mcal_ADC/Mcal_ADC_init.h"
 typedef enum {
     ADC_CHANAL_AN1 = 0,
     ADC_CHANAL_AN2,
@@ -4845,7 +4848,12 @@ typedef enum {
 }ADC_Conversion_CLK_t;
 
 typedef struct {
+
     void(* ADCinterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+
+
     ADC_TAD_t AcquisitionClock;
     ADC_Conversion_CLK_t ConversionClock;
     ADC_chanal_select_t AdcChanall;
@@ -4864,12 +4872,16 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
 Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC);
 Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversionStatus);
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 # 9 "Mcal/Mcal_ADC/Mcal_ADC_prog.c" 2
 
 
 
-static __attribute__((inline)) void ADC_input_chanal_configuration(const ADC_t * copyADC);
+static void (*ADC_interruptHandler)(void) = ((void*)0);
+
+
+static __attribute__((inline)) void ADC_input_chanal_configuration(ADC_chanal_select_t copyChanal);
 static __attribute__((inline)) void ADC_SelectResultFormat(const ADC_t * copyADC);
 static __attribute__((inline)) void ADC_VolatgeReferance(const ADC_t * copyADC);
 
@@ -4890,7 +4902,20 @@ Std_Return MCAL_ADC_init(const ADC_t *copyADC) {
 
 
         ADCON0bits.CHS = copyADC->AdcChanall;
-        ADC_input_chanal_configuration(copyADC);
+        ADC_input_chanal_configuration(copyADC->AdcChanall);
+
+
+
+            (INTCONbits.GIE = 1);
+            (INTCONbits.PEIE = 1);
+            (PIE1bits.ADIE = 1);
+            (PIR1bits.ADIF = 0);
+            switch(copyADC->Priorety) {
+                case INTERRUPT_PRIORETY_HIGH : (IPR1bits.ADIP = 1); break;
+                case INTERRUPT_PRIORETY_LOW : (IPR1bits.ADIP = 0); break;
+            }
+            ADC_interruptHandler = copyADC->ADCinterruptHandler;
+
 
 
 
@@ -4900,7 +4925,7 @@ Std_Return MCAL_ADC_init(const ADC_t *copyADC) {
 
         ADC_VolatgeReferance(copyADC);
 
-
+        (ADCON0bits.ADON = 1);
         retValue = (Std_Return)1;
     }
     return retValue;
@@ -4912,6 +4937,15 @@ Std_Return MCAL_ADC_Deinit(const ADC_t *copyADC) {
 
     }
     else {
+
+        (ADCON0bits.ADON = 0);
+
+
+
+            (PIE1bits.ADIE = 0);
+
+
+
 
         retValue = (Std_Return)1;
     }
@@ -4925,6 +4959,9 @@ Std_Return MCAL_ADC_SelectChanal(const ADC_t *copyADC, ADC_chanal_select_t copyC
     }
     else {
 
+        ADCON0bits.CHS = copyADC->AdcChanall;
+        ADC_input_chanal_configuration(copyChanal);
+
         retValue = (Std_Return)1;
     }
     return retValue;
@@ -4936,7 +4973,7 @@ Std_Return MCAL_ADC_StartConversion(const ADC_t *copyADC) {
 
     }
     else {
-
+        (ADCON0bits.GODONE = 1);
         retValue = (Std_Return)1;
     }
     return retValue;
@@ -4948,7 +4985,7 @@ Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversi
 
     }
     else {
-
+        *copyConversionStatus = ((uint8_t)(!(ADCON0bits.GO_nDONE)));
         retValue = (Std_Return)1;
     }
     return retValue;
@@ -4960,31 +4997,50 @@ Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *cop
 
     }
     else {
-
+        switch(copyADC->ResultFormat) {
+            case 0x01U : *copyConversionResult = (ADC_Resulte_t)((ADRESH << 8)+(ADRESL)); break;
+            case 0x00U : *copyConversionResult = (ADC_Resulte_t)(((ADRESH << 8)+(ADRESL)) >> 6); break;
+        }
         retValue = (Std_Return)1;
     }
     return retValue;
 }
 
-Std_Return MCAL_ADC_getConversion(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult) {
+Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult) {
     uint8_t retValue = (Std_Return)0;
     if((copyADC == ((void*)0)) && (copyConversionResult ==((void*)0))) {
 
     }
     else {
-
+        retValue = MCAL_ADC_SelectChanal(copyADC, copyChanal);
+        retValue = MCAL_ADC_StartConversion(copyADC);
+        while(ADCON0bits.GO_nDONE);
+        retValue = MCAL_ADC_getConversionResult(copyADC, copyConversionResult);
         retValue = (Std_Return)1;
     }
     return retValue;
 }
 
-static __attribute__((inline)) void ADC_input_chanal_configuration(const ADC_t * copyADC) {
-    switch(copyADC->AdcChanall) {
+Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyADC == ((void*)0)) {
+
+    }
+    else {
+        retValue = MCAL_ADC_SelectChanal(copyADC, copyChanal);
+        retValue = MCAL_ADC_StartConversion(copyADC);
+        retValue = (Std_Return)1;
+    }
+    return retValue;
+}
+
+static __attribute__((inline)) void ADC_input_chanal_configuration(ADC_chanal_select_t copyChanal) {
+    switch(copyChanal) {
         case ADC_CHANAL_AN1 : TRISA |= (1 << 0x0); break;
         case ADC_CHANAL_AN2 : TRISA |= (1 << 0x1); break;
         case ADC_CHANAL_AN3 : TRISA |= (1 << 0x2); break;
         case ADC_CHANAL_AN4 : TRISA |= (1 << 0x3); break;
-        case ADC_CHANAL_AN5 : TRISA |= (1 << 0x4); break;
+        case ADC_CHANAL_AN5 : TRISA |= (1 << 0x5); break;
         case ADC_CHANAL_AN6 : TRISE |= (1 << 0x0); break;
         case ADC_CHANAL_AN7 : TRISE |= (1 << 0x1); break;
         case ADC_CHANAL_AN8 : TRISE |= (1 << 0x2); break;
@@ -5007,5 +5063,12 @@ static __attribute__((inline)) void ADC_VolatgeReferance(const ADC_t * copyADC) 
     switch(copyADC->VolatageRefrance) {
         case 0x01U : do{ADCON1bits.VCFG1 = 1; ADCON1bits.VCFG0 = 1; }while(0); break;
         case 0x00U : do{ADCON1bits.VCFG1 = 0; ADCON1bits.VCFG0 = 0; }while(0); break;
+    }
+}
+
+void ADC_ISR() {
+    (PIR1bits.ADIF = 0);
+    if(ADC_interruptHandler) {
+        ADC_interruptHandler();
     }
 }
