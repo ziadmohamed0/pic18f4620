@@ -1,80 +1,103 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F3055 `(v ~T0 @X0 0 tf ]
-"58 App/../Hall/Led/../../Mcal/Mcal_GPIO/Mcal_GPIO_init.h
+"58 Mcal/Mcal_Timer_0/../Mcal_GPIO/Mcal_GPIO_init.h
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . Port Pin Direction Status ]
-"51 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"51 Mcal/Mcal_Timer_0/../Mcal_dfs.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT0;
 [c E3044 0 1 .. ]
 [n E3044 . INTERRUPT_EDGE_FALLING INTERRUPT_EDGE_RISING  ]
 [c E3048 0 1 2 .. ]
 [n E3048 . INTERRUPT_EXTERNAL_INT0 INTERRUPT_EXTERNAL_INT1 INTERRUPT_EXTERNAL_INT2  ]
 [c E3040 0 1 .. ]
 [n E3040 . INTERRUPT_PRIORETY_LOW INTERRUPT_PRIORETY_HIGH  ]
-"104 App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h
-[; ;App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 104: typedef struct {
+"104 Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h: 104: typedef struct {
 [s S274 `*F3055 1 `S273 1 `E3044 1 `E3048 1 `E3040 1 ]
 [n S274 . EX_InterruptHandler MCU_Pin Edge Source Priorety ]
 [v F3063 `(v ~T0 @X0 0 tf ]
 [v F3065 `(v ~T0 @X0 0 tf ]
 "112
-[; ;App/../Hall/Led/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
+[; ;Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h: 112: typedef struct {
 [s S275 `*F3063 1 `*F3065 1 `S273 1 `E3040 1 ]
 [n S275 . EX_InterruptHandler_High EX_InterruptHandler_Low MCU_Pin Priorety ]
 [v F3132 `(v ~T0 @X0 0 tf ]
-"68 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"68 Mcal/Mcal_Timer_0/../Mcal_dfs.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 68: ADC_t adc1;
 [c E3111 0 1 2 3 4 5 6 7 .. ]
 [n E3111 . ADC_TAD_0 ADC_TAD_2 ADC_TAD_4 ADC_TAD_6 ADC_TAD_8 ADC_TAD_12 ADC_TAD_16 ADC_TAD_20  ]
 [c E3121 0 1 2 3 4 5 6 .. ]
 [n E3121 . ADC_CLK_CONVERSION_FOSC_DIV_2 ADC_CLK_CONVERSION_FOSC_DIV_8 ADC_CLK_CONVERSION_FOSC_DIV_32 ADC_CLK_CONVERSION_FOSC_DIV_FRC ADC_CLK_CONVERSION_FOSC_DIV_4 ADC_CLK_CONVERSION_FOSC_DIV_16 ADC_CLK_CONVERSION_FOSC_DIV_64  ]
 [c E3096 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
 [n E3096 . ADC_CHANAL_AN1 ADC_CHANAL_AN2 ADC_CHANAL_AN3 ADC_CHANAL_AN4 ADC_CHANAL_AN5 ADC_CHANAL_AN6 ADC_CHANAL_AN7 ADC_CHANAL_AN8 ADC_CHANAL_AN9 ADC_CHANAL_AN10 ADC_CHANAL_AN11 ADC_CHANAL_AN12 ADC_CHANAL_AN13  ]
-"106 App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h
-[; ;App/../Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h: 106: typedef struct {
+"106 Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h: 106: typedef struct {
 [s S276 `*F3132 1 `E3040 1 `E3111 1 `E3121 1 `E3096 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
 [n S276 . ADCinterruptHandler Priorety AcquisitionClock ConversionClock AdcChanall VolatageRefrance ResultFormat ADC_Reserved ]
-"27 App/../Hall/Led/Hall_Led_init.h
-[; ;App/../Hall/Led/Hall_Led_init.h: 27: typedef struct {
-[s S278 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S278 . LED_PORTx LED_PINx LED_Status ]
-"24 App/../Hall/DC_Motor/Hall_Dc_Motor_init.h
-[; ;App/../Hall/DC_Motor/Hall_Dc_Motor_init.h: 24: typedef struct {
-[s S281 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S281 . DC_Motor_Port DC_Motor_Pin DC_Motor_Status ]
-"30
-[; ;App/../Hall/DC_Motor/Hall_Dc_Motor_init.h: 30: typedef struct {
-[s S282 `S281 -> 2 `i ]
-[n S282 . DC_MOTOR ]
-"46 App/../Hall/Hall_dfs.h
-[; ;App/../Hall/Hall_dfs.h: 46: Segement_t Seg1;
-[c E3281 0 1 .. ]
-[n E3281 . SEGEMENT_COMMON_ANODE SEGEMENT_COMMON_CATHOD  ]
-"31 App/../Hall/Seven_seg/Hall_Seven_seg_init.h
-[; ;App/../Hall/Seven_seg/Hall_Seven_seg_init.h: 31: typedef struct {
-[s S283 `S273 -> 4 `i `E3281 1 ]
-[n S283 . Segement_Pins SegmentType ]
-"49 App/../Hall/Hall_dfs.h
-[; ;App/../Hall/Hall_dfs.h: 49: BTN_t BTN1;
-[c E3236 0 1 .. ]
-[n E3236 . BTN_Pressed BTN_Released  ]
-[c E3240 0 1 .. ]
-[n E3240 . BTN_Active_High BTN_Active_Low  ]
-"29 App/../Hall/Button/Hall_Button_init.h
-[; ;App/../Hall/Button/Hall_Button_init.h: 29: typedef struct {
-[s S279 `S273 1 `E3236 1 `E3240 1 ]
-[n S279 . BTN_Pin BTN_Status BTN_Connection ]
-"24 App/../Hall/Key_Pad/Hall_Key_Pad_init.h
-[; ;App/../Hall/Key_Pad/Hall_Key_Pad_init.h: 24: typedef struct {
-[s S284 `S273 -> 4 `i `S273 -> 4 `i ]
-[n S284 . Keypad_Row_Pins Keypad_Column_Pins ]
-"43 App/../Hall/LCD/Hall_lcd_init.h
-[; ;App/../Hall/LCD/Hall_lcd_init.h: 43: typedef struct {
-[s S285 `S273 1 `S273 1 `S273 -> 4 `i ]
-[n S285 . LCD_rs LCD_en LCD_D ]
-"49
-[; ;App/../Hall/LCD/Hall_lcd_init.h: 49: typedef struct {
-[s S286 `S273 1 `S273 1 `S273 -> 8 `i ]
-[n S286 . LCD_rs LCD_en LCD_D ]
-[p mainexit ]
+[v F3230 `(v ~T0 @X0 0 tf ]
+[v F3231 `(v ~T0 @X0 0 tf ]
+[v F3199 `(v ~T0 @X0 0 tf ]
+"20 Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 20: Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer) {
+[c E3187 0 1 2 3 4 5 6 7 .. ]
+[n E3187 . TIMR0_PRESCALER_DIV_BY_2 TIMR0_PRESCALER_DIV_BY_4 TIMR0_PRESCALER_DIV_BY_8 TIMR0_PRESCALER_DIV_BY_16 TIMR0_PRESCALER_DIV_BY_32 TIMR0_PRESCALER_DIV_BY_64 TIMR0_PRESCALER_DIV_BY_128 TIMR0_PRESCALER_DIV_BY_256  ]
+"58 Mcal/Mcal_Timer_0/../Mcal_Timer_0/Mcal_Timer_0_init.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_Timer_0/Mcal_Timer_0_init.h: 58: typedef struct {
+[s S277 `*F3199 1 `E3040 1 :1 `uc 1 `us 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `E3187 1 :4 `uc 1 ]
+[n S277 . Timer0_InterruptHandler Priorety Presacler_Enable Timer0_preloaValue Timer0_Counter_Edge Timer0_Mode Timer0_Register_Size Prescaler timer0_reserved ]
+"5862 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5862:     struct {
+[s S253 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S253 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"5870
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5870:     struct {
+[s S254 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S254 . T0PS0 T0PS1 T0PS2 . T016BIT ]
+"5861
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5861: typedef union {
+[u S252 `S253 1 `S254 1 ]
+[n S252 . . . ]
+"5878
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5878: extern volatile T0CONbits_t T0CONbits __attribute__((address(0xFD5)));
+[v _T0CONbits `VS252 ~T0 @X0 0 e@4053 ]
+[v F3220 `(v ~T0 @X0 1 tf1`*CS277 ]
+"11 Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 11: static __attribute__((inline)) void Timer0_prescaler_config(const Timer0_t *copyTimer);
+[v _Timer0_prescaler_config `TF3220 ~T0 @X0 0 s ]
+[v F3223 `(v ~T0 @X0 1 tf1`*CS277 ]
+"12
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 12: static __attribute__((inline)) void Timer0_Mode_config(const Timer0_t *copyTimer);
+[v _Timer0_Mode_config `TF3223 ~T0 @X0 0 s ]
+[v F3226 `(v ~T0 @X0 1 tf1`*CS277 ]
+"13
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 13: static __attribute__((inline)) void Timer0_Register_Size(const Timer0_t *copyTimer);
+[v _Timer0_Register_Size `TF3226 ~T0 @X0 0 s ]
+"5947 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5947: extern volatile unsigned char TMR0H __attribute__((address(0xFD7)));
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"5940
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 5940: extern volatile unsigned char TMR0L __attribute__((address(0xFD6)));
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"6380
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6380:     struct {
+[s S266 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S266 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"6390
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6390:     struct {
+[s S267 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S267 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"6400
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6400:     struct {
+[s S268 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S268 . . GIEL GIEH ]
+"6379
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6379: typedef union {
+[u S265 `S266 1 `S267 1 `S268 1 ]
+[n S265 . . . . ]
+"6406
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6406: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS265 ~T0 @X0 0 e@4082 ]
+[v F3252 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -486,100 +509,491 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"51 App/../Hall/LCD/../../Mcal/Mcal_dfs.h
+"51 Mcal/Mcal_Timer_0/../Mcal_dfs.h
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 51: Interrupt_INTx_t EX_INT0;
 [v _EX_INT0 `S274 ~T0 @X0 1 e ]
 "52
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 52: Interrupt_INTx_t EX_INT1;
 [v _EX_INT1 `S274 ~T0 @X0 1 e ]
 "53
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 53: Interrupt_INTx_t EX_INT2;
 [v _EX_INT2 `S274 ~T0 @X0 1 e ]
 "56
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 56: Interrupt_RBx_t RB_4;
 [v _RB_4 `S275 ~T0 @X0 1 e ]
 "57
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 57: Interrupt_RBx_t RB_5;
 [v _RB_5 `S275 ~T0 @X0 1 e ]
 "58
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 58: Interrupt_RBx_t RB_6;
 [v _RB_6 `S275 ~T0 @X0 1 e ]
 "59
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 59: Interrupt_RBx_t RB_7;
 [v _RB_7 `S275 ~T0 @X0 1 e ]
 "62
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 62: uint16_t retADC1;
 [v _retADC1 `us ~T0 @X0 1 e ]
 "63
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 63: uint16_t retADC2;
 [v _retADC2 `us ~T0 @X0 1 e ]
 "64
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 64: uint16_t retADC3;
 [v _retADC3 `us ~T0 @X0 1 e ]
 "65
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 65: uint16_t retADC4;
 [v _retADC4 `us ~T0 @X0 1 e ]
 "68
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 68: ADC_t adc1;
 [v _adc1 `S276 ~T0 @X0 1 e ]
 "69
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 69: ADC_t adc2;
 [v _adc2 `S276 ~T0 @X0 1 e ]
 "70
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 70: ADC_t adc3;
 [v _adc3 `S276 ~T0 @X0 1 e ]
 "71
+[; ;Mcal/Mcal_Timer_0/../Mcal_dfs.h: 71: ADC_t adc4;
 [v _adc4 `S276 ~T0 @X0 1 e ]
-"22 App/../Hall/Hall_dfs.h
-[; ;App/../Hall/Hall_dfs.h: 22: uint8_t *RetValue_KeyPad = ((void*)0);
-[v _RetValue_KeyPad `*uc ~T0 @X0 1 e ]
-[i _RetValue_KeyPad
--> -> -> 0 `i `*v `*uc
+"14 Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 14: static uint16_t Timer0_Preloaded = 0;
+[v _Timer0_Preloaded `us ~T0 @X0 1 s ]
+[i _Timer0_Preloaded
+-> -> 0 `i `us
 ]
-"23
-[; ;App/../Hall/Hall_dfs.h: 23: uint8_t *RetValue_BTN = ((void*)0);
-[v _RetValue_BTN `*uc ~T0 @X0 1 e ]
-[i _RetValue_BTN
--> -> -> 0 `i `*v `*uc
+"17
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 17: static void (*Timer0_interruptHandler)(void) = ((void*)0);
+[v _Timer0_interruptHandler `*F3230 ~T0 @X0 1 s ]
+[i _Timer0_interruptHandler
+-> -> -> 0 `i `*v `*F3231
 ]
-"37
-[; ;App/../Hall/Hall_dfs.h: 37: Led_t Led1;
-[v _Led1 `S278 ~T0 @X0 1 e ]
-"38
-[; ;App/../Hall/Hall_dfs.h: 38: Led_t Led2;
-[v _Led2 `S278 ~T0 @X0 1 e ]
-"39
-[; ;App/../Hall/Hall_dfs.h: 39: Led_t Led3;
-[v _Led3 `S278 ~T0 @X0 1 e ]
-"42
-[; ;App/../Hall/Hall_dfs.h: 42: DC_Motor_t Motor1;
-[v _Motor1 `S282 ~T0 @X0 1 e ]
-"43
-[; ;App/../Hall/Hall_dfs.h: 43: DC_Motor_t Motor2;
-[v _Motor2 `S282 ~T0 @X0 1 e ]
-"46
-[; ;App/../Hall/Hall_dfs.h: 46: Segement_t Seg1;
-[v _Seg1 `S283 ~T0 @X0 1 e ]
-"49
-[; ;App/../Hall/Hall_dfs.h: 49: BTN_t BTN1;
-[v _BTN1 `S279 ~T0 @X0 1 e ]
-"52
-[; ;App/../Hall/Hall_dfs.h: 52: KeyPad_t KeyPad1;
-[v _KeyPad1 `S284 ~T0 @X0 1 e ]
-"55
-[; ;App/../Hall/Hall_dfs.h: 55: LCD_4Bit_t LCD1_4Bit;
-[v _LCD1_4Bit `S285 ~T0 @X0 1 e ]
-"56
-[; ;App/../Hall/Hall_dfs.h: 56: LCD_8Bit_t LCD1_8Bit;
-[v _LCD1_8Bit `S286 ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"9 App/Main.c
-[; ;App/Main.c: 9: int main(void) {
-[v _main `(i ~T0 @X0 1 ef ]
+"20
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 20: Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer) {
+[v _MCAL_TIMER0_init `(uc ~T0 @X0 1 ef1`*CS277 ]
 {
-[e :U _main ]
+[e :U _MCAL_TIMER0_init ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
 [f ]
-"11
-[; ;App/Main.c: 11:     while(1) {
-[e :U 289 ]
+"21
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 21:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
+"22
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 22:     if(copyTimer == ((void*)0)) {
+[e $ ! == _copyTimer -> -> -> 0 `i `*v `*CS277 279  ]
 {
-"13
-[; ;App/Main.c: 13:     }
+"23
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 23:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"24
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 24:     }
 }
-[e :U 288 ]
+[e $U 280  ]
+"25
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 25:     else {
+[e :U 279 ]
+{
+"26
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 26:         (T0CONbits.TMR0ON = 0 );
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"27
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 27:         Timer0_prescaler_config(copyTimer);
+[e ( _Timer0_prescaler_config (1 _copyTimer ]
+"28
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 28:         Timer0_Mode_config(copyTimer);
+[e ( _Timer0_Mode_config (1 _copyTimer ]
+"29
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 29:         Timer0_Register_Size(copyTimer);
+[e ( _Timer0_Register_Size (1 _copyTimer ]
+"30
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 30:         TMR0H = (copyTimer->Timer0_preloaValue) >> 8;
+[e = _TMR0H -> >> -> . *U _copyTimer 3 `ui -> 8 `i `uc ]
+"31
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 31:         TMR0L = (uint8_t)(copyTimer->Timer0_preloaValue) ;
+[e = _TMR0L -> . *U _copyTimer 3 `uc ]
+"32
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 32:         Timer0_Preloaded = copyTimer->Timer0_preloaValue;
+[e = _Timer0_Preloaded . *U _copyTimer 3 ]
+"35
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 35:         (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"36
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 36:         (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"38
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 38:         (INTCONbits.TMR0IE = 1);
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"39
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 39:         (INTCONbits.TMR0IF = 0);
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"53
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 53:         Timer0_interruptHandler = copyTimer->Timer0_InterruptHandler;
+[e = _Timer0_interruptHandler . *U _copyTimer 0 ]
+"55
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 55:         (T0CONbits.TMR0ON = 1);
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"56
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 56:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"57
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 57:     }
+}
+[e :U 280 ]
+"58
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 58:     return retValue;
+[e ) _retValue ]
+[e $UE 278  ]
+"59
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 59: }
+[e :UE 278 ]
+}
+"61
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 61: Std_Return MCAL_TIMER0_DeInit(const Timer0_t *copyTimer) {
+[v _MCAL_TIMER0_DeInit `(uc ~T0 @X0 1 ef1`*CS277 ]
+{
+[e :U _MCAL_TIMER0_DeInit ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"62
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 62:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
+"63
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 63:     if(copyTimer == ((void*)0)) {
+[e $ ! == _copyTimer -> -> -> 0 `i `*v `*CS277 282  ]
+{
+"64
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 64:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"65
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 65:     }
+}
+[e $U 283  ]
+"66
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 66:     else {
+[e :U 282 ]
+{
+"67
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 67:         (T0CONbits.TMR0ON = 0 );
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"69
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 69:         (INTCONbits.TMR0IE = 0);
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
+"71
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 71:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"72
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 72:     }
+}
+[e :U 283 ]
+"73
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 73:     return retValue;
+[e ) _retValue ]
+[e $UE 281  ]
+"74
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 74: }
+[e :UE 281 ]
+}
+"76
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 76: Std_Return MCAL_TIMER0_writeValue(const Timer0_t *copyTimer, uint16_t copyValue) {
+[v _MCAL_TIMER0_writeValue `(uc ~T0 @X0 1 ef2`*CS277`us ]
+{
+[e :U _MCAL_TIMER0_writeValue ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[v _copyValue `us ~T0 @X0 1 r2 ]
+[f ]
+"77
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 77:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
+"78
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 78:     if(copyTimer == ((void*)0)) {
+[e $ ! == _copyTimer -> -> -> 0 `i `*v `*CS277 285  ]
+{
+"79
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 79:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"80
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 80:     }
+}
+[e $U 286  ]
+"81
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 81:     else {
+[e :U 285 ]
+{
+"82
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 82:         TMR0H = (copyValue) >> 8;
+[e = _TMR0H -> >> -> _copyValue `ui -> 8 `i `uc ]
+"83
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 83:         TMR0L = (uint8_t)(copyValue) ;
+[e = _TMR0L -> _copyValue `uc ]
+"84
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 84:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"85
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 85:     }
+}
+[e :U 286 ]
+"86
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 86:     return retValue;
+[e ) _retValue ]
+[e $UE 284  ]
+"87
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 87: }
+[e :UE 284 ]
+}
+"89
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 89: Std_Return MCAL_TIMER0_readValue(const Timer0_t *copyTimer, uint16_t *copyValue) {
+[v _MCAL_TIMER0_readValue `(uc ~T0 @X0 1 ef2`*CS277`*us ]
+{
+[e :U _MCAL_TIMER0_readValue ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[v _copyValue `*us ~T0 @X0 1 r2 ]
+[f ]
+"90
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 90:     uint8_t retValue = (Std_Return)0;
+[v _retValue `uc ~T0 @X0 1 a ]
+[e = _retValue -> -> 0 `i `uc ]
+"91
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 91:     uint8_t timer0L = 0;
+[v _timer0L `uc ~T0 @X0 1 a ]
+[e = _timer0L -> -> 0 `i `uc ]
+"92
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 92:     uint8_t timer0H = 0;
+[v _timer0H `uc ~T0 @X0 1 a ]
+[e = _timer0H -> -> 0 `i `uc ]
+"93
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 93:     if((copyTimer == ((void*)0)) && (copyTimer == ((void*)0))) {
+[e $ ! && == _copyTimer -> -> -> 0 `i `*v `*CS277 == _copyTimer -> -> -> 0 `i `*v `*CS277 288  ]
+{
+"94
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 94:         retValue = (Std_Return)0;
+[e = _retValue -> -> 0 `i `uc ]
+"95
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 95:     }
+}
 [e $U 289  ]
-[e :U 290 ]
-"14
-[; ;App/Main.c: 14:     return 0;
-[e ) -> 0 `i ]
+"96
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 96:     else {
+[e :U 288 ]
+{
+"97
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 97:         timer0L = TMR0L;
+[e = _timer0L _TMR0L ]
+"98
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 98:         timer0H = TMR0H;
+[e = _timer0H _TMR0H ]
+"99
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 99:         *copyValue = (uint8_t)((timer0H << 8) + timer0L);
+[e = *U _copyValue -> -> + << -> _timer0H `i -> 8 `i -> _timer0L `i `uc `us ]
+"100
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 100:         retValue = (Std_Return)1;
+[e = _retValue -> -> 1 `i `uc ]
+"101
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 101:     }
+}
+[e :U 289 ]
+"102
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 102:     return retValue;
+[e ) _retValue ]
 [e $UE 287  ]
-"15
-[; ;App/Main.c: 15: }
+"103
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 103: }
 [e :UE 287 ]
+}
+"107
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 107: void Timer0_ISR(void) {
+[v _Timer0_ISR `(v ~T0 @X0 1 ef ]
+{
+[e :U _Timer0_ISR ]
+[f ]
+"108
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 108:     (INTCONbits.TMR0IF = 0);
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"109
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 109:     TMR0H = (Timer0_Preloaded) >> 8;
+[e = _TMR0H -> >> -> _Timer0_Preloaded `ui -> 8 `i `uc ]
+"110
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 110:     TMR0L = (uint8_t)(Timer0_Preloaded) ;
+[e = _TMR0L -> _Timer0_Preloaded `uc ]
+"111
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 111:     if(Timer0_interruptHandler) {
+[e $ ! != _Timer0_interruptHandler -> -> 0 `i `*F3252 291  ]
+{
+"112
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 112:         Timer0_interruptHandler();
+[e ( *U _Timer0_interruptHandler ..  ]
+"113
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 113:     }
+}
+[e :U 291 ]
+"114
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 114: }
+[e :UE 290 ]
+}
+[v F3254 `(v ~T0 @X0 1 tf1`*CS277 ]
+"117
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 117: static __attribute__((inline)) void Timer0_prescaler_config(const Timer0_t *copyTimer) {
+[v _Timer0_prescaler_config `TF3254 ~T0 @X0 1 s ]
+{
+[e :U _Timer0_prescaler_config ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"118
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 118:     if(copyTimer->Presacler_Enable == 1U) {
+[e $ ! == -> . *U _copyTimer 2 `ui -> 1 `ui 293  ]
+{
+"119
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 119:         (T0CONbits.PSA = 0);
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+"120
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 120:         T0CONbits.T0PS = copyTimer->Prescaler;
+[e = . . _T0CONbits 0 0 -> . *U _copyTimer 7 `uc ]
+"121
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 121:     }
+}
+[e $U 294  ]
+"122
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 122:     else if(copyTimer->Presacler_Enable == 0U) {
+[e :U 293 ]
+[e $ ! == -> . *U _copyTimer 2 `ui -> 0 `ui 295  ]
+{
+"123
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 123:         (T0CONbits.PSA = 1);
+[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+"124
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 124:     }
+}
+[e $U 296  ]
+"125
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 125:     else {
+[e :U 295 ]
+{
+"127
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 127:     }
+}
+[e :U 296 ]
+[e :U 294 ]
+"128
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 128: }
+[e :UE 292 ]
+}
+[v F3257 `(v ~T0 @X0 1 tf1`*CS277 ]
+"130
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 130: static __attribute__((inline)) void Timer0_Mode_config(const Timer0_t *copyTimer) {
+[v _Timer0_Mode_config `TF3257 ~T0 @X0 1 s ]
+{
+[e :U _Timer0_Mode_config ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"131
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 131:     if(copyTimer->Timer0_Mode == 1U) {
+[e $ ! == -> . *U _copyTimer 5 `ui -> 1 `ui 298  ]
+{
+"132
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 132:         (T0CONbits.T0CS = 0);
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+"133
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 133:     }
+}
+[e $U 299  ]
+"134
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 134:     else if(copyTimer->Timer0_Mode == 0U) {
+[e :U 298 ]
+[e $ ! == -> . *U _copyTimer 5 `ui -> 0 `ui 300  ]
+{
+"135
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 135:         (T0CONbits.T0CS = 1);
+[e = . . _T0CONbits 0 3 -> -> 1 `i `uc ]
+"136
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 136:         if(copyTimer->Timer0_Counter_Edge == 1U) {
+[e $ ! == -> . *U _copyTimer 4 `ui -> 1 `ui 301  ]
+{
+"137
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 137:             (T0CONbits.T0SE = 0);
+[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
+"138
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 138:         }
+}
+[e $U 302  ]
+"139
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 139:         else if (copyTimer->Timer0_Counter_Edge == 0U) {
+[e :U 301 ]
+[e $ ! == -> . *U _copyTimer 4 `ui -> 0 `ui 303  ]
+{
+"140
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 140:             (T0CONbits.T0SE = 1);
+[e = . . _T0CONbits 0 2 -> -> 1 `i `uc ]
+"141
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 141:         }
+}
+[e $U 304  ]
+"142
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 142:         else {
+[e :U 303 ]
+{
+"144
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 144:         }
+}
+[e :U 304 ]
+[e :U 302 ]
+"145
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 145:     }
+}
+[e $U 305  ]
+"146
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 146:     else {
+[e :U 300 ]
+{
+"148
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 148:     }
+}
+[e :U 305 ]
+[e :U 299 ]
+"149
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 149: }
+[e :UE 297 ]
+}
+[v F3260 `(v ~T0 @X0 1 tf1`*CS277 ]
+"151
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 151: static __attribute__((inline)) void Timer0_Register_Size(const Timer0_t *copyTimer) {
+[v _Timer0_Register_Size `TF3260 ~T0 @X0 1 s ]
+{
+[e :U _Timer0_Register_Size ]
+[v _copyTimer `*CS277 ~T0 @X0 1 r1 ]
+[f ]
+"152
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 152:     if(copyTimer->Timer0_Register_Size == 1U) {
+[e $ ! == -> . *U _copyTimer 6 `ui -> 1 `ui 307  ]
+{
+"153
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 153:         (T0CONbits.T08BIT = 1);
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+"154
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 154:     }
+}
+[e $U 308  ]
+"155
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 155:     else if (copyTimer->Timer0_Register_Size == 0U) {
+[e :U 307 ]
+[e $ ! == -> . *U _copyTimer 6 `ui -> 0 `ui 309  ]
+{
+"156
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 156:         (T0CONbits.T08BIT = 0);
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+"157
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 157:     }
+}
+[e $U 310  ]
+"158
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 158:     else {
+[e :U 309 ]
+{
+"160
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 160:     }
+}
+[e :U 310 ]
+[e :U 308 ]
+"161
+[; ;Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c: 161: }
+[e :UE 306 ]
 }

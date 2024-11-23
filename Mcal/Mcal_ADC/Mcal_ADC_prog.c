@@ -36,19 +36,22 @@ Std_Return MCAL_ADC_init(const ADC_t *copyADC) {
         ADC_input_chanal_configuration(copyADC->AdcChanall);
         
         /* Configure The interrupt */
-        #if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+#if ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_ENABLE
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_DISABLE_FUTURE
             MCAL_INTERRUPT_GlobaleInterruptEnable();
             MCAL_INTERRUPT_PeripheralInterruptEnable();
+#endif
             Mcal_ADC_InterruptEnable();
             Mcal_ADC_ClearFlage();
+            ADC_interruptHandler = copyADC->ADCinterruptHandler;
+#if INTERRUPT_PRIORETY_LEVELS_ENABLE == INTERRUPT_ENABLE_FUTURE
             switch(copyADC->Priorety) {
                 case INTERRUPT_PRIORETY_HIGH : Mcal_ADC_HighPrioritySet(); break;
                 case INTERRUPT_PRIORETY_LOW : Mcal_ADC_LowPrioritySet(); break;
-            }
-            ADC_interruptHandler = copyADC->ADCinterruptHandler;
-        #elif ADC_INTERRUPT_FUTUR == ADC_INTERRUPT_FUTUR_DISABLE
-
-        #endif
+            }            
+#endif
+            
+#endif
                 
         /* Configure The result Format */
         ADC_SelectResultFormat(copyADC);

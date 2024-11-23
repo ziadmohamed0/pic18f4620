@@ -6,6 +6,7 @@
                    projectFiles="true">
       <logicalFolder name="App" displayName="App" projectFiles="true">
         <itemPath>App/Main.h</itemPath>
+        <itemPath>App/ISR.h</itemPath>
       </logicalFolder>
       <logicalFolder name="Hall" displayName="Hall" projectFiles="true">
         <logicalFolder name="Button" displayName="Button" projectFiles="true">
@@ -51,6 +52,11 @@
           <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h</itemPath>
           <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="Mcal_Timer_0"
+                       displayName="Mcal_Timer_0"
+                       projectFiles="true">
+          <itemPath>Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h</itemPath>
+        </logicalFolder>
         <itemPath>Mcal/Mcal_Device_cfg.h</itemPath>
         <itemPath>Mcal/Mcal_Std_Types.h</itemPath>
         <itemPath>Mcal/Mcal_Bit_Math.h</itemPath>
@@ -72,6 +78,7 @@
                    projectFiles="true">
       <logicalFolder name="App" displayName="App" projectFiles="true">
         <itemPath>App/Main.c</itemPath>
+        <itemPath>App/ISR.c</itemPath>
       </logicalFolder>
       <logicalFolder name="Hall" displayName="Hall" projectFiles="true">
         <logicalFolder name="Button" displayName="Button" projectFiles="true">
@@ -113,6 +120,11 @@
           <itemPath>Mcal/Mcal_interrupt/Mcal_external_interrupt.c</itemPath>
           <itemPath>Mcal/Mcal_interrupt/Mcal_interrupt_manager.c</itemPath>
           <itemPath>Mcal/Mcal_interrupt/Mcal_internal_interrupt.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Mcal_Timer_0"
+                       displayName="Mcal_Timer_0"
+                       projectFiles="true">
+          <itemPath>Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c</itemPath>
         </logicalFolder>
         <itemPath>Mcal/Mcal_Device_cfg.c</itemPath>
         <itemPath>Mcal/Mcal_dfs.c</itemPath>

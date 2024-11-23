@@ -4811,7 +4811,8 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
-void ADC_ISR();
+void ADC_ISR(void);
+void Timer0_ISR(void);
 # 9 "Mcal/Mcal_interrupt/Mcal_interrupt_manager.c" 2
 
 
@@ -4884,5 +4885,10 @@ void __attribute__((picinterrupt(("")))) MCAL_InterruptManager(void) {
         ADC_ISR();
     }
 
+
+
+    if((1 == INTCONbits.TMR0IE) && (1 == INTCONbits.TMR0IF)) {
+        Timer0_ISR();
+    }
 
 }

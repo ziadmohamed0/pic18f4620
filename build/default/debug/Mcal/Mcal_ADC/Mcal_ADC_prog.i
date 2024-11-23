@@ -4906,20 +4906,14 @@ Std_Return MCAL_ADC_init(const ADC_t *copyADC) {
 
 
 
+
             (INTCONbits.GIE = 1);
             (INTCONbits.PEIE = 1);
+
             (PIE1bits.ADIE = 1);
             (PIR1bits.ADIF = 0);
-            switch(copyADC->Priorety) {
-                case INTERRUPT_PRIORETY_HIGH : (IPR1bits.ADIP = 1); break;
-                case INTERRUPT_PRIORETY_LOW : (IPR1bits.ADIP = 0); break;
-            }
             ADC_interruptHandler = copyADC->ADCinterruptHandler;
-
-
-
-
-
+# 57 "Mcal/Mcal_ADC/Mcal_ADC_prog.c"
         ADC_SelectResultFormat(copyADC);
 
 

@@ -15,6 +15,7 @@
 #include "Mcal_GPIO/Mcal_GPIO_init.h"
 #include "Mcal_EEPROM/Mcal_EEPROM_init.h"
 #include "Mcal_ADC/Mcal_ADC_init.h"
+#include "Mcal_Timer_0/Mcal_Timer_0_init.h"
 /* -------------------- Include End  -------------------- */
 
 /* -------------------- Macro Start -------------------- */

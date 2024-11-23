@@ -1,4 +1,4 @@
-# 1 "Hall/DC_Motor/Hall_Dc_Motor_prog.c"
+# 1 "Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Hall/DC_Motor/Hall_Dc_Motor_prog.c" 2
+# 1 "Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c" 2
 
 
 
@@ -15,16 +15,16 @@
 
 
 
-# 1 "Hall/DC_Motor/Hall_Dc_Motor_init.h" 1
-# 12 "Hall/DC_Motor/Hall_Dc_Motor_init.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
+# 1 "Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h" 1
+# 12 "Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_dfs.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
 
 
@@ -100,7 +100,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 3
@@ -254,10 +254,10 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 13 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_Compiler.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_Compiler.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_Compiler.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_Compiler.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4722,12 +4722,12 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_Compiler.h" 2
-# 14 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 12 "Mcal/Mcal_Timer_0/../Mcal_Compiler.h" 2
+# 14 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_Bit_Math.h" 1
-# 15 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h" 2
-# 70 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_Std_Types.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_Bit_Math.h" 1
+# 15 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h" 2
+# 70 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_Std_Types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned long uint32_t;
@@ -4740,16 +4740,16 @@ typedef float float32_t;
 
 
 typedef uint8_t Std_Return;
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
-# 13 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_gen_cfg.h" 1
+# 13 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
-# 29 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_GPIO/../Mcal_Device_cfg.h" 1
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h" 2
+# 29 "Mcal/Mcal_Timer_0/../Mcal_interrupt/../Mcal_GPIO/Mcal_GPIO_init.h"
 typedef enum {
     GPIO_Status_Low = 0,
     GPIO_Status_High
@@ -4800,14 +4800,14 @@ Std_Return Mcal_GPIO_initPortDirection(Port_Index_t copyPortCFG, uint8_t copyDir
 Std_Return MCAL_GPIO_getPortDirection(Port_Index_t copyPortCFG, uint8_t* copyDirectionPort);
 Std_Return MCAL_GPIO_writePortStatus(Port_Index_t copyPortCFG, uint8_t copyStatusPort);
 Std_Return MCAL_GPIO_getPortStatus(Port_Index_t copyPortCFG, uint8_t* copyStatusPort);
-# 14 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h" 2
-# 65 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_cfg.h"
+# 14 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h" 2
+# 65 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_cfg.h"
 typedef enum {
     INTERRUPT_PRIORETY_LOW,
     INTERRUPT_PRIORETY_HIGH
 }Interrupt_Priorety_cfg_t;
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h" 2
-# 93 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_external_interrupt.h"
+# 12 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h" 2
+# 93 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_external_interrupt.h"
 typedef enum {
     INTERRUPT_EDGE_FALLING,
     INTERRUPT_EDGE_RISING
@@ -4841,13 +4841,13 @@ Std_Return MCAL_INTERRUPT_INTx_DeInit(const Interrupt_INTx_t *copyINTx);
 
 Std_Return MCAL_INTERRUPT_RBx_init(const Interrupt_RBx_t *copyRBx);
 Std_Return MCAL_INTERRUPT_RBx_DeInit(const Interrupt_RBx_t *copyRBx);
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 12 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h" 1
-# 13 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_internal_interrupt.h" 1
+# 13 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h" 1
-# 25 "Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_manager.h" 1
+# 25 "Mcal/Mcal_Timer_0/../Mcal_interrupt/Mcal_interrupt_manager.h"
 void INT0_ISR(void);
 void INT1_ISR(void);
 void INT2_ISR(void);
@@ -4857,20 +4857,20 @@ void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
 void ADC_ISR(void);
 void Timer0_ISR(void);
-# 14 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 14 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
 
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h" 1
-# 39 "Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_EEPROM/Mcal_EEPROM_init.h" 1
+# 39 "Mcal/Mcal_Timer_0/../Mcal_EEPROM/Mcal_EEPROM_init.h"
 Std_Return MCAL_EEPROM_DataWriteByte(uint16_t copybAdd, uint8_t copybData);
 Std_Return MCAL_EEPROM_DataReadByte(uint16_t copybAdd, uint8_t *copybData);
-# 16 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 16 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 1
-# 13 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h" 1
-# 13 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h" 2
-# 69 "Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h" 1
+# 13 "Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_ADC/MCAL_ADC_cfg.h" 1
+# 13 "Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h" 2
+# 69 "Mcal/Mcal_Timer_0/../Mcal_ADC/Mcal_ADC_init.h"
 typedef enum {
     ADC_CHANAL_AN1 = 0,
     ADC_CHANAL_AN2,
@@ -4935,46 +4935,11 @@ Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversi
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
 Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
 Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
-# 17 "Hall/DC_Motor/../../Mcal/Mcal_dfs.h" 2
+# 17 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
 
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h"
-# 1 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h" 1
-# 12 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h" 2
-# 47 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h"
-typedef enum {
-    TIMR0_PRESCALER_DIV_BY_2,
-    TIMR0_PRESCALER_DIV_BY_4,
-    TIMR0_PRESCALER_DIV_BY_8,
-    TIMR0_PRESCALER_DIV_BY_16,
-    TIMR0_PRESCALER_DIV_BY_32,
-    TIMR0_PRESCALER_DIV_BY_64,
-    TIMR0_PRESCALER_DIV_BY_128,
-    TIMR0_PRESCALER_DIV_BY_256,
-}Timer0_Prescaler_t;
-
-typedef struct {
-
-    void (* Timer0_InterruptHandler)(void);
-    Interrupt_Priorety_cfg_t Priorety;
-
-    uint8_t Presacler_Enable : 1;
-    uint16_t Timer0_preloaValue;
-    uint8_t Timer0_Counter_Edge : 1;
-    uint8_t Timer0_Mode : 1;
-    uint8_t Timer0_Register_Size : 1;
-    Timer0_Prescaler_t Prescaler;
-    uint8_t timer0_reserved : 4;
-}Timer0_t;
-
-
-
-Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer);
-Std_Return MCAL_TIMER0_DeInit(const Timer0_t *copyTimer);
-Std_Return MCAL_TIMER0_writeValue(const Timer0_t *copyTimer, uint16_t copyValue);
-Std_Return MCAL_TIMER0_readValue(const Timer0_t *copyTimer, uint16_t *copyValue);
-# 18 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
-# 35 "Hall/DC_Motor/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h"
+# 1 "Mcal/Mcal_Timer_0/../Mcal_Timer_0/Mcal_Timer_0_init.h" 1
+# 18 "Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
+# 35 "Mcal/Mcal_Timer_0/../Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);
@@ -5012,119 +4977,178 @@ ADC_t adc1;
 ADC_t adc2;
 ADC_t adc3;
 ADC_t adc4;
-# 12 "Hall/DC_Motor/Hall_Dc_Motor_init.h" 2
-# 24 "Hall/DC_Motor/Hall_Dc_Motor_init.h"
-typedef struct {
-    uint8_t DC_Motor_Port : 4;
-    uint8_t DC_Motor_Pin : 3;
-    uint8_t DC_Motor_Status : 1;
-}DC_Motor_pin_t;
+# 12 "Mcal/Mcal_Timer_0/../Mcal_Timer_0/Mcal_Timer_0_init.h" 2
+# 47 "Mcal/Mcal_Timer_0/../Mcal_Timer_0/Mcal_Timer_0_init.h"
+typedef enum {
+    TIMR0_PRESCALER_DIV_BY_2,
+    TIMR0_PRESCALER_DIV_BY_4,
+    TIMR0_PRESCALER_DIV_BY_8,
+    TIMR0_PRESCALER_DIV_BY_16,
+    TIMR0_PRESCALER_DIV_BY_32,
+    TIMR0_PRESCALER_DIV_BY_64,
+    TIMR0_PRESCALER_DIV_BY_128,
+    TIMR0_PRESCALER_DIV_BY_256,
+}Timer0_Prescaler_t;
 
 typedef struct {
-    DC_Motor_pin_t DC_MOTOR[2];
-}DC_Motor_t;
+
+    void (* Timer0_InterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+    uint8_t Presacler_Enable : 1;
+    uint16_t Timer0_preloaValue;
+    uint8_t Timer0_Counter_Edge : 1;
+    uint8_t Timer0_Mode : 1;
+    uint8_t Timer0_Register_Size : 1;
+    Timer0_Prescaler_t Prescaler;
+    uint8_t timer0_reserved : 4;
+}Timer0_t;
 
 
 
-Std_Return HALL_DC_MOTOR_init(const DC_Motor_t* copyDC_motor);
-Std_Return HALL_DC_MOTOR_right(const DC_Motor_t* copyDC_motor);
-Std_Return HALL_DC_MOTOR_left(const DC_Motor_t* copyDC_motor);
-Std_Return HALL_DC_MOTOR_stop(const DC_Motor_t* copyDC_motor);
-# 9 "Hall/DC_Motor/Hall_Dc_Motor_prog.c" 2
+Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer);
+Std_Return MCAL_TIMER0_DeInit(const Timer0_t *copyTimer);
+Std_Return MCAL_TIMER0_writeValue(const Timer0_t *copyTimer, uint16_t copyValue);
+Std_Return MCAL_TIMER0_readValue(const Timer0_t *copyTimer, uint16_t *copyValue);
+# 9 "Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c" 2
 
 
+static __attribute__((inline)) void Timer0_prescaler_config(const Timer0_t *copyTimer);
+static __attribute__((inline)) void Timer0_Mode_config(const Timer0_t *copyTimer);
+static __attribute__((inline)) void Timer0_Register_Size(const Timer0_t *copyTimer);
+static uint16_t Timer0_Preloaded = 0;
 
-static Pin_cfg_t objPin_motor_1;
-static Pin_cfg_t objPin_motor_2;
 
-Std_Return HALL_DC_MOTOR_init(const DC_Motor_t* copyDC_motor) {
-    uint8_t retvalue = (Std_Return)0;
-    if(copyDC_motor == ((void*)0)) {
-        retvalue = (Std_Return)0;
+static void (*Timer0_interruptHandler)(void) = ((void*)0);
+
+
+Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyTimer == ((void*)0)) {
+        retValue = (Std_Return)0;
     }
     else {
-        objPin_motor_1.Port = copyDC_motor->DC_MOTOR[0].DC_Motor_Port;
-        objPin_motor_1.Pin = copyDC_motor->DC_MOTOR[0].DC_Motor_Pin;
-        objPin_motor_1.Status = copyDC_motor->DC_MOTOR[0].DC_Motor_Status;
-        objPin_motor_1.Direction = GPIO_Dircetion_Output;
+        (T0CONbits.TMR0ON = 0 );
+        Timer0_prescaler_config(copyTimer);
+        Timer0_Mode_config(copyTimer);
+        Timer0_Register_Size(copyTimer);
+        TMR0H = (copyTimer->Timer0_preloaValue) >> 8;
+        TMR0L = (uint8_t)(copyTimer->Timer0_preloaValue) ;
+        Timer0_Preloaded = copyTimer->Timer0_preloaValue;
 
-        objPin_motor_2.Port = copyDC_motor->DC_MOTOR[1].DC_Motor_Port;
-        objPin_motor_2.Pin = copyDC_motor->DC_MOTOR[1].DC_Motor_Pin;
-        objPin_motor_2.Status = copyDC_motor->DC_MOTOR[1].DC_Motor_Status;
-        objPin_motor_2.Direction = GPIO_Dircetion_Output;
 
-        MCAL_GPIO_init(&objPin_motor_1);
-        MCAL_GPIO_init(&objPin_motor_2);
-        retvalue = (Std_Return)1;
+        (INTCONbits.GIE = 1);
+        (INTCONbits.PEIE = 1);
+
+        (INTCONbits.TMR0IE = 1);
+        (INTCONbits.TMR0IF = 0);
+# 53 "Mcal/Mcal_Timer_0/Mcal_Timer_0_prog.c"
+        Timer0_interruptHandler = copyTimer->Timer0_InterruptHandler;
+
+        (T0CONbits.TMR0ON = 1);
+        retValue = (Std_Return)1;
     }
-    return retvalue;
+    return retValue;
 }
 
-Std_Return HALL_DC_MOTOR_right(const DC_Motor_t* copyDC_motor) {
-    uint8_t retvalue = (Std_Return)0;
-    if(copyDC_motor == ((void*)0)) {
-        retvalue = (Std_Return)0;
+Std_Return MCAL_TIMER0_DeInit(const Timer0_t *copyTimer) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyTimer == ((void*)0)) {
+        retValue = (Std_Return)0;
     }
     else {
-        objPin_motor_1.Port = copyDC_motor->DC_MOTOR[0].DC_Motor_Port;
-        objPin_motor_1.Pin = copyDC_motor->DC_MOTOR[0].DC_Motor_Pin;
-        objPin_motor_1.Status = copyDC_motor->DC_MOTOR[0].DC_Motor_Status;
-        objPin_motor_1.Direction = GPIO_Dircetion_Output;
+        (T0CONbits.TMR0ON = 0 );
 
-        objPin_motor_2.Port = copyDC_motor->DC_MOTOR[1].DC_Motor_Port;
-        objPin_motor_2.Pin = copyDC_motor->DC_MOTOR[1].DC_Motor_Pin;
-        objPin_motor_2.Status = copyDC_motor->DC_MOTOR[1].DC_Motor_Status;
-        objPin_motor_2.Direction = GPIO_Dircetion_Output;
+        (INTCONbits.TMR0IE = 0);
 
-        MCAL_GPIO_writePinStatus(&objPin_motor_1,GPIO_Status_High);
-        MCAL_GPIO_writePinStatus(&objPin_motor_2,GPIO_Status_Low);
-        retvalue = (Std_Return)1;
+        retValue = (Std_Return)1;
     }
-    return retvalue;
+    return retValue;
 }
 
-Std_Return HALL_DC_MOTOR_left(const DC_Motor_t* copyDC_motor) {
-    uint8_t retvalue = (Std_Return)0;
-    if(copyDC_motor == ((void*)0)) {
-        retvalue = (Std_Return)0;
+Std_Return MCAL_TIMER0_writeValue(const Timer0_t *copyTimer, uint16_t copyValue) {
+    uint8_t retValue = (Std_Return)0;
+    if(copyTimer == ((void*)0)) {
+        retValue = (Std_Return)0;
     }
     else {
-        objPin_motor_1.Port = copyDC_motor->DC_MOTOR[0].DC_Motor_Port;
-        objPin_motor_1.Pin = copyDC_motor->DC_MOTOR[0].DC_Motor_Pin;
-        objPin_motor_1.Status = copyDC_motor->DC_MOTOR[0].DC_Motor_Status;
-        objPin_motor_1.Direction = GPIO_Dircetion_Output;
-
-        objPin_motor_2.Port = copyDC_motor->DC_MOTOR[1].DC_Motor_Port;
-        objPin_motor_2.Pin = copyDC_motor->DC_MOTOR[1].DC_Motor_Pin;
-        objPin_motor_2.Status = copyDC_motor->DC_MOTOR[1].DC_Motor_Status;
-        objPin_motor_2.Direction = GPIO_Dircetion_Output;
-
-        MCAL_GPIO_writePinStatus(&objPin_motor_1,GPIO_Status_Low);
-        MCAL_GPIO_writePinStatus(&objPin_motor_2,GPIO_Status_High);
-        retvalue = (Std_Return)1;
+        TMR0H = (copyValue) >> 8;
+        TMR0L = (uint8_t)(copyValue) ;
+        retValue = (Std_Return)1;
     }
-    return retvalue;
+    return retValue;
 }
 
-Std_Return HALL_DC_MOTOR_stop(const DC_Motor_t* copyDC_motor) {
-    uint8_t retvalue = (Std_Return)0;
-    if(copyDC_motor == ((void*)0)) {
-        retvalue = (Std_Return)0;
+Std_Return MCAL_TIMER0_readValue(const Timer0_t *copyTimer, uint16_t *copyValue) {
+    uint8_t retValue = (Std_Return)0;
+    uint8_t timer0L = 0;
+    uint8_t timer0H = 0;
+    if((copyTimer == ((void*)0)) && (copyTimer == ((void*)0))) {
+        retValue = (Std_Return)0;
     }
     else {
-        objPin_motor_1.Port = copyDC_motor->DC_MOTOR[0].DC_Motor_Port;
-        objPin_motor_1.Pin = copyDC_motor->DC_MOTOR[0].DC_Motor_Pin;
-        objPin_motor_1.Status = copyDC_motor->DC_MOTOR[0].DC_Motor_Status;
-        objPin_motor_1.Direction = GPIO_Dircetion_Output;
-
-        objPin_motor_2.Port = copyDC_motor->DC_MOTOR[1].DC_Motor_Port;
-        objPin_motor_2.Pin = copyDC_motor->DC_MOTOR[1].DC_Motor_Pin;
-        objPin_motor_2.Status = copyDC_motor->DC_MOTOR[1].DC_Motor_Status;
-        objPin_motor_2.Direction = GPIO_Dircetion_Output;
-
-        MCAL_GPIO_writePinStatus(&objPin_motor_1,GPIO_Status_Low);
-        MCAL_GPIO_writePinStatus(&objPin_motor_2,GPIO_Status_Low);
-        retvalue = (Std_Return)1;
+        timer0L = TMR0L;
+        timer0H = TMR0H;
+        *copyValue = (uint8_t)((timer0H << 8) + timer0L);
+        retValue = (Std_Return)1;
     }
-    return retvalue;
+    return retValue;
+}
+
+
+
+void Timer0_ISR(void) {
+    (INTCONbits.TMR0IF = 0);
+    TMR0H = (Timer0_Preloaded) >> 8;
+    TMR0L = (uint8_t)(Timer0_Preloaded) ;
+    if(Timer0_interruptHandler) {
+        Timer0_interruptHandler();
+    }
+}
+
+
+static __attribute__((inline)) void Timer0_prescaler_config(const Timer0_t *copyTimer) {
+    if(copyTimer->Presacler_Enable == 1U) {
+        (T0CONbits.PSA = 0);
+        T0CONbits.T0PS = copyTimer->Prescaler;
+    }
+    else if(copyTimer->Presacler_Enable == 0U) {
+        (T0CONbits.PSA = 1);
+    }
+    else {
+
+    }
+}
+
+static __attribute__((inline)) void Timer0_Mode_config(const Timer0_t *copyTimer) {
+    if(copyTimer->Timer0_Mode == 1U) {
+        (T0CONbits.T0CS = 0);
+    }
+    else if(copyTimer->Timer0_Mode == 0U) {
+        (T0CONbits.T0CS = 1);
+        if(copyTimer->Timer0_Counter_Edge == 1U) {
+            (T0CONbits.T0SE = 0);
+        }
+        else if (copyTimer->Timer0_Counter_Edge == 0U) {
+            (T0CONbits.T0SE = 1);
+        }
+        else {
+
+        }
+    }
+    else {
+
+    }
+}
+
+static __attribute__((inline)) void Timer0_Register_Size(const Timer0_t *copyTimer) {
+    if(copyTimer->Timer0_Register_Size == 1U) {
+        (T0CONbits.T08BIT = 1);
+    }
+    else if (copyTimer->Timer0_Register_Size == 0U) {
+        (T0CONbits.T08BIT = 0);
+    }
+    else {
+
+    }
 }

@@ -114,8 +114,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 2596: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
 [v _PIR1bits `VS96 ~T0 @X0 0 e@3998 ]
 "32 Mcal/Mcal_interrupt/Mcal_interrupt_manager.h
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 32: void ADC_ISR();
-[v _ADC_ISR `(v ~T0 @X0 0 e? ]
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 32: void ADC_ISR(void);
+[v _ADC_ISR `(v ~T0 @X0 0 ef ]
+"33
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.h: 33: void Timer0_ISR(void);
+[v _Timer0_ISR `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4620.h: 54: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -730,7 +733,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 97:     }
 }
 [e :U 286 ]
-"100
-[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 100: }
+"101
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 101:     if((1 == INTCONbits.TMR0IE) && (1 == INTCONbits.TMR0IF)) {
+[e $ ! && == -> 1 `i -> . . _INTCONbits 0 5 `i == -> 1 `i -> . . _INTCONbits 0 2 `i 287  ]
+{
+"102
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 102:         Timer0_ISR();
+[e ( _Timer0_ISR ..  ]
+"103
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 103:     }
+}
+[e :U 287 ]
+"105
+[; ;Mcal/Mcal_interrupt/Mcal_interrupt_manager.c: 105: }
 [e :UE 274 ]
 }

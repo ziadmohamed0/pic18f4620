@@ -14,4 +14,6 @@ Hall/Led/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
 Hall/Led/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
 Hall/Led/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h  \
 Hall/Led/../../Mcal/Mcal_ADC/Mcal_ADC_init.h  \
-Hall/Led/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h 
+Hall/Led/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h  \
+Hall/Led/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h  \
+Hall/Led/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h 

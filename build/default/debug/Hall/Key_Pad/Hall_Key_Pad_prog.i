@@ -4855,7 +4855,8 @@ void RB4_ISR(uint8_t copySource);
 void RB5_ISR(uint8_t copySource);
 void RB6_ISR(uint8_t copySource);
 void RB7_ISR(uint8_t copySource);
-void ADC_ISR();
+void ADC_ISR(void);
+void Timer0_ISR(void);
 # 14 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 2
 
 
@@ -4935,7 +4936,45 @@ Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *cop
 Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
 Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
 # 17 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h" 2
-# 34 "Hall/Key_Pad/../../Mcal/Mcal_dfs.h"
+
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h"
+# 1 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h" 1
+# 12 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h" 2
+# 47 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h"
+typedef enum {
+    TIMR0_PRESCALER_DIV_BY_2,
+    TIMR0_PRESCALER_DIV_BY_4,
+    TIMR0_PRESCALER_DIV_BY_8,
+    TIMR0_PRESCALER_DIV_BY_16,
+    TIMR0_PRESCALER_DIV_BY_32,
+    TIMR0_PRESCALER_DIV_BY_64,
+    TIMR0_PRESCALER_DIV_BY_128,
+    TIMR0_PRESCALER_DIV_BY_256,
+}Timer0_Prescaler_t;
+
+typedef struct {
+
+    void (* Timer0_InterruptHandler)(void);
+    Interrupt_Priorety_cfg_t Priorety;
+
+    uint8_t Presacler_Enable : 1;
+    uint16_t Timer0_preloaValue;
+    uint8_t Timer0_Counter_Edge : 1;
+    uint8_t Timer0_Mode : 1;
+    uint8_t Timer0_Register_Size : 1;
+    Timer0_Prescaler_t Prescaler;
+    uint8_t timer0_reserved : 4;
+}Timer0_t;
+
+
+
+Std_Return MCAL_TIMER0_init(const Timer0_t *copyTimer);
+Std_Return MCAL_TIMER0_DeInit(const Timer0_t *copyTimer);
+Std_Return MCAL_TIMER0_writeValue(const Timer0_t *copyTimer, uint16_t copyValue);
+Std_Return MCAL_TIMER0_readValue(const Timer0_t *copyTimer, uint16_t *copyValue);
+# 18 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h" 2
+# 35 "Hall/Key_Pad/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h"
 void INT0_isr(void);
 void INT1_isr(void);
 void INT2_isr(void);

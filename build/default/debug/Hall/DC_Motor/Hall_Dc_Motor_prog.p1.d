@@ -14,4 +14,6 @@ Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_internal_interrupt.h  \
 Hall/DC_Motor/../../Mcal/Mcal_interrupt/Mcal_interrupt_manager.h  \
 Hall/DC_Motor/../../Mcal/Mcal_EEPROM/Mcal_EEPROM_init.h  \
 Hall/DC_Motor/../../Mcal/Mcal_ADC/Mcal_ADC_init.h  \
-Hall/DC_Motor/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h 
+Hall/DC_Motor/../../Mcal/Mcal_ADC/MCAL_ADC_cfg.h  \
+Hall/DC_Motor/../../Mcal/Mcal_Timer_0/Mcal_Timer_0_init.h  \
+Hall/DC_Motor/../../Mcal/Mcal_Timer_0/../Mcal_dfs.h 

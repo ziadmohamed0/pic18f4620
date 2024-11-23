@@ -130,7 +130,6 @@ Std_Return MCAL_ADC_isConversionDone(const ADC_t *copyADC, uint8_t *copyConversi
 Std_Return MCAL_ADC_getConversionResult(const ADC_t *copyADC, ADC_Resulte_t *copyConversionResult);
 Std_Return MCAL_ADC_getConversion_Blocking(const ADC_t *copyADC, ADC_chanal_select_t copyChanal, ADC_Resulte_t* copyConversionResult);
 Std_Return MCAL_ADC_startConversion_Interrupt(const ADC_t *copyADC, ADC_chanal_select_t copyChanal);
-
 /* -------------------- API End -------------------- */
 
 #endif	/* MCAL_ADC_INIT_H */

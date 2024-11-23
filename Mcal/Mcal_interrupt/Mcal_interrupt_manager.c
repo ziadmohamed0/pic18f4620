@@ -97,6 +97,11 @@ void __interrupt() MCAL_InterruptManager(void) {
     }
     /* ----------------------------- ADC interrupt ISR End ----------------------------- */
     
+    /* ----------------------------- Timer0 interrupt ISR Start ----------------------------- */
+    if((MCAL_INTERRUPT_ENABLE == INTCONbits.TMR0IE) && (MCAL_INTERRUPT_OCCUR == INTCONbits.TMR0IF)) {
+        Timer0_ISR();
+    }
+    /* ----------------------------- Timer0 interrupt ISR End ----------------------------- */    
 }
 
 #endif
